@@ -1,0 +1,44 @@
+<meta charset='utf-8'>
+<script>
+/**
+*programme qui calcule l'amende à payer
+*pour un retour de livre en bibliotheque
+*sachant qu'il faut payer 50 centimes par
+*jour de retard et une fois 25 centimes 
+*de frais administratif
+*le bibliothécaire devra donner le nombre
+*de jour de retard
+*
+@author N.Van Houtryve < ddddddddd >
+*/
+
+// déclaration de variantes, constante et fonction
+
+var amende;
+var nombre_de_jour;
+const FRAIS_ADMIN = 0.25;
+const FRAIS_PAR_JOUR = 0.50;
+
+nombre_de_jour = prompt('Quel est le nombre de jours de retard?');
+
+
+//Méthode de calcule
+
+amende = (nombre_de_jour * FRAIS_PAR_JOUR) +FRAIS_ADMIN;
+
+
+
+//Affichage de résultat
+
+document.write('votre amende s\'élève à '+amende+' euros');
+
+console.log('ggghghghghg');
+
+
+
+
+
+
+
+
+</script>
