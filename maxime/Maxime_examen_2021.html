@@ -24,37 +24,41 @@
         rent,
         charges,
         isGarageOption = false,
-        rentIndex,
-        goNext = false;
+        rentIndex;
     const GARAGE_COST = 100;
     const data = {
+        // Propriétés
         rent:       [650, 850, 730, 680],
         charges:    [30, 150, 25, 0],
         withGarage: [false, true, true, false],
+        
+        // Méthodes
+		isValidRent: function(rent) {
+			for (let i = 0; i < this.rent.length; i++) {
+                if (rent == this.rent[i]) {
+                    return i;
+                    break;
+                }
+            }
+			
+			return false;
+		},
+		isValidCharges: function(charges, rentIndex) {
+			return charges == this.charges[rentIndex];
+		},
     };
     const RENT_MULTIPLIER = 2;
 
     do {
         // lecture des données
         do {
-            rent = parseInt(prompt("Entrez le loyer mensuel :"));
-            
-            for (let i = 0; i < data.rent.length; i++) {
-                if (rent == data.rent[i]) {
-                    goNext = true;
-                    rentIndex = i;
-                    break;
-                }
-            }
-        } while (!goNext);
-
-        goNext = false;
+            rent = parseInt(prompt("Entrez le loyer mensuel :")); 
+            rentIndex = data.isValidRent(rent);
+        } while (rentIndex===false);
       
         do {
-            charges = parseInt(prompt("Entrez les charges correspondantes :"));
-            
-            if (charges == data.charges[rentIndex]) goNext = true;
-        } while (!goNext);
+            charges = parseInt(prompt("Entrez les charges correspondantes :"));           
+        } while (!data.isValidCharges(charges, rentIndex));
 
         // traitement données
         totalCost = rent + charges;
