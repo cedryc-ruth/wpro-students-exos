@@ -75,13 +75,13 @@
 
             // si la personne prend l'option garage
             if (isGarageOption) {
-                var tmpCost = totalCost;
+                var basicCost = totalCost;
                 totalCost = totalCost + GARAGE_COST;
             
                 // affichage de la location avec garage
                 document.write("<p>Option:</p>
                     <p>- Garage (" + GARAGE_COST + " €)</p>
-                    <p>Coût total de la location: " + tmpCost + " + " + GARAGE_COST +
+                    <p>Coût total de la location: " + basicCost + " + " + GARAGE_COST +
                     " = " + totalCost + " €</p>");
             }
         }
