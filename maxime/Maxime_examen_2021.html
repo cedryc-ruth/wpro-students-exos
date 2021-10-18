@@ -33,19 +33,19 @@
         withGarage: [false, true, true, false],
         
         // Méthodes
-		isValidRent: function(rent) {
-			for (let i = 0; i < this.rent.length; i++) {
+        isValidRent: function(rent) {
+            for (let i = 0; i < this.rent.length; i++) {
                 if (rent == this.rent[i]) {
                     return i;
                     break;
                 }
             }
-			
-			return false;
-		},
-		isValidCharges: function(charges, rentIndex) {
-			return charges == this.charges[rentIndex];
-		},
+
+            return false;
+        },
+        isValidCharges: function(charges, rentIndex) {
+            return charges == this.charges[rentIndex];
+        },
     };
     const RENT_MULTIPLIER = 2;
 
