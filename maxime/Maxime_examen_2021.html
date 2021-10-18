@@ -25,7 +25,6 @@
         charges,
         isGarageOption = false,
         rentIndex,
-        firstLoop = true,
         goNext = false;
     const GARAGE_COST = 100;
     const DATA = [
@@ -39,10 +38,6 @@
     const RENT_MULTIPLIER = 2;
 
     do {
-        // séparation des affichages après la première itération ( totalement inutile, juste pour plus de clareté )
-        if (!firstLoop) document.write("------------------------------");
-        if (firstLoop) firstLoop = false;
-
         // lecture des données
         do {
             rent = parseInt(prompt("Entrez le loyer mensuel :"));
@@ -85,6 +80,9 @@
                     " = " + totalCost + " €</p>");
             }
         }
+        
+        // séparation des affichages après la première itération ( totalement inutile, juste pour plus de clareté )
+        document.write("<hr>");
     } while (confirm("Voulez-vous calculer le prix total d'un autre appartement ?"));
     </script>
 </body>
