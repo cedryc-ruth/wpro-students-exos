@@ -41,6 +41,7 @@
         // lecture des données
         do {
             rent = parseInt(prompt("Entrez le loyer mensuel :"));
+            
             for (let i = 0; i < DATA[ROW_R].length; i++) {
                 if (rent == DATA[ROW_R][i]) {
                     goNext = true;
@@ -54,6 +55,7 @@
       
         do {
             charges = parseInt(prompt("Entrez les charges correspondantes :"));
+            
             if (charges == DATA[ROW_C][rentIndex]) goNext = true;
         } while (!goNext);
 
