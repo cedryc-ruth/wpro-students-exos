@@ -1,109 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Examen 2020~2021</title>
-  </head>
-  <body>
+</head>
+<body>
     <script>
-      /**
-       * Author : Kestens Maxime
-       * Date : 16-10-2021
-       *
-       * Programme permettant de calucler le prix
-       * total d'une location d'un appartement
-       *
-       * @author Kestens Maxime
-       * @version 1.0
-       */
+    /**
+     * Author : Kestens Maxime
+     * Date : 16-10-2021
+     *
+     * Programme permettant de calucler le prix
+     * total d'une location d'un appartement
+     *
+     * @author Kestens Maxime
+     * @version 1.0
+     */
 
-      // Initialisation / déclaration variables
-      var totalCost,
+    // Initialisation / déclaration variables
+    var totalCost,
         rent,
         charges,
         isGarageOption = false,
         rentIndex,
         firstLoop = true,
         goNext = false;
-      const GARAGE_COST = 100;
-      const DATA = [
+    const GARAGE_COST = 100;
+    const DATA = [
         [650, 850, 730, 680],
         [30, 150, 25, 0],
         [false, true, true, false],
-      ];
-      const ROW_R = 0, // const row utiles si par la suite on change l'ordre dans le tab, aucune valeur fixe dans le code à changer
+    ];
+    const ROW_R = 0, // const row utiles si par la suite on change l'ordre dans le tab, aucune valeur fixe dans le code à changer
         ROW_C = 1, // R = rent, C = charges, G = garage
         ROW_G = 2;
-      const RENT_MULTIPLIER = 2;
+    const RENT_MULTIPLIER = 2;
 
-      do {
+    do {
         // séparation des affichages après la première itération ( totalement inutile, juste pour plus de clareté )
         if (!firstLoop) document.write("------------------------------");
         if (firstLoop) firstLoop = false;
 
         // lecture des données
         do {
-          rent = parseInt(prompt("Entrez le loyer mensuel :"));
-          for (let i = 0; i < DATA[ROW_R].length; i++) {
-            if (rent == DATA[ROW_R][i]) {
-              goNext = true;
-              rentIndex = i;
-              break;
+            rent = parseInt(prompt("Entrez le loyer mensuel :"));
+            for (let i = 0; i < DATA[ROW_R].length; i++) {
+                if (rent == DATA[ROW_R][i]) {
+                    goNext = true;
+                    rentIndex = i;
+                    break;
+                }
             }
-          }
         } while (!goNext);
 
         goNext = false;
+      
         do {
-          charges = parseInt(prompt("Entrez les charges correspondantes :"));
-          if (charges == DATA[ROW_C][rentIndex]) goNext = true;
+            charges = parseInt(prompt("Entrez les charges correspondantes :"));
+            if (charges == DATA[ROW_C][rentIndex]) goNext = true;
         } while (!goNext);
 
         // traitement données
         totalCost = rent + charges;
 
         // affichage de la location basique
-        document.write(
-          "<p>Total : " +
-            rent +
-            " + " +
-            charges +
-            " = " +
-            totalCost +
-            " € - Garantie locative : " +
-            rent * RENT_MULTIPLIER +
-            " €</p>"
-        );
+        document.write("<p>Total : " + rent + " + " + charges + " = " + totalCost +
+              " € - Garantie locative : " + rent * RENT_MULTIPLIER + " €</p>");
 
         // vérification si le loyer entré permet une location de garage
         if (DATA[ROW_G][rentIndex] == true) {
-          isGarageOption = confirm(
-            "Souhaitez-vous profiter de l'option du garage ?"
-          );
+            isGarageOption = confirm("Souhaitez-vous profiter de l'option du garage ?");
 
-          // si la personne prend l'option garage
-          if (isGarageOption) {
-            var tmpCost = totalCost;
-            totalCost = totalCost + GARAGE_COST;
-            // affichage de la location avec garage
-            document.write(
-              "<p>Option:</p><p>- Garage (" +
-                GARAGE_COST +
-                " €)</p><p>Coût total de la location: " +
-                tmpCost +
-                " + " +
-                GARAGE_COST +
-                " = " +
-                totalCost +
-                " €</p>"
-            );
-          }
+            // si la personne prend l'option garage
+            if (isGarageOption) {
+                var tmpCost = totalCost;
+                totalCost = totalCost + GARAGE_COST;
+            
+                // affichage de la location avec garage
+                document.write("<p>Option:</p>
+                    <p>- Garage (" + GARAGE_COST + " €)</p>
+                    <p>Coût total de la location: " + tmpCost + " + " + GARAGE_COST +
+                    " = " + totalCost + " €</p>");
+            }
         }
-      } while (
-        confirm("Voulez-vous calculer le prix total d'un autre appartement ?")
-      );
+    } while (confirm("Voulez-vous calculer le prix total d'un autre appartement ?"));
     </script>
-  </body>
+</body>
 </html>
