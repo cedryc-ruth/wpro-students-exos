@@ -27,14 +27,11 @@
         rentIndex,
         goNext = false;
     const GARAGE_COST = 100;
-    const DATA = [
-        [650, 850, 730, 680],
-        [30, 150, 25, 0],
-        [false, true, true, false],
-    ];
-    const ROW_R = 0, // const row utiles si par la suite on change l'ordre dans le tab, aucune valeur fixe dans le code à changer
-        ROW_C = 1, // R = rent, C = charges, G = garage
-        ROW_G = 2;
+    const data = {
+        rent:       [650, 850, 730, 680],
+        charges:    [30, 150, 25, 0],
+        withGarage: [false, true, true, false],
+    };
     const RENT_MULTIPLIER = 2;
 
     do {
@@ -42,8 +39,8 @@
         do {
             rent = parseInt(prompt("Entrez le loyer mensuel :"));
             
-            for (let i = 0; i < DATA[ROW_R].length; i++) {
-                if (rent == DATA[ROW_R][i]) {
+            for (let i = 0; i < data.rent.length; i++) {
+                if (rent == data.rent[i]) {
                     goNext = true;
                     rentIndex = i;
                     break;
@@ -56,7 +53,7 @@
         do {
             charges = parseInt(prompt("Entrez les charges correspondantes :"));
             
-            if (charges == DATA[ROW_C][rentIndex]) goNext = true;
+            if (charges == data.charges[rentIndex]) goNext = true;
         } while (!goNext);
 
         // traitement données
@@ -67,7 +64,7 @@
               " € - Garantie locative : " + rent * RENT_MULTIPLIER + " €</p>");
 
         // vérification si le loyer entré permet une location de garage
-        if (DATA[ROW_G][rentIndex] == true) {
+        if (data.withGarage[rentIndex] == true) {
             isGarageOption = confirm("Souhaitez-vous profiter de l'option du garage ?");
 
             // si la personne prend l'option garage
