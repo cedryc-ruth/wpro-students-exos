@@ -7,20 +7,19 @@
 //Déclaration des variables
 var prime;
 var chiffreVente;
-var newPrime;
-var newChiffreVente;
-
-//Insignation des variables
-chiffreVente = 1000;
-prime = 0.1;
+const TAUX_PRIME = 0.1;
 
 //Lecture des données
-newChiffreVente = parseInt(prompt('Quel est ton nouveau chiffre de vente ?'));
+chiffreVente = parseInt(prompt('Quel est ton chiffre de vente ?'));
 
 //Méthode de calcul
-newPrime = (prime*newChiffreVente)/chiffreVente;
-
+if(chiffreVente>=1000) {
+  prime = chiffreVente + chiffreVente*TAUX_PRIME;
+} else {
+  prime = 0;
+}
+  
 //Affichage des données
-document.write('<p>Ton prime est de : '+(newPrime*100)+' %</p>');
+document.write('<p>Ton prime est de : '+(prime*100)+' %</p>');
 
 </script>
