@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<script>
+/*
+  Un programme qui affiche le montant de la prime d'un vendeur.
+*/
+
+//Déclaration des variables
+var prime;
+var chiffreVente;
+var newPrime;
+var newChiffreVente;
+
+//Insignation des variables
+chiffreVente = 1000;
+prime = 0.1;
+
+//Lecture des données
+newChiffreVente = parseInt(prompt('Quel est ton nouveau chiffre de vente ?'));
+
+//Méthode de calcul
+newPrime = (prime*newChiffreVente)/chiffreVente;
+
+//Affichage des données
+document.write('<p>Ton prime est de : '+(newPrime*100)+' %</p>');
+
+</script>
