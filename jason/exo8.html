@@ -1,33 +1,18 @@
 <meta charset="utf-8">
 <script>
 /*
-  Un programme qui affiche le montant  primes progressives:
-  0-500 => 2%, 501-1000 => 5%, plus de 1000 => 10%
-*/
+ * Un programme qui affiche le montant  primes progressives:
+ * 0-500 => 2%, 501-1000 => 5%, plus de 1000 => 10%
+ */
 
-//Déclaration des variables
+//Déclaration des variables et des constantes
 var prime;
 var chiffreVente;
-var newPrime;
-
-//Insignation des variables
-chiffreVente = 500;
-prime1 = 0.02;
-prime2 = 0.05;
-prime3 = 0.1;
+const SEUIL_VENTE = 500;
+const TAUX_PRIME_LOW = 0.02;
+const TAUX_PRIME_MEDIUM = 0.05;
+const TAUX_PRIME_HIGH = 0.1;
 
 //Traitement et affichage des données
-for(var i=0; i<=500; i++) {
-    if(i>=0 && i<=500) {
-        newPrime = (prime1*i)/chiffreVente;
-        document.write('<p>Ton prime '+i+' est de : '+(newPrime*100)+' %</p>');
-    }
-}
-document.write('<hr>');
-for(var i=501; i<=1000; i++) {
-    if(i>=501 && i<=1000) {
-        newPrime = (prime2*i)/chiffreVente;
-        document.write('<p>Ton prime '+i+' est de : '+(newPrime*100)+' %</p>');
-    }
-}
+//...
 </script>
