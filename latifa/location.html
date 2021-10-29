@@ -9,7 +9,7 @@
  var coutTotal;
  var loyerMensuel;
  var charges;
- const loyerGarage = 100;
+ const LOYER_GARAGE = 100;
  var garantieLocative;
  var optionGarage;
  var totalAvecGarage;
@@ -27,7 +27,7 @@ do {
 // Méthode de calcul
 garantieLocative = 2 * loyerMensuel;
 coutTotal = loyerMensuel + charges;
-totalAvecGarage = coutTotal + loyerGarage;
+totalAvecGarage = coutTotal + LOYER_GARAGE;
 
 document.write('<p>"Total: '+loyerMensuel+' + '+charges+' = '+coutTotal+' € - Garantie locative: '+garantieLocative+' €".</p>');
 
@@ -36,7 +36,7 @@ if (loyerMensuel == 730 || loyerMensuel == 850) {
     confirm('Souhaitez-vous ajouter une location d\'un gagare d\'une valeur de 100 € ?');
 	document.write('<p>Option: </p>'
         +'<p>- Garage (100 €)</p>'
-        +'<p>Coût total de la location: '+coutTotal+' + '+loyerGarage+' = '+totalAvecGarage+' €</p>');
+        +'<p>Coût total de la location: '+coutTotal+' + '+LOYER_GARAGE+' = '+totalAvecGarage+' €</p>');
 }
 
 } while (confirm('recommencer'));
