@@ -31,8 +31,7 @@ do {
 
     document.write('<p>Total: '+loyerMensuel+' + '+charges+' = '+coutTotal+' € - Garantie locative: '+garantieLocative+' €.</p>');
 
-    if (loyerMensuel == 730 || loyerMensuel == 850) {
-        confirm('Souhaitez-vous ajouter une location d\'un gagare d\'une valeur de 100 € ?');
+    if (confirm('Souhaitez-vous ajouter une location d\'un gagare d\'une valeur de 100 € ?')) {
 	document.write('<p>Option: </p>'
 	        +'<p>- Garage (100 €)</p>'
 	        +'<p>Coût total de la location: '+coutTotal+' + '+LOYER_GARAGE+' = '+totalAvecGarage+' €</p>');
