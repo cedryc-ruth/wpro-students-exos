@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<script>
+/**
+ * programme qui permet de caluler le cout total 
+ * d'une location
+ */
+
+ // Déclmaration des variables, constantes
+ var coutTotal;
+ var loyerMensuel;
+ var charges;
+ const loyerGarage = 100;
+ var garantieLocative;
+ var optionGarage;
+ var TotalAvecGarage;
+
+ // Lecture des données
+do {
+    do{
+	loyerMensuel = parseInt(prompt('Combien est le loyer?'));
+} while(isNaN(loyerMensuel) || loyerMensuel<1);
+
+do {	
+	charges = parseInt(prompt('combien sont les charges?'));
+} while(isNaN(charges) || charges<0);
+
+// Méthode de calcul
+garantieLocative = 2 * loyerMensuel;
+coutTotal = loyerMensuel + charges;
+TotalAvecGarage = coutTotal + loyerGarage;
+
+document.write('<p>"Total: '+loyerMensuel+' + '+charges+' = '+coutTotal+' € - Garantie locative: '+garantieLocative+' €".</p>');
+
+
+if (loyerMensuel == 730 || loyerMensuel == 850) {
+    confirm('Souhaitez-vous ajouter une location d\'un gagare d\'une valeur de 100 € ?');
+	document.write('<p>Option: </p>'
+        +'<p>- Garage (100 €)</p>'
+        +'<p>Coût total de la location: '+coutTotal+' + '+loyerGarage+' = '+TotalAvecGarage+' €</p>');
+}
+
+} while (confirm('recommencer'));
+
+</script>

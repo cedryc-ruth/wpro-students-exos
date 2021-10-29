@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<script>
+/**
+ * programme qui calcule et affiche la 
+ * différence d'âge d'un couple
+ * 
+ * @author L.Larbaoui
+ * @version 1.0
+ */
+
+// Déclaration des variables, constantes
+var age;
+var homme;
+var femme;
+var resultat;
+
+// Méthode de calcule
+
+do {
+    do {
+        homme = parseInt(prompt('quel est l\'âge de l\'homme?'));
+    } while (isNaN(homme) || homme<1);
+    do {
+        femme = parseInt(prompt('Quel est l\âge de la femme?'));
+    } while (isNaN(femme) || femme<1);
+
+    resultat = Math.abs(homme - femme);
+
+    if(resultat>1) {
+        document.write('<p>Entre '+homme+' et '+femme+' => '+resultat+' ans d\'écart</p>');
+    } else if(resultat == 1) {
+        document.write('<p>Entre '+homme+' et '+femme+' => '+resultat+' an d\'écart</p>');
+    } else if(resultat == 0) {
+        document.write('<p>Entre '+homme+' et '+femme+' => Pas de différence d\'âge</p>');
+    }
+
+} while (confirm('Voulez-vous continuer?'));
+
+</script>
