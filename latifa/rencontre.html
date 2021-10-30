@@ -14,9 +14,8 @@ var homme;
 var femme;
 var resultat;
 
-// Méthode de calcule
-
 do {
+    //Lecture des données
     do {
         homme = parseInt(prompt('quel est l\'âge de l\'homme?'));
     } while (isNaN(homme) || homme<1);
@@ -25,8 +24,10 @@ do {
         femme = parseInt(prompt('Quel est l\âge de la femme?'));
     } while (isNaN(femme) || femme<1);
 
+    // Méthode de calcul
     resultat = Math.abs(homme - femme);
 
+    //Affichage du résultat
     if(resultat>1) {
         document.write('<p>Entre '+homme+' et '+femme+' => '+resultat+' ans d\'écart</p>');
     } else if(resultat == 1) {
