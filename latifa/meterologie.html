@@ -9,24 +9,24 @@
  * @version 1.0
  */
 
- var temperature
- var resultat;
+var temperature;
+var resultat;
 
- do {
- 	do{
- 		Math.floor(Math.random (-9999,9999));
- 		temperature = prompt('Entrez la température')
- 	} while (isNaN(temperature) || temperature < -9999|| temperature > 9999);
+do {
+    do {
+        Math.floor(Math.random (-9999,9999));
+ 		     temperature = prompt('Entrez la température');
+ 	  } while (isNaN(temperature) || temperature < -9999|| temperature > 9999);
  		
- 		if(window.prompt('Voulez-vous en fahrenheit ? si oui, tapez "F".')){
- 			resultat = (temperature - 32)*5/9
- 			document.write('<p>'+temperature+' °F correspond à '+resultat.toFixed(1)+' °C.</p>');
-
- 			} if(window.prompt('Voulez-vous en degré Celsius ? si oui, tapez "C".')) {
- 				resultat = (temperature *9/5)+32
- 				document.write('<p>'+temperature+' °C correspond à '+resultat.toFixed(1)+' °F.</p>');
- 		}
-
+ 		 if(window.prompt('Voulez-vous en fahrenheit ? si oui, tapez "F".')) {
+ 			    resultat = (temperature - 32)*5/9;
+ 			    document.write('<p>'+temperature+' °F correspond à '+resultat.toFixed(1)+' °C.</p>');
+ 			}
+ 
+    if(window.prompt('Voulez-vous en degré Celsius ? si oui, tapez "C".')) {
+ 				   resultat = (temperature *9/5)+32;
+ 				   document.write('<p>'+temperature+' °C correspond à '+resultat.toFixed(1)+' °F.</p>');
+ 		 }
  } while (confirm('Voulez-vous recommencer ?'));
 
 </script>
