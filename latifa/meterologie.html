@@ -17,12 +17,14 @@ do {
         temperature = prompt('Entrez la température');
     } while (isNaN(temperature) || temperature < -9999|| temperature > 9999);
  	
-    if(window.prompt('Voulez-vous en fahrenheit ? si oui, tapez "F".')) {
+    do {
+        choix = prompt('Voulez-vous en fahrenheit ou en celsius ? tapez "F" ou "C".');
+    } while(choix!='F' && choix!='C');
+    
+    if(choix=='F') {
         resultat = (temperature - 32)*5/9;
         document.write('<p>'+temperature+' °F correspond à '+resultat.toFixed(1)+' °C.</p>');
-    }
- 
-    if(window.prompt('Voulez-vous en degré Celsius ? si oui, tapez "C".')) {
+    } else {    //choix=='C'
         resultat = (temperature *9/5)+32;
         document.write('<p>'+temperature+' °C correspond à '+resultat.toFixed(1)+' °F.</p>');
     }
