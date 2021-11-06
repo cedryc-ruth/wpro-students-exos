@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo des pluies</title>
+</head>
+<body>
+    <script>
+        //Initialisation des variables
+        var pHVeille,
+            pHJour,
+            affichage,
+            variation
+
+        do {
+            //Lecture des données
+            do pHVeille = parseFloat(prompt('Quel était le pH hier ?'))
+            while(isNaN(pHVeille) || pHVeille < 0 || pHVeille > 14)
+
+            do pHJour = parseFloat(prompt('Quel est le pH aujourd\'hui ?'))
+            while(isNaN(pHJour) || pHJour < 0 || pHJour > 14)
+
+            do affichage = prompt('Voulez vous afficher le type de pH ? oui / non')
+            while(!isNaN(affichage) || (affichage != 'oui' && affichage != 'non'))
+
+            //Traitement des données
+            variation = pHJour/pHVeille*100 -100
+
+            //Affichage des résultats
+            document.write('<p>Veille : ' + pHVeille)
+            document.write('<p>Aujourd\'hui : ' + pHJour)
+            
+            if(affichage == 'oui'){
+                if(pHJour < 6) document.writeln('  (Acide)')
+                else if(pHJour > 8) document.writeln('  (Alcalin)')
+                else document.writeln('  (Neutre)')
+            }
+
+            document.write('<p>=> ' + variation.toFixed(1) + '%')
+
+        } while (confirm('Voulez vous continuer ?'))
+
+    </script>
+</body>
+</html>

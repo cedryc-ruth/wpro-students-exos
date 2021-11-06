@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2013 - 2014</title>
+</head>
+<body>
+    <script>
+        var age1, age2, ecart
+
+        do {
+            do age1 = parseInt(prompt('Entrez l\'age de la permier personne'), 0)
+            while (isNaN(age1) || age1 <= 0)
+
+            do age2 = parseInt(prompt('Entrez l\'age de la seconde personne'), 0)
+            while (isNaN(age2) || age2 <= 0)
+
+            ecart = Math.abs(age1 - age2)
+
+            if(ecart == 1) document.writeln('<p>Entre ' + age1 + ' et ' + age2 + ' => ' + ecart + ' an d\'écart')
+            else if(ecart == 0) document.writeln('<p>Entre ' + age1 + ' et ' + age2 + ' => Pas de difference d\'âge')
+            else document.writeln('<p>Entre ' + age1 + ' et ' + age2 + ' => ' + ecart + ' ans d\'écart')
+        
+            } while (confirm('Voulez vous continuer ?'));
+
+    </script>
+    
+</body>
+</html>
