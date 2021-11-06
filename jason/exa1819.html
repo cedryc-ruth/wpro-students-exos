@@ -46,7 +46,7 @@ do {
 			document.write("<p>Total: "+TARIF_TPS +" * "+jourLocation+"+ "+TARIF_NETTOYAGE+" = "+prixTotal+" €</p>");
 		} else if(code=='REI') {
 			//Traitement des données
-			prixTotal= TARIF_REI * "+jourLocation+" + TARIF_NETTOYAGE; 
+			prixTotal= TARIF_REI * jourLocation + TARIF_NETTOYAGE; 
 			//Affichage du résultat
 			document.write("<p>Total: "+TARIF_REI+" * "+jourLocation+"+ "+TARIF_NETTOYAGE+" = "+prixTotal+" €</p>");
 		}
