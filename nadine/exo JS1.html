@@ -10,10 +10,20 @@
  */
 
 //Déclaration des variables, des constantes et des fonctions
-var a = 5
-var b = 3
+var a = 5;
+var b = 3;
+var c;
 
-// Affichage des données
+// Affichage des données (avant le traitement)
+console.log('a = ',a);
+console.log('b = ',b);
+
+//Traitement des données
+c = a;
+a = b;
+b = a;
+
+// Affichage des données (après le traitement)
 console.log('a = ',a);
 console.log('b = ',b);
 
