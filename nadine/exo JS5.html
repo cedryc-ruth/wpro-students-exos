@@ -24,10 +24,6 @@ jourRetard = parseInt(prompt('jour de retard ?'));
 amende = FRAIS_ADMINISTRATIFS + (FRAIS_RETARDS * jourRetard);
 
 // Lecture des données et affichage du montant à payer
-if(jourRetard == 1) {
-    document.write('<p>Votre amende est de '+amende+' centimes.</p>');
-} else if (jourRetard > 1) {
-    document.write("<p>Vous allez payer "+(amende/100)+" € d'amende.</p>");
-}
+document.write('<p>Votre amende est de '+amende+' euros.</p>');
 
 </script>
