@@ -28,8 +28,8 @@ do {
 	} while(code != 'TPS'  && code !=  'PIR' && code !=  'REI');
 	
 	do {
-		jourLocation = parseInt(prompt("combien de jour de location svp ?"));
-	} while(isNaN(jourLocation) || jourLocation < 0 || jourLocation > 5 || parseInt(jourLocation) == jourLocation);
+		jourLocation = prompt("combien de jour de location svp ?");
+	} while(isNaN(jourLocation) || jourLocation < 0 || jourLocation > 5 || parseInt(jourLocation) != jourLocation);
 
 	optionNettoyage = confirm("Voulez-vous l'option nettoyage ?");
 
