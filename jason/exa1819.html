@@ -12,10 +12,10 @@
 var jourLocation;		//Entré utilisateur/Pas plus de 5 jours de location/Entier positif						//Fait par l'utilisateur
 var prixTotal;  		 //A afficher ou pas
 var code;				//Donné par l'utilisateur		
-const TPS = 85;			//Coût du costume trois pièces
-const PIR = 70;		     //Coût du costume déguisement de pirate
-const REI = 90;		     //Coût du costume déguisement reinde de neiges
-const NETTOYAGE = 20;        //Coût pour le nettoyage du costume
+const TARIF_TPS = 85;		//Coût du costume trois pièces
+const TARIF_PIR = 70;           //Coût du costume déguisement de pirate
+const TARIF_REI = 90;	        //Coût du costume déguisement reinde de neiges
+const TARIF_NETTOYAGE = 20;     //Coût pour le nettoyage du costume
 var optionNettoyage = false; //Choix du nettoyage ou non
 
 //Lecture des données
@@ -34,29 +34,29 @@ do {
 	optionNettoyage = confirm("Voulez-vous l'option nettoyage ?");
 
 	if(optionNettoyage) {
-		if (PIR) {
+		if (code=='PIR') {
 			//Traitement des données
-			prixTotal= PIR * jourLocation + NETTOYAGE; 
+			prixTotal= TARIF_PIR * jourLocation + TARIF_NETTOYAGE; 
 			//Affichage du résultat
-			document.write("<p>Total: "+PIR+" * "+jourLocation+" + "+NETTOYAGE+" = "+prixTotal+" €</p>");
-		} else if(TPS ) {
+			document.write("<p>Total: "+TARIF_PIR+" * "+jourLocation+" + "+TARIF_NETTOYAGE+" = "+prixTotal+" €</p>");
+		} else if(code=='TPS') {
 			//Traitement des données
-			prixTotal= TPS * 2 + optionNettoyage; 
+			prixTotal= TARIF_TPS * 2 + optionNettoyage; 
 			//Affichage du résultat
-			document.write("<p>Total: "+TPS +" * "+jourLocation+"+ "+NETTOYAGE+" = "+prixTotal+" €</p>");
-		} else if(REI) {
+			document.write("<p>Total: "+TARIF_TPS +" * "+jourLocation+"+ "+TARIF_NETTOYAGE+" = "+prixTotal+" €</p>");
+		} else if(code=='REI') {
 			//Traitement des données
-			prixTotal= REI * "+jourLocation+" + NETTOYAGE; 
+			prixTotal= TARIF_REI * "+jourLocation+" + TARIF_NETTOYAGE; 
 			//Affichage du résultat
-			document.write("<p>Total: "+REI+" * "+jourLocation+"+ "+NETTOYAGE+" = "+prixTotal+" €</p>");
+			document.write("<p>Total: "+TARIF_REI+" * "+jourLocation+"+ "+TARIF_NETTOYAGE+" = "+prixTotal+" €</p>");
 		}
 	} else {
-		if(PIR) {
-			document.write("<p>Total: "+PIR+" * "+jourLocation+" €/p>"); 
-		} else if(TPS) {
-			document.write("<p>Total: "+TPS+" * "+jourLocation+"€/p>");
-		} else if(REI) {
-			document.write("<p>Total: "+REI+" * "+jourLocation+" €/p>");
+		if(code=='PIR') {
+			document.write("<p>Total: "+TARIF_PIR+" * "+jourLocation+" €/p>"); 
+		} else if(code=='TPS') {
+			document.write("<p>Total: "+TARIF_TPS+" * "+jourLocation+"€/p>");
+		} else if(code=='REI') {
+			document.write("<p>Total: "+TARIF_REI+" * "+jourLocation+" €/p>");
 		}
 	}
 } while(confirm("Voulez-vous recommencer ?"));
