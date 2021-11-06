@@ -15,7 +15,8 @@ var code;				//Donné par l'utilisateur
 const TPS = 85;			//Coût du costume trois pièces
 const PIR = 70;		     //Coût du costume déguisement de pirate
 const REI = 90;		     //Coût du costume déguisement reinde de neiges
-var optionNettoyage = 20;   //Pour le nettoyage du costume
+const NETTOYAGE = 20;        //Coût pour le nettoyage du costume
+var optionNettoyage = false; //Choix du nettoyage ou non
 
 //Lecture des données
 do {
@@ -31,19 +32,19 @@ do {
 	if(optionNettoyage) {
 		if (PIR) {
 			//Traitement des données
-			prixTotal= PIR * jourLocation + optionNettoyage; 
+			prixTotal= PIR * jourLocation + NETTOYAGE; 
 			//Affichage du résultat
-			document.write("<p>Total: "+PIR+" * "+jourLocation+" + "+optionNettoyage+" = "+prixTotal+" €</p>");
+			document.write("<p>Total: "+PIR+" * "+jourLocation+" + "+NETTOYAGE+" = "+prixTotal+" €</p>");
 		} else if(TPS ) {
 			//Traitement des données
 			prixTotal= TPS * 2 + optionNettoyage; 
 			//Affichage du résultat
-			document.write("<p>Total: "+TPS +" * "+jourLocation+"+ "+optionNettoyage+" = "+prixTotal+" €</p>");
+			document.write("<p>Total: "+TPS +" * "+jourLocation+"+ "+NETTOYAGE+" = "+prixTotal+" €</p>");
 		} else if(REI) {
 			//Traitement des données
-			prixTotal= REI * "+jourLocation+" + optionNettoyage; 
+			prixTotal= REI * "+jourLocation+" + NETTOYAGE; 
 			//Affichage du résultat
-			document.write("<p>Total: "+REI+" * "+jourLocation+"+ "+optionNettoyage+" = "+prixTotal+" €</p>");
+			document.write("<p>Total: "+REI+" * "+jourLocation+"+ "+NETTOYAGE+" = "+prixTotal+" €</p>");
 		}
 	} else {
 		if(PIR) {
