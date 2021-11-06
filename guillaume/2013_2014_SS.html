@@ -14,11 +14,11 @@ var resultat;
 
 do {
     do {
-        temperature = parseFloat(prompt("Entrez la temperature"));
+        temperature = parseFloat(prompt("Entrez la température"));
     } while(isNaN(temperature) || temperature < -9999 || temperature > 9999);
         
     do {
-        unite = prompt('Entrez l\'unité de temperature');
+        unite = prompt('Entrez l\'unité de température');
     } while(unite != 'C' && unite != 'F');
 
     if(unite == 'F') {
