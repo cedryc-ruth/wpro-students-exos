@@ -1,34 +1,29 @@
 <meta charset='utf-8'>
 <script>
-
 /**
  * Ecrivez un programme qui calcule et affiche le périmètre
  * et la superficie d'un rectangle dont la largeur et la longueur
  * sont données par l'utilisateur
  * 
- * @Author Van Houtryve N.
+ * @author Van Houtryve N.
  * 
- * */
+ */
 
 // Déclaration des variables 
- 
 var périmètre
 var superficie
 var largeur
 var longueur
 
 // Lecture des données et affectation des variables
-
 longueur = parseInt(prompt('Veuillez entrer la longueur svp !'));
 largeur = parseInt(prompt('Veuillez entrer la largeur svp !'));
 
 // Traitement des données
-
 superficie = longueur * largeur;
 périmètre = (longueur + largeur) * 2;
 
 // Affichage des résultats
-
 document.write('<p>La superficie est de '+superficie+' cm^2 </p>');
 document.write('<p>Le périmètre est de '+périmètre+' cm </p>');
 
