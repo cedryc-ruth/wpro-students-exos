@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+<script>
+/**
+ * Un site Web de location de costumes et déguisements me demande de réaliser 
+ * un programme qui permet de calculer le prix des locations
+ *
+ * @author J.Nama Jason
+ * @version 1.0
+ */
+ 
+//Déclaration des variables et des constantes
+var jourLocation;		//Entré utilisateur/Pas plus de 5 jours de location/Entier positif						//Fait par l'utilisateur
+var prixTotal;  		 //A afficher ou pas
+var code;				//Donné par l'utilisateur		
+const TPS = 85;			//Coût du costume trois pièces
+const PIR = 70;		     //Coût du costume déguisement de pirate
+const REI = 90;		     //Coût du costume déguisement reinde de neiges
+var optionNettoyage = 20;   //Pour le nettoyage du costume
+
+//Lecture des données
+do {
+	do {
+		code = prompt("Veuillez entrer le code du costume choisi svp !\nTapez TPS pour 3PS");
+	} while(code != TPS  || code !=  PIR || code !=  REI);
+	do {
+		jourLocation = parseInt(prompt("combien de jour de location svp ?"));
+	} while(isNaN(jourLocation) || jourLocation < 0 || jourLocation > 5 || parseInt(jourLocation) == jourLocation);
+
+	optionNettoyage = confirm("Voulez-vous l'option nettoyage ?");
+
+	if(optionNettoyage) {
+		if (PIR) {
+			//Traitement des données
+			prixTotal= PIR * jourLocation + optionNettoyage; 
+			//Affichage du résultat
+			document.write("<p>Total: "+PIR+" * "+jourLocation+" + "+optionNettoyage+" = "+prixTotal+" €</p>");
+		} else if(TPS ) {
+			//Traitement des données
+			prixTotal= TPS * 2 + optionNettoyage; 
+			//Affichage du résultat
+			document.write("<p>Total: "+TPS +" * "+jourLocation+"+ "+optionNettoyage+" = "+prixTotal+" €</p>");
+		} else if(REI) {
+			//Traitement des données
+			prixTotal= REI * "+jourLocation+" + optionNettoyage; 
+			//Affichage du résultat
+			document.write("<p>Total: "+REI+" * "+jourLocation+"+ "+optionNettoyage+" = "+prixTotal+" €</p>");
+		}
+	} else {
+		if(PIR) {
+			document.write("<p>Total: "+PIR+" * "+jourLocation+" €/p>"); 
+		} else if(TPS) {
+			document.write("<p>Total: "+TPS+" * "+jourLocation+"€/p>");
+		} else if(REI) {
+			document.write("<p>Total: "+REI+" * "+jourLocation+" €/p>");
+		}
+	}
+} while(confirm("Voulez-vous recommencer ?"));
+</script>
