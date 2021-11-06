@@ -21,8 +21,12 @@ var optionNettoyage = false; //Choix du nettoyage ou non
 //Lecture des données
 do {
 	do {
-		code = prompt("Veuillez entrer le code du costume choisi svp !\nTapez TPS pour 3PS");
-	} while(code != TPS  || code !=  PIR || code !=  REI);
+		code = prompt("Veuillez entrer le code du costume choisi svp !\n"
+			      +"Tapez TPS pour '3 pièces'\n"
+			      +"Tapez PIR pour 'Pirate'\n"
+			      +"Tapez REI pour 'Reine des neiges'");
+	} while(code != 'TPS'  && code !=  'PIR' && code !=  'REI');
+	
 	do {
 		jourLocation = parseInt(prompt("combien de jour de location svp ?"));
 	} while(isNaN(jourLocation) || jourLocation < 0 || jourLocation > 5 || parseInt(jourLocation) == jourLocation);
