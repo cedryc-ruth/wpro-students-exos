@@ -52,11 +52,14 @@ do {
 		}
 	} else {
 		if(code=='PIR') {
-			document.write("<p>Total: "+TARIF_PIR+" * "+jourLocation+" €/p>"); 
+			prixTotal = TARIF_PIR * jourLocation;
+			document.write("<p>Total: "+prixTotal+" €/p>"); 
 		} else if(code=='TPS') {
-			document.write("<p>Total: "+TARIF_TPS+" * "+jourLocation+"€/p>");
+			prixTotal = TARIF_TPS * jourLocation;
+			document.write("<p>Total: "+prixTotal+"€/p>");
 		} else if(code=='REI') {
-			document.write("<p>Total: "+TARIF_REI+" * "+jourLocation+" €/p>");
+			prixTotal = TARIF_REI * jourLocation;
+			document.write("<p>Total: "+prixTotal+" €/p>");
 		}
 	}
 } while(confirm("Voulez-vous recommencer ?"));
