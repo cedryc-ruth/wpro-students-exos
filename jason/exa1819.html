@@ -41,7 +41,7 @@ do {
 			document.write("<p>Total: "+TARIF_PIR+" * "+jourLocation+" + "+TARIF_NETTOYAGE+" = "+prixTotal+" €</p>");
 		} else if(code=='TPS') {
 			//Traitement des données
-			prixTotal= TARIF_TPS * 2 + optionNettoyage; 
+			prixTotal= TARIF_TPS * jourLocation + optionNettoyage; 
 			//Affichage du résultat
 			document.write("<p>Total: "+TARIF_TPS +" * "+jourLocation+"+ "+TARIF_NETTOYAGE+" = "+prixTotal+" €</p>");
 		} else if(code=='REI') {
