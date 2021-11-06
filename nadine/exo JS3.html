@@ -2,38 +2,32 @@
 <script>
 
 /**
-* Ecrivez un programme qui calcule et affiche
-* le prix ttc compris à partir de deux données
-* entrées par l'utilisateur. Le prix Hors TVA,
-* le nombre d'articles désirés. Le taux de TVA applicable
-* est de 20.5%.
-
-* @Author Van Houtryve N.
-
-*/
+ * Ecrivez un programme qui calcule et affiche
+ * le prix ttc compris à partir de deux données
+ * entrées par l'utilisateur. Le prix Hors TVA,
+ * le nombre d'articles désirés. Le taux de TVA applicable
+ * est de 20.5%.
+ *
+ * @Author Van Houtryve N.
+ */
 
 // Déclaration des variables et des constantes
-
 var prixTTC;
 var prixHTVA;
 var nbArticles;
 Const TAUX_TVA = 0.205;
 
 // Initialisation des variables 
-
 prixTTC = 0;
 
 // Lecture des données et affectations
-
 prixHTVA = parseInt(prompt("Quel est le prix hors TVA ?"));
 nbArticles = parseInt(prompt("Quel est le nombre d'articles ?"));
 
 // Traitement des données
-
 prixTTC = prixHTVA * (1 + TAUX_TVA) * nbArticles;
 
 // Affichage du résultat
-
 document.write("<p>Le prix total est : " + prixTTC + " € </p>");
 
 </script>
