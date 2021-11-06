@@ -7,29 +7,28 @@
     <title>Convertisseur températures</title>
 </head>
 <body>
+<script>
+var temperature;
+var unite;
+var resultat;
 
-    <script>
-        var temperature,
-            unite,
-            resultat
-
-        do {
-            do temperature = parseFloat(prompt("Entrez la temperature"))
-            while(isNaN(temperature) || temperature < -9999 || temperature > 9999)
+do {
+    do {
+        temperature = parseFloat(prompt("Entrez la temperature"));
+    } while(isNaN(temperature) || temperature < -9999 || temperature > 9999);
         
-            do unite = prompt('Entrez l\'unité de temperature')
-            while(unite != 'C' && unite != 'F') 
+    do {
+        unite = prompt('Entrez l\'unité de temperature');
+    } while(unite != 'C' && unite != 'F');
 
-            if(unite == 'F'){
-                resultat = (temperature - 32) * 5/9
-                document.writeln('<p>' + temperature + ' °F correspond à ' + resultat.toFixed(2) + ' °C.')
-            }
-            else if(unite == 'C'){
-                resultat = temperature * 9/5 + 32
-                document.writeln('<p>' + temperature + ' °C correspond à ' + resultat.toFixed(2) + ' °F.')
-            }
-        } while (confirm('Voulez vous continuer ?'))
-    </script>
-    
+    if(unite == 'F') {
+        resultat = (temperature - 32) * 5/9;
+        document.writeln('<p>' + temperature + ' °F correspond à ' + resultat.toFixed(2) + ' °C.');
+    } else if(unite == 'C') {
+        resultat = temperature * 9/5 + 32;
+        document.writeln('<p>' + temperature + ' °C correspond à ' + resultat.toFixed(2) + ' °F.');
+    }
+} while(confirm('Voulez vous continuer ?'));
+</script>    
 </body>
 </html>
