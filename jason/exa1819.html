@@ -17,6 +17,7 @@ const TARIF_PIR = 70;           //Coût du costume déguisement de pirate
 const TARIF_REI = 90;	        //Coût du costume déguisement reinde de neiges
 const TARIF_NETTOYAGE = 20;     //Coût pour le nettoyage du costume
 var optionNettoyage = false; //Choix du nettoyage ou non
+var tarif;			//Tarif applicable par rapport au choix du costume
 
 //Lecture des données
 do {
@@ -32,35 +33,26 @@ do {
 	} while(isNaN(jourLocation) || jourLocation < 0 || jourLocation > 5 || parseInt(jourLocation) != jourLocation);
 
 	optionNettoyage = confirm("Voulez-vous l'option nettoyage ?");
-
+	
+	//Traitement des données
+	if (code=='PIR') {
+		tarif = TARIF_PIR;
+	} else if(code=='TPS') {
+		tarif = TARIF_TPS;
+	} else if(code=='REI') {
+		tarif = TARIF_REI;
+	}
+	
 	if(optionNettoyage) {
-		if (code=='PIR') {
-			//Traitement des données
-			prixTotal= TARIF_PIR * jourLocation + TARIF_NETTOYAGE; 
-			//Affichage du résultat
-			document.write("<p>Total: "+TARIF_PIR+" * "+jourLocation+" + "+TARIF_NETTOYAGE+" = "+prixTotal+" €</p>");
-		} else if(code=='TPS') {
-			//Traitement des données
-			prixTotal= TARIF_TPS * jourLocation + optionNettoyage; 
-			//Affichage du résultat
-			document.write("<p>Total: "+TARIF_TPS +" * "+jourLocation+"+ "+TARIF_NETTOYAGE+" = "+prixTotal+" €</p>");
-		} else if(code=='REI') {
-			//Traitement des données
-			prixTotal= TARIF_REI * jourLocation + TARIF_NETTOYAGE; 
-			//Affichage du résultat
-			document.write("<p>Total: "+TARIF_REI+" * "+jourLocation+"+ "+TARIF_NETTOYAGE+" = "+prixTotal+" €</p>");
-		}
+		prixTotal= tarif * jourLocation + TARIF_NETTOYAGE;
+		
+		//Affichage du résultat
+		document.write("<p>Total: "+tarif+" * "+jourLocation+" + "+TARIF_NETTOYAGE+" = "+prixTotal+" €</p>");
 	} else {
-		if(code=='PIR') {
-			prixTotal = TARIF_PIR * jourLocation;
-			document.write("<p>Total: "+prixTotal+" €/p>"); 
-		} else if(code=='TPS') {
-			prixTotal = TARIF_TPS * jourLocation;
-			document.write("<p>Total: "+prixTotal+"€/p>");
-		} else if(code=='REI') {
-			prixTotal = TARIF_REI * jourLocation;
-			document.write("<p>Total: "+prixTotal+" €/p>");
-		}
+		prixTotal = tarif * jourLocation;
+		
+		//Affichage du résultat
+		document.write("<p>Total: "+prixTotal+" €/p>");
 	}
 } while(confirm("Voulez-vous recommencer ?"));
 </script>
