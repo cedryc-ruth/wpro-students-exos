@@ -30,7 +30,7 @@ do {
 	
 	do {
 		jourLocation = prompt("combien de jour de location svp ?");
-	} while(isNaN(jourLocation) || jourLocation < 0 || jourLocation > 5 || parseInt(jourLocation) != jourLocation);
+	} while(isNaN(jourLocation) || jourLocation <= 0 || jourLocation > 5 || parseInt(jourLocation) != jourLocation);
 
 	optionNettoyage = confirm("Voulez-vous l'option nettoyage ?");
 	
