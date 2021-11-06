@@ -23,7 +23,7 @@
             while(isNaN(pHJour) || pHJour < 0 || pHJour > 14)
 
             do affichage = prompt('Voulez vous afficher le type de pH ? oui / non')
-            while(!isNaN(affichage) || (affichage != 'oui' && affichage != 'non'))
+            while(affichage != 'oui' && affichage != 'non')
 
             //Traitement des données
             variation = pHJour/pHVeille*100 -100
