@@ -1,0 +1,38 @@
+<meta charset='utf-8'>
+<script>
+
+/**
+ * Ecrivez un programme qui calcule et affiche l'amande à payer
+ * pour un retour de livres en bibliothèque.
+ * Sachant qu'il faut 50 centimes par jour de retard.
+ * Et une fois 25 centimes de frais administratifs,
+ * le bibliothécaire devra donner le nombre de jour de retard.
+ * 
+ * @Author Van Houtryve N.
+ * 
+ */
+
+// Déclaration des variables et Constantes
+var amende;
+var jourRetard;
+const FRAIS_ADMINISTRATIFS = 25;
+const FRAIS_RETARDS = 50;
+
+// Initialisation des variables
+amende = 0;
+
+// Lecture des données
+jourRetard = parseInt(prompt('jour de retard ?'));
+
+// Traitement des données
+amende = FRAIS_ADMINISTRATIFS + (FRAIS_RETARDS * jourRetard);
+
+
+// Lecture des données et affichage du montant à payer
+if(jourRetard == 1) {
+    document.write('<p>Votre amende est de '+amende+' centimes.</p>');
+} else if (jourRetard > 1) {
+    document.write("<p>Vous allez payer "+(amende/100)+" € d'amende.</p>");
+}
+
+</script>
