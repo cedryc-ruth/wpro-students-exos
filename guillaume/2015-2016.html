@@ -13,6 +13,7 @@
             pHJour,
             affichage,
             variation
+        var texte = '';
 
         do {
             //Lecture des données
@@ -29,16 +30,17 @@
             variation = pHJour/pHVeille*100 -100
 
             //Affichage des résultats
-            document.write('<p>Veille : ' + pHVeille)
-            document.write('<p>Aujourd\'hui : ' + pHJour)
+            texte += '<p>Veille : ' + pHVeille + '<br>')
+            texte += 'Aujourd\'hui : ' + pHJour)
             
             if(affichage == 'oui'){
-                if(pHJour < 6) document.writeln('  (Acide)')
-                else if(pHJour > 8) document.writeln('  (Alcalin)')
-                else document.writeln('  (Neutre)')
+                if(pHJour < 6) texte += ' (Acide)'
+                else if(pHJour > 8) texte += ' (Alcalin)'
+                else texte += '  (Neutre)'
             }
 
-            document.write('<p>=> ' + variation.toFixed(1) + '%')
+            texte += '<br>=> ' + variation.toFixed(1) + '%</p>')
+            document.write(texte);
 
         } while (confirm('Voulez vous continuer ?'))
 
