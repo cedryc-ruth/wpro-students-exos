@@ -1,36 +1,34 @@
 <script>
 /**
- *@author Amela.A
- *@version0.1
- *Différence d'âge 
+ * Différence d'âge
+ *
+ * @author Amela.A
+ * @version 0.1
  */
  
 //Déclaration des variables
-
 var agePartenaire1
 var agePartenaire2
 var différenceAge
 
 do {
-//Lecture des données
+	//Lecture des données
 	do {
 		agePartenaire1 = prompt ('Veuillez entrer l\'âge du premier partenaire')
-	}while (isNaN (agePartenaire1) || agePartenaire1 < 0)
+	} while(isNaN (agePartenaire1) || agePartenaire1 < 0)
 	
 	do {
 		agePartenaire2 = prompt ('Veuillez entrer l\'âge du second partenaire')
-	}while (isNaN (agePartenaire2) || agePartenaire2 < 0)
+	} while(isNaN (agePartenaire2) || agePartenaire2 < 0)
 
 
-//Traitement des données et affichage
-
+	//Traitement des données et affichage
 	différenceAge =  agePartenaire1 - agePartenaire2
-	if (différenceAge == 0){
-	document.write ('<p>Entre '+agePartenaire1+' et '+agePartenaire2+' = '+' => Pas de différence d\'âge </p>')
+	
+	if(différenceAge == 0) {
+		document.write('<p>Entre '+agePartenaire1+' et '+agePartenaire2+' = '+' => Pas de différence d\'âge </p>')
+	} else {
+		document.write('<p>Entre '+agePartenaire1+' et '+agePartenaire2+' => '+différenceAge+' ans d\'écart</p>')
 	}
-	else  {
-
-	document.write ('<p>Entre '+agePartenaire1+' et '+agePartenaire2+' => '+différenceAge+' ans d\'écart</p>')
-	}
-}while (confirm ('voulez vous recommencer?'))
+} while(confirm('voulez vous recommencer?'))
 </script>
