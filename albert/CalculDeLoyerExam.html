@@ -14,8 +14,8 @@ do {
 		loyerMensuel = parseFloat (prompt ('Quel est le montant du loyer mensuel?'))
 	} while(isNaN (loyerMensuel) || parseInt (loyerMensuel) != loyerMensuel || loyerMensuel < 0)
 	
-	charges = prompt ('Quel est le montant des charges?')
 	do {
+		charges = prompt ('Quel est le montant des charges?')
 	} while(isNaN (charges) || parseInt (charges) != charges || charges < 0)
 
 	//Traitement des données et affichage
