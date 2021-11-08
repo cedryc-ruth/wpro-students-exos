@@ -15,15 +15,15 @@ do {
 	//Lecture des données
 	do {
 		agePartenaire1 = prompt ('Veuillez entrer l\'âge du premier partenaire')
-	} while(isNaN (agePartenaire1) || agePartenaire1 < 0)
+	} while(isNaN(agePartenaire1) || agePartenaire1 < 0)
 	
 	do {
 		agePartenaire2 = prompt ('Veuillez entrer l\'âge du second partenaire')
-	} while(isNaN (agePartenaire2) || agePartenaire2 < 0)
+	} while(isNaN(agePartenaire2) || agePartenaire2 < 0)
 
 
 	//Traitement des données et affichage
-	differenceAge =  agePartenaire1 - agePartenaire2
+	differenceAge =  Math.abs(agePartenaire1 - agePartenaire2)
 	
 	if(differenceAge == 0) {
 		document.write('<p>Entre '+agePartenaire1+' et '+agePartenaire2+' = '+' => Pas de différence d\'âge </p>')
