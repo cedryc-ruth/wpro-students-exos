@@ -1,6 +1,5 @@
 <script>
 //Déclaration des variables
-
 var coutTotalLocation 
 var loyerMensuel
 var Charges
@@ -10,34 +9,28 @@ var grantieLocative
 const LOCATION_GARAGE = 100
 
 do {
-//Lecture de données
-do {
-loyerMensuel = parseFloat (prompt ('Quel est le montant du loyer mensuel?'))
-}while (isNaN (loyerMensuel) || parseInt (loyerMensuel) != loyerMensuel || loyerMensuel < 0)
-charges  =prompt ('Quel est le montant des charges?')
-do {
-}while (isNaN (charges) || parseInt (charges) != charges || charges < 0)
+	//Lecture de données
+	do {
+		loyerMensuel = parseFloat (prompt ('Quel est le montant du loyer mensuel?'))
+	} while(isNaN (loyerMensuel) || parseInt (loyerMensuel) != loyerMensuel || loyerMensuel < 0)
+	
+	charges = prompt ('Quel est le montant des charges?')
+	do {
+	} while(isNaN (charges) || parseInt (charges) != charges || charges < 0)
 
+	//Traitement des données et affichage
+	locationGarage = confirm('Voulez vous louer un garage pour la somme supplémentaire de ' +LOCATION_GARAGE+' ?')
 
-//Traitement des données et affichage
-
-locationGarage = confirm ('Voulez vous louer un garage pour la somme supplémentaire de ' +LOCATION_GARAGE+' ?')
-
-
-
-if (locationGarage) {
-	prixTotalDetail = coutTotalLocation + LOCATION_GARAGE
-	document.write ('<p>Total : '+loyerMensuel+' + '+charges+' = '+coutTotalLocation+' € '+' - '+'Garantie Locative : '+garantieLocative+' € '+'</p>')
-	document.write ('<p>Option : </p>')
-	document.write ('<p> - Garage '+'('+LOCATION_GARAGE+' €'+')'+'</p>')
-	document.write ('<p>Cout total de la location : '+coutTotalLocation+' + '+LOCATION_GARAGE+' = '+prixTotalDetail+' € '+'</p>')
-}
-else {
-garantieLocative = loyerMensuel * 2
-coutTotalLocation = loyerMensuel + charges
-
-document.write ('<p>Total : '+loyerMensuel+' + '+charges+' = '+coutTotalLocation+ ' € '+' - '+' Garantie Locative : '+garantieLocative+' € </p>')
-
-}
-}while ('Voulez vous recommencer?')	
+	if (locationGarage) {
+		prixTotalDetail = coutTotalLocation + LOCATION_GARAGE
+		document.write('<p>Total : '+loyerMensuel+' + '+charges+' = '+coutTotalLocation+' € '+' - '+'Garantie Locative : '+garantieLocative+' € '+'</p>')
+		document.write('<p>Option : </p>')
+		document.write('<p> - Garage '+'('+LOCATION_GARAGE+' €'+')'+'</p>')
+		document.write('<p>Cout total de la location : '+coutTotalLocation+' + '+LOCATION_GARAGE+' = '+prixTotalDetail+' € '+'</p>')
+	} else {
+		garantieLocative = loyerMensuel * 2
+		coutTotalLocation = loyerMensuel + charges
+		document.write('<p>Total : '+loyerMensuel+' + '+charges+' = '+coutTotalLocation+ ' € '+' - '+' Garantie Locative : '+garantieLocative+' € </p>')
+	}
+} while('Voulez vous recommencer?')	
 </script>
