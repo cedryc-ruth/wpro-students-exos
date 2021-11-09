@@ -44,16 +44,19 @@ do {
 	// Traitement des données
 	if(morphologie == 'fine') {
 		poidsIdeal = (taille - 100 + age / 10) * 0.9 * 0.9
-		document.write("<p>Tanaka Vous êtes en surpoids!</p>");
-		document.write("<p>Tanaka votre poids idéal est 67.32 </p>");
 	} else if (morphologie == 'normal') {
 		poidsIdeal = (taille - 100 + age / 10) * 0.9 
-		document.write("<p>Honda votre poids idéal est 75.60 </p>");
-		document.write("<p>Honda Tout va bien.</p>");
 	} else if (morphologie == 'large') {
 		poidsIdeal = (taille - 100 + age / 10) * 0.9 * 1.1 
-		document.write("<p>Honda votre poids idéal est 75.60 </p>");
-		document.write("<p>Honda Tout va bien.</p>");
+	}
+	
+	//Affichage du résultat
+	if(poids<=poidsIdeal) {
+		document.write("<p>"+prenom+", votre poids idéal est "+poidsIdeal+"</p>");
+		document.write("<p>Tout va bien.</p>");
+	} else {
+		document.write("<p>"+prenom+", votre poids idéal est "+poidsIdeal+"</p>");
+		document.write("<p>Vous êtes en surpoids!</p>");
 	}
 } while(confirm("Voulez-vous recommencer ?"));
 </script>
