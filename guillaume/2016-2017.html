@@ -45,29 +45,26 @@
     do numeroFormation = parseInt(prompt('Quel est le code de la formation choisie ?'))
     while (isNaN(numeroFormation) || cours.find(cours => cours.code === numeroFormation) == undefined)
 
-    do ressortissantUe = prompt('Etes-vous ressortissant UE ? oui/non')
-    while(ressortissantUe != 'oui' && ressortissantUe != 'non')
-
-    do membrePersonnel = prompt('Etes-vous membre du personnel ? oui/non')
-    while(membrePersonnel != 'oui' && membrePersonnel != 'non')
-
-    do afficherDetail = prompt('Voulez-vous afficher les détails du montant total ? oui/non')
-    while(afficherDetail != 'oui' && afficherDetail != 'non')
-
+    ressortissantUe = confirm('Etes-vous ressortissant UE ? oui/non')
+    
+    membrePersonnel = confirm('Etes-vous membre du personnel ? oui/non')
+    
+    afficherDetail = confirm('Voulez-vous afficher les détails du montant total ? oui/non')
+    
     //Traitement des données
     formationChoisie = cours.find(cours => cours.code === numeroFormation)
 
-    if(membrePersonnel == 'non') {
+    if(!membrePersonnel) {
         participation = 25
         
-        if(ressortissantUe == 'oui') {
+        if(ressortissantUe) {
             fraisHorsUE = 0 
-        } else if(ressortissantUe == 'non') {
+        } else {
             fraisHorsUE = 0.4 * formationChoisie['duree']
         }
         
         fraisInscription = participation + 0.35 * formationChoisie['duree']
-    } else if(membrePersonnel == 'oui') {
+    } else {
         participation = 0
         fraisInscription = 0.35 * formationChoisie['duree']
     }
@@ -76,7 +73,7 @@
     document.write('<p>Formation : ' + cours.find(cours => cours.code === numeroFormation)['nom'])
     document.write('<p>Tarif : ' + (participation + fraisInscription + fraisHorsUE) + ' €')
         
-    if(afficherDetail == 'oui'){
+    if(afficherDetail){
         document.write('<p>&nbsp;&nbsp;- Participation : ' + participation + ' €</p>')
         document.write('<p>&nbsp;&nbsp;- Inscription : ' + fraisInscription + ' €</p>')
         document.write('<p>&nbsp;&nbsp;- Frais Hors E.U. : ' + fraisHorsUE + ' €</p>')
