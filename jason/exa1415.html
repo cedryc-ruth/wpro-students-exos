@@ -1,0 +1,68 @@
+<meta charset="utf-8">
+<script>
+/**
+ * Ecrivez un programme qui calcule et qui affiche le poids idéal théorique d'un
+ * internaute.
+ *
+ * @author J.Nama Jason
+ * @version 1.0
+ */
+
+//Déclaration des variables et des constantes
+var poidsActuel;
+var poidsIdeal;
+var morphologie;
+var prenom;
+var taille;
+var age;
+
+//Lecture des données
+do {
+	do {
+		prenom = prompt("Quel est votre prénom ?");
+	} while(!isNaN(prenom));
+
+	do {
+		taille = parseFloat(prompt("Quel est votre taille ?\nVeuillez votre taille en cm "));
+	} while(isNaN(taille) || taille <= 0);
+
+	do {
+		age = parseInt(prompt("Quel est votre âge ?"));
+	} while(isNaN(age) || age <= 0);
+
+	do {
+		morphologie = prompt("Quel est votre morphologie ?\n'normale', 'fine' ou 'large'");
+	} while(morphologie != 'normale' && morphologie != 'fine' && morphologie != 'large');
+
+	do {
+		poidsActuel = parseFloat(prompt("Quel est votre poids ? en kg"));
+	} while(isNaN(age) || age <= 0);
+
+	//Traitement des données
+	poidsIdeal = (taille - 100 + age / 10) * 0.9 //Pour la morphologie "normale"
+	poidsIdeal = (taille - 100 + age / 10) * 0.9 * 0.9 //Pour la morphologie "fine"
+	poidsIdeal = (taille - 100 + age / 10) * 0.9 * 1.1 //Pour la morphologie "large"
+
+	if(morphologie == 'normale') {
+		poidsIdeal = (taille - 100 + age / 10) * 0.9;
+	
+		//Affichage des résultats
+		document.write("<p>"+prenom+", votre poids idéal est "+poidsIdeal+"Kg</p>");
+		document.write("<p>Votre poids est normale.</p>");
+
+	} else if(morphologie == 'fine') {
+		poidsIdeal = (taille - 100 + age / 10) * 0.9 * 0.9;
+		
+		//Affichage des résultats
+		document.write("<p>"+prenom+", votre poids idéal est "+poidsIdeal+"Kg</p>");
+		document.write("<p>Tout va bien, vous êtes mince.</p>");
+
+	} else if(morphologie == 'large') {
+		poidsIdeal = (taille - 100 + age / 10) * 0.9 * 1.1;
+		
+		//Affichage des résultats
+		document.write("<p>"+prenom+", votre poids idéal est "+poidsIdeal+"Kg</p>");
+		document.write("<p>Vous êtes en surpoids !</p>");
+	}		
+} while(confirm("Voulez-vous recommencer ?"));
+</script>
