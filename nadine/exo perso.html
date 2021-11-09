@@ -29,7 +29,6 @@ do {
 
 showDetails = confirm("Voulez-vous le total ?"); 
 
-
 // Traitement des données
 if(code == 20) {
     total = nbTickets * TARIFS_CHRISTOPHE;
@@ -44,11 +43,11 @@ document.write("<p>Votre sélection:</p>");
     
 if(showDetails) {
     if(code == 20) {
-        document.write("<p>-1 x Christophe ("+TARIFS_CHRISTOPHE+" €)</p>");
+        document.write('<p>-'+nbTickets+' x Christophe ('+TARIFS_CHRISTOPHE+' €)</p>');
     } else if(code == 100) {
-        document.write('<p>-2 x Garland Jeffreys ('+TARIFS_GARLAND_JEFF+' €) </p>');
+        document.write('<p>-'+nbTickets+' x Garland Jeffreys ('+TARIFS_GARLAND_JEFF+' €) </p>');
     } else if(code == 3) {
-        document.write('<p>-1 x Jambinai ('+TARIFS_JAMBINAI+' €) </p>');
+        document.write('<p>-'+nbTickets+' x Jambinai ('+TARIFS_JAMBINAI+' €) </p>');
     }
 }
 
