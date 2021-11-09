@@ -45,11 +45,11 @@ do {
 	} while(morphologie!='fine' && morphologie!='moyenne' && morphologie!='large');
 
 	//traitement des données
-	if(morphologie='normal') {
+	if(morphologie=='normal') {
 		poidsIdeal = (taille - 100 + age /10) *0.9;
-	} else if(morphologie='fine') {
+	} else if(morphologie=='fine') {
 		poidsIdeal = (taille - 100 + age /10) *0.9 *0.9;
-	} else if(morphologie='large') {
+	} else if(morphologie=='large') {
 		poidsIdeal = (taille - 100 + age /10) *0.9 *1.1;
 	}
 			
@@ -57,6 +57,7 @@ do {
 
 	//affichage du résultat
 	document.write('<p>'+prenom+', votre poids idéal est '+poidsIdeal.toFixed(2)+'kg.</p>');
+	
 	if(imc<18.5) {
 		document.write('<p>Vous être maigre!</p>');
 	} else if(imc>25) {
