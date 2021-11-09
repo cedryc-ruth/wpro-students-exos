@@ -1,16 +1,16 @@
 <meta charset="utf-8">
-
 <script>
-
-/*
-un programme qui calcule et affiche le poids idéal théorique d'un internaute en se basant sur la formule de Creff. 
-Cette formule utilise la taille, l'âge et la morphologie de l'internaute pour le calcul.
-L'utilisateur entrera un par un au clavier son prénom, sa taille, son âge et sa morphologie. 
-En fonction de la morphologie, il faudra appliquer la bonne formule pour calculer le poids idéal théorique.
-Veillez à valider correctement les données entrées et à afficher au terme du traitement 
-le poids idéal théorique et si l'internaute est en surpoids ou non.
-Le programme doit pouvoir se relancer et ne pourra s’arrêter que lorsque l’utilisateur le signifiera.
-*/
+/**
+ * Un programme qui calcule et affiche le poids idéal théorique d'un internaute en se basant sur la formule de Creff. 
+ * Cette formule utilise la taille, l'âge et la morphologie de l'internaute pour le calcul.
+ * L'utilisateur entrera un par un au clavier son prénom, sa taille, son âge et sa morphologie. 
+ * En fonction de la morphologie, il faudra appliquer la bonne formule pour calculer le poids idéal théorique.
+ * Veillez à valider correctement les données entrées et à afficher au terme du traitement 
+ * le poids idéal théorique et si l'internaute est en surpoids ou non.
+ * Le programme doit pouvoir se relancer et ne pourra s’arrêter que lorsque l’utilisateur le signifiera.
+ *
+ * @author N. Bouharat
+ */
 
 //déclaration des données
 var poidsIdeal;
@@ -21,51 +21,49 @@ var morphologie;
 var prenom;
 var imc;
 
-//lecture des données
-do {	
+do {
+	//lecture des données
 	do {
-		prenom= prompt('Quel est votre prénom?'); 
-	}while(!isNaN(prenom));
+		prenom = prompt('Quel est votre prénom?'); 
+	} while(!isNaN(prenom));
 
 	do {
-		taille= parseFloat(prompt('Quelle est votre taille, en cm?')); 
-	}while(isNaN(taille) || taille<1);
+		taille = parseFloat(prompt('Quelle est votre taille, en cm?')); 
+	} while(isNaN(taille) || taille<1);
 
 	do {
-		age= parseFloat(prompt('Vous avez quel âge?')); 
-	}while(isNaN(age) || age<1);
+		age = parseFloat(prompt('Vous avez quel âge?')); 
+	} while(isNaN(age) || age<1);
 
 	do {
-		poidsActuel=parseFloat(prompt('Quel est votre poids actuel, en kg?')); 
-	}while(isNaN(poidsActuel) || poidsActuel<1);
+		poidsActuel = parseFloat(prompt('Quel est votre poids actuel, en kg?')); 
+	} while(isNaN(poidsActuel) || poidsActuel<1);
+
+	do {
+		morphologie = prompt('Votre silhouette est fine, moyenne ou large?');
+	} while(morphologie!='fine' && morphologie!='moyenne' && morphologie!='large');
 
 	//traitement des données
-	do {
-		morphologie= prompt('Votre silhouette est fine, moyenne ou large?');
-	}while(morphologie!= 'fine' && morphologie!='moyenne' && morphologie!='large');
-
-	//traitement des données
-	if (morphologie='normal') {
-		poidsIdeal= (taille - 100 + age /10) *0.9;
-	}else if (morphologie='fine') {
-			poidsIdeal= (taille - 100 + age /10) *0.9 *0.9;
-		}else if (morphologie='large') {
-				poidsIdeal= (taille - 100 + age /10) *0.9 *1.1;
-			}
+	if(morphologie=='normal') {
+		poidsIdeal = (taille - 100 + age /10) *0.9;
+	} else if(morphologie=='fine') {
+		poidsIdeal = (taille - 100 + age /10) *0.9 *0.9;
+	} else if(morphologie=='large') {
+		poidsIdeal = (taille - 100 + age /10) *0.9 *1.1;
+	}
 			
-	imc= parseFloat(poidsActuel / taille**2);
+	imc = parseFloat(poidsActuel / taille**2);
 
 	//affichage du résultat
 	document.write('<p>'+prenom+', votre poids idéal est '+poidsIdeal.toFixed(2)+'kg.</p>');
+	
 	if(imc<18.5) {
 		document.write('<p>Vous être maigre!</p>');
-	}else if(imc>25) {
-			document.write('<p>Vous êtes en surpoids!</p>');
-		}else {
-				document.write('<p>Tout va bien.</p>');
-			}
-
-
-}while(!confirm('Voulez-vous arrêter?'));
+	} else if(imc>25) {
+		document.write('<p>Vous êtes en surpoids!</p>');
+	} else {
+		document.write('<p>Tout va bien.</p>');
+	}
+} while(!confirm('Voulez-vous arrêter?'));
 
 </script>
