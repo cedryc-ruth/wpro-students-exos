@@ -1,106 +1,85 @@
 <meta charset='utf-8'>
 <script>
-
 /**
  * Entrainement perso de Nana
  * 
- * @Author Van Houtryve N.
+ * @author Van Houtryve N.
  */
 
- // Déclaration des variables et constantes
+// Déclaration des variables et constantes
+var nbTicket;
+var total;
+var code;
+var totalDetail;
+var nbTicketChristophe;
+var nbTicketGarland;
+var nbTicketJambinai;
+const TARIFS_GARLAND_JEFF = 26;
+const TARIFS_CHRISTOPHE = 50;
+const TARIFS_JAMBINAI = 15;
+const CODE_GARLAND_JEFF = 100;
+const CODE_CHRISTOPHE = 20;
+const CODE_JAMBINAI = 3;
 
- var nbTicket;
- var total;
- var code;
- var totalDetail;
- var nbTicketChristophe;
- var nbTicketGarland;
- var nbTicketJambinai;
- const TARIFS_GARLAND_JEFF = 26;
- const TARIFS_CHRISTOPHE = 50;
- const TARIFS_JAMBINAI = 15;
- const CODE_GARLAND_JEFF = 100;
- const CODE_CHRISTOPHE = 20;
- const CODE_JAMBINAI = 3;
-
- // Lecture des données
-do{
-      code = parseInt(prompt('Quel est votre code?\nTapez 100 pour GARLAND, 20 pour CHRISTOPHE et 3 pour JAMBINAI'));
+// Lecture des données
+do {
+    code = parseInt(prompt('Quel est votre code?\nTapez 100 pour GARLAND, 20 pour CHRISTOPHE et 3 pour JAMBINAI'));
 } while(isNaN(code) || code != 100 && code != 20 && code != 3);
 
-do{
-      nbTicket = parseInt(prompt('Combien de ticket svp?'));
+do {
+    nbTicket = parseInt(prompt('Combien de ticket svp?'));
 } while(isNaN(nbTicket) || nbTicket < 0);
 
-do{
-      nbTicketChristophe = parseInt(prompt('Combien de ticket svp CHRISTOPHE?'));
+do {
+    nbTicketChristophe = parseInt(prompt('Combien de ticket svp CHRISTOPHE?'));
 } while(isNaN(nbTicketChristophe) || nbTicket < 0);
 
-do{
-      nbTicketGarland = parseInt(prompt('Combien de ticket svp GARLAND?'));
+do {
+    nbTicketGarland = parseInt(prompt('Combien de ticket svp GARLAND?'));
 } while(isNaN(nbTicketGarland) || nbTicket < 0);
 
-do{
-      nbTicketJambinai = parseInt(prompt('Combien de ticket svp JAMBINAI?'));
+do {
+    nbTicketJambinai = parseInt(prompt('Combien de ticket svp JAMBINAI?'));
 } while(isNaN(nbTicketJambinai) || nbTicket < 0);
 
 
 totalDetail = confirm("Voulez-vous le total ?"); 
 
 
-// Taitement des données
+// Traitement des données
 
 document.write("<p>Votre sélection:</p>");
 
 if(code == 20) {
-
-      total = nbTicket * TARIFS_CHRISTOPHE;
-      document.write("<p>-1 x Christophe ("+TARIFS_CHRISTOPHE+" €)</p>");
-        document.write("<p>Total: "+total+" €</p>");
-
-
-}else if (code == 100) {
-
+    total = nbTicket * TARIFS_CHRISTOPHE;
+    document.write("<p>-1 x Christophe ("+TARIFS_CHRISTOPHE+" €)</p>");
+    document.write("<p>Total: "+total+" €</p>");
+} else if(code == 100) {
       total = nbTicket * TARIFS_GARLAND_JEFF;
       document.write('<p>-2 x Garland Jeffreys ('+TARIFS_GARLAND_JEFF+' €) </p>');
-
-}else if (code == 3) {
-
+} else if(code == 3) {
       total = nbTicket * TARIFS_JAMBINAI;
-}     document.write('<p>-1 x Jambinai ('+TARIFS_JAMBINAI+' €) </p>');
-
-
-    
-    document.write('<p>Total: 50 €</p>');
-
-      
-      document.write('<p>Total: (67 €) </p>'); 
-
-
-if (totalDetail) {
-
-if(code == 20) {
-
-      total = nbTicketChristophe * TARIFS_CHRISTOPHE;
-} if (code == 100) {
-
-      total = nbTicketGarland * TARIFS_GARLAND_JEFF;
-
-} if (code == 3) {
-
-      total = nbTicketJambinai * TARIFS_JAMBINAI;
-
 }
-      total = nbTicketGarland * TARIFS_GARLAND_JEFF + nbTicketJambinai * TARIFS_JAMBINAI;
-      document.write('Total');
 
+document.write('<p>-1 x Jambinai ('+TARIFS_JAMBINAI+' €) </p>');
+document.write('<p>Total: 50 €</p>');
+document.write('<p>Total: (67 €) </p>'); 
+
+if(totalDetail) {
+    if(code == 20) {
+        total = nbTicketChristophe * TARIFS_CHRISTOPHE;
+    } if (code == 100) {
+        total = nbTicketGarland * TARIFS_GARLAND_JEFF;
+    } if (code == 3) {
+        total = nbTicketJambinai * TARIFS_JAMBINAI;
+    }
+
+    total = nbTicketGarland * TARIFS_GARLAND_JEFF + nbTicketJambinai * TARIFS_JAMBINAI;
+    document.write('Total');
 } else if(code == 20) {
 
 } else {
     
 }
-
-
-
 
 </script>
