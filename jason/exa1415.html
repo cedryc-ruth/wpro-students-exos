@@ -39,10 +39,6 @@ do {
 	} while(isNaN(age) || age <= 0);
 
 	//Traitement des données
-	poidsIdeal = (taille - 100 + age / 10) * 0.9 //Pour la morphologie "normale"
-	poidsIdeal = (taille - 100 + age / 10) * 0.9 * 0.9 //Pour la morphologie "fine"
-	poidsIdeal = (taille - 100 + age / 10) * 0.9 * 1.1 //Pour la morphologie "large"
-
 	if(morphologie == 'normale') {
 		poidsIdeal = (taille - 100 + age / 10) * 0.9;
 	
