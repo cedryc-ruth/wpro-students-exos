@@ -1,0 +1,59 @@
+<meta charset = 'utf-8'>
+<script>
+
+/**
+ * Ecrivez un programme qui calcule et affiche le poids idéal d'un internaute
+ * en se basant sur la formule de Creff.
+ * 
+ * @author Van Houtryve N.
+ * 
+ */
+
+
+// Déclaration des variables et constantes
+var poids;
+var morphologie;
+var prenom;
+var taille;
+var age;
+
+
+// Lecture des données
+do {
+
+
+do {
+    prenom = prompt("Quel est votre prenom ?\nEntrez 'Tanaka' ou 'Honda'");
+} while(!isNaN(prenom) || prenom != 'Tanaka' && prenom != 'Honda');
+do {
+    taille = parseFloat(prompt("Quel est votre taille?\nEntrez votre taille en cm"));
+} while(isNaN(taille) || taille<=0 );
+do {
+    age = parseInt(prompt("Quel est votre age?"));
+} while(isNaN(age) || age<=0);
+do {
+    morphologie = prompt("Quel est votre morphologie?");
+} while(!isNaN(morphologie) || morphologie != 'fine' && morphologie != 'normal' && morphologie != 'large');
+
+
+// Traitement des données
+poids = (taille - 100 + age / 10) * 0.9 //Pour la morphologie normale
+poids = (taille - 100 + age / 10) * 0,9 * 0,9 //Pour la morphologie fine
+poids = (taille - 100 + age / 10) * 0.9 * 1.1 //Pour la morphologie large
+
+ if(prenom == 'Tanaka') {
+    poids = (taille - 100 + age / 10) * 0.9 * 1.1
+    document.write("<p>Tanaka Vous êtes en surpoids!</p>");
+    document.write("<p>Tanaka votre poids idéal est 67.32 </p>");
+ }
+
+ if (prenom == 'Honda') {
+    poids = (taille - 100 + age / 10) * 0.9 
+    document.write("<p>Honda votre poids idéal est 75.60 </p>");
+    document.write("<p>Honda Tout va bien.</p>");
+ }
+
+} while(confirm("Voulez-vous recommencer ?"));
+
+
+</script>
