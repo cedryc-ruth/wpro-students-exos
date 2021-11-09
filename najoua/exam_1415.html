@@ -21,8 +21,8 @@ var morphologie;
 var prenom;
 var imc;
 
-//lecture des données
-do {	
+do {
+	//lecture des données
 	do {
 		prenom = prompt('Quel est votre prénom?'); 
 	} while(!isNaN(prenom));
@@ -39,7 +39,6 @@ do {
 		poidsActuel = parseFloat(prompt('Quel est votre poids actuel, en kg?')); 
 	} while(isNaN(poidsActuel) || poidsActuel<1);
 
-	//traitement des données
 	do {
 		morphologie = prompt('Votre silhouette est fine, moyenne ou large?');
 	} while(morphologie!='fine' && morphologie!='moyenne' && morphologie!='large');
