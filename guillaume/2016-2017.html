@@ -60,17 +60,17 @@
         if(ressortissantUe) {
             fraisHorsUE = 0 
         } else {
-            fraisHorsUE = 0.4 * formationChoisie['duree']
+            fraisHorsUE = 0.4 * formationChoisie.duree
         }
         
-        fraisInscription = participation + 0.35 * formationChoisie['duree']
+        fraisInscription = participation + 0.35 * formationChoisie.duree
     } else {
         participation = 0
-        fraisInscription = 0.35 * formationChoisie['duree']
+        fraisInscription = 0.35 * formationChoisie.duree
     }
 
     //Affichage des résultats
-    document.write('<p>Formation : ' + cours.find(cours => cours.code === numeroFormation)['nom'])
+    document.write('<p>Formation : ' + formationChoisie.nom)
     document.write('<p>Tarif : ' + (participation + fraisInscription + fraisHorsUE) + ' €')
         
     if(afficherDetail){
