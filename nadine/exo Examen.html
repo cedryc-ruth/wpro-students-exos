@@ -12,6 +12,7 @@
 
 // Déclaration des variables et constantes
 var poids;
+var poidsIdeal;
 var morphologie;
 var prenom;
 var taille;
@@ -34,23 +35,27 @@ do {
 	do {
 		morphologie = prompt("Quel est votre morphologie?");
 	} while(!isNaN(morphologie) || morphologie != 'fine' && morphologie != 'normal' && morphologie != 'large');
+	
+	do {
+		poids = parseFloat(prompt("Quel est votre poids?\nEntrez votre poids en kg"));
+	} while(isNaN(poids) || poids<=0 );
 
 
 	// Traitement des données
-	poids = (taille - 100 + age / 10) * 0.9 //Pour la morphologie normale
-	poids = (taille - 100 + age / 10) * 0.9 * 0.9 //Pour la morphologie fine
-	poids = (taille - 100 + age / 10) * 0.9 * 1.1 //Pour la morphologie large
+	poidsIdeal = (taille - 100 + age / 10) * 0.9 //Pour la morphologie normale
+	poidsIdeal = (taille - 100 + age / 10) * 0.9 * 0.9 //Pour la morphologie fine
+	poidsIdeal = (taille - 100 + age / 10) * 0.9 * 1.1 //Pour la morphologie large
 
 	if(morphologie == 'fine') {
-		poids = (taille - 100 + age / 10) * 0.9 * 0.9
+		poidsIdeal = (taille - 100 + age / 10) * 0.9 * 0.9
 		document.write("<p>Tanaka Vous êtes en surpoids!</p>");
 		document.write("<p>Tanaka votre poids idéal est 67.32 </p>");
 	} else if (morphologie == 'normal') {
-		poids = (taille - 100 + age / 10) * 0.9 
+		poidsIdeal = (taille - 100 + age / 10) * 0.9 
 		document.write("<p>Honda votre poids idéal est 75.60 </p>");
 		document.write("<p>Honda Tout va bien.</p>");
 	} else if (morphologie == 'large') {
-		poids = (taille - 100 + age / 10) * 0.9 * 1.1 
+		poidsIdeal = (taille - 100 + age / 10) * 0.9 * 1.1 
 		document.write("<p>Honda votre poids idéal est 75.60 </p>");
 		document.write("<p>Honda Tout va bien.</p>");
 	}
