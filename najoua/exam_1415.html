@@ -24,33 +24,33 @@ var imc;
 //lecture des données
 do {	
 	do {
-		prenom= prompt('Quel est votre prénom?'); 
+		prenom = prompt('Quel est votre prénom?'); 
 	} while(!isNaN(prenom));
 
 	do {
-		taille= parseFloat(prompt('Quelle est votre taille, en cm?')); 
+		taille = parseFloat(prompt('Quelle est votre taille, en cm?')); 
 	} while(isNaN(taille) || taille<1);
 
 	do {
-		age= parseFloat(prompt('Vous avez quel âge?')); 
+		age = parseFloat(prompt('Vous avez quel âge?')); 
 	} while(isNaN(age) || age<1);
 
 	do {
-		poidsActuel=parseFloat(prompt('Quel est votre poids actuel, en kg?')); 
+		poidsActuel = parseFloat(prompt('Quel est votre poids actuel, en kg?')); 
 	} while(isNaN(poidsActuel) || poidsActuel<1);
 
 	//traitement des données
 	do {
-		morphologie= prompt('Votre silhouette est fine, moyenne ou large?');
-	} while(morphologie!= 'fine' && morphologie!='moyenne' && morphologie!='large');
+		morphologie = prompt('Votre silhouette est fine, moyenne ou large?');
+	} while(morphologie!='fine' && morphologie!='moyenne' && morphologie!='large');
 
 	//traitement des données
 	if(morphologie='normal') {
-		poidsIdeal= (taille - 100 + age /10) *0.9;
+		poidsIdeal = (taille - 100 + age /10) *0.9;
 	} else if(morphologie='fine') {
-		poidsIdeal= (taille - 100 + age /10) *0.9 *0.9;
+		poidsIdeal = (taille - 100 + age /10) *0.9 *0.9;
 	} else if(morphologie='large') {
-		poidsIdeal= (taille - 100 + age /10) *0.9 *1.1;
+		poidsIdeal = (taille - 100 + age /10) *0.9 *1.1;
 	}
 			
 	imc = parseFloat(poidsActuel / taille**2);
