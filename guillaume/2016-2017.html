@@ -8,79 +8,79 @@
 </head>
 <body>
     <script>
-        //Initialisation des variables
-        var numeroFormation,
-            ressortissantUe,
-            membrePersonnel,
-            afficherDetail,
-            fraisInscription,
-            fraisHorsUE = 0,
-            formationChoisie,
-            participation
+    //Initialisation des variables
+    var numeroFormation,
+        ressortissantUe,
+        membrePersonnel,
+        afficherDetail,
+        fraisInscription,
+        fraisHorsUE = 0,
+        formationChoisie,
+        participation
 
-        let cours = [
-                    {
-                        'code': 1050,
-                        'nom' : 'Access',
-                        'duree' : 40
-                    },
-                    {
-                        'code' : 1060,
-                        'nom' : 'Excel',
-                        'duree' : 40
-                    },
-                    {
-                        'code' : 1065,
-                        'nom' : 'Excel avancé',
-                        'duree' : 60
-                    },
-                    {
-                        'code' : 3040,
-                        'nom' : 'Joomla',
-                        'duree' : 80
-                    }
-                    ]
+    let cours = [
+        {
+            'code': 1050,
+            'nom' : 'Access',
+            'duree' : 40
+        },
+        {
+            'code' : 1060,
+            'nom' : 'Excel',
+            'duree' : 40
+        },
+        {
+            'code' : 1065,
+            'nom' : 'Excel avancé',
+            'duree' : 60
+        },
+        {
+            'code' : 3040,
+            'nom' : 'Joomla',
+            'duree' : 80
+        }
+    ]
         
-        //Lecture des données
-        do numeroFormation = parseInt(prompt('Quel est le code de la formation choisie ?'))
-        while (isNaN(numeroFormation) || cours.find(cours => cours.code === numeroFormation) == undefined)
+    //Lecture des données
+    do numeroFormation = parseInt(prompt('Quel est le code de la formation choisie ?'))
+    while (isNaN(numeroFormation) || cours.find(cours => cours.code === numeroFormation) == undefined)
 
-        do ressortissantUe = prompt('Etes-vous ressortissant UE ? oui/non')
-        while(ressortissantUe != 'oui' && ressortissantUe != 'non')
+    do ressortissantUe = prompt('Etes-vous ressortissant UE ? oui/non')
+    while(ressortissantUe != 'oui' && ressortissantUe != 'non')
 
-        do membrePersonnel = prompt('Etes-vous membre du personnel ? oui/non')
-        while(membrePersonnel != 'oui' && membrePersonnel != 'non')
+    do membrePersonnel = prompt('Etes-vous membre du personnel ? oui/non')
+    while(membrePersonnel != 'oui' && membrePersonnel != 'non')
 
-        do afficherDetail = prompt('Voulez-vous afficher les détails du montant total ? oui/non')
-        while(afficherDetail != 'oui' && afficherDetail != 'non')
+    do afficherDetail = prompt('Voulez-vous afficher les détails du montant total ? oui/non')
+    while(afficherDetail != 'oui' && afficherDetail != 'non')
 
-        //Traitement des données
-        formationChoisie = cours.find(cours => cours.code === numeroFormation)
+    //Traitement des données
+    formationChoisie = cours.find(cours => cours.code === numeroFormation)
 
-        if(membrePersonnel == 'non'){
-            participation = 25
-            if(ressortissantUe == 'oui'){
-                fraisHorsUE = 0 
-            }
-            else if(ressortissantUe == 'non'){
-                fraisHorsUE = 0.4 * formationChoisie['duree']
-            }
-            fraisInscription = participation + 0.35 * formationChoisie['duree']
-        }
-        else if(membrePersonnel == 'oui'){
-            participation = 0
-            fraisInscription = 0.35 * formationChoisie['duree']
-        }
-
-        //Affichage des résultats
-        document.write('<p>Formation : ' + cours.find(cours => cours.code === numeroFormation)['nom'])
-        document.write('<p>Tarif : ' + (participation + fraisInscription + fraisHorsUE) + ' €')
+    if(membrePersonnel == 'non') {
+        participation = 25
         
-        if(afficherDetail == 'oui'){
-            document.write('<p>&nbsp;&nbsp;- Participation : ' + participation + ' €</p>')
-            document.write('<p>&nbsp;&nbsp;- Inscription : ' + fraisInscription + ' €</p>')
-            document.write('<p>&nbsp;&nbsp;- Frais Hors E.U. : ' + fraisHorsUE + ' €</p>')
+        if(ressortissantUe == 'oui') {
+            fraisHorsUE = 0 
+        } else if(ressortissantUe == 'non') {
+            fraisHorsUE = 0.4 * formationChoisie['duree']
         }
+        
+        fraisInscription = participation + 0.35 * formationChoisie['duree']
+    } else if(membrePersonnel == 'oui') {
+        participation = 0
+        fraisInscription = 0.35 * formationChoisie['duree']
+    }
+
+    //Affichage des résultats
+    document.write('<p>Formation : ' + cours.find(cours => cours.code === numeroFormation)['nom'])
+    document.write('<p>Tarif : ' + (participation + fraisInscription + fraisHorsUE) + ' €')
+        
+    if(afficherDetail == 'oui'){
+        document.write('<p>&nbsp;&nbsp;- Participation : ' + participation + ' €</p>')
+        document.write('<p>&nbsp;&nbsp;- Inscription : ' + fraisInscription + ' €</p>')
+        document.write('<p>&nbsp;&nbsp;- Frais Hors E.U. : ' + fraisHorsUE + ' €</p>')
+    }
         
     </script>
 </body>
