@@ -7,13 +7,10 @@
  */
 
 // Déclaration des variables et constantes
-var nbTicket;
+var nbTickets;
 var total;
 var code;
-var totalDetail;
-var nbTicketChristophe;
-var nbTicketGarland;
-var nbTicketJambinai;
+var showDetails;
 const TARIFS_GARLAND_JEFF = 26;
 const TARIFS_CHRISTOPHE = 50;
 const TARIFS_JAMBINAI = 15;
@@ -27,59 +24,33 @@ do {
 } while(isNaN(code) || code != 100 && code != 20 && code != 3);
 
 do {
-    nbTicket = parseInt(prompt('Combien de ticket svp?'));
-} while(isNaN(nbTicket) || nbTicket < 0);
+    nbTickets = parseInt(prompt('Combien de ticket svp?'));
+} while(isNaN(nbTickets) || nbTickets < 0);
 
-do {
-    nbTicketChristophe = parseInt(prompt('Combien de ticket svp CHRISTOPHE?'));
-} while(isNaN(nbTicketChristophe) || nbTicketChristophe < 0);
-
-do {
-    nbTicketGarland = parseInt(prompt('Combien de ticket svp GARLAND?'));
-} while(isNaN(nbTicketGarland) || nbTicketGarland < 0);
-
-do {
-    nbTicketJambinai = parseInt(prompt('Combien de ticket svp JAMBINAI?'));
-} while(isNaN(nbTicketJambinai) || nbTicketJambinai < 0);
-
-
-totalDetail = confirm("Voulez-vous le total ?"); 
+showDetails = confirm("Voulez-vous le total ?"); 
 
 
 // Traitement des données
-
-document.write("<p>Votre sélection:</p>");
-
 if(code == 20) {
-    total = nbTicket * TARIFS_CHRISTOPHE;
-    document.write("<p>-1 x Christophe ("+TARIFS_CHRISTOPHE+" €)</p>");
-    document.write("<p>Total: "+total+" €</p>");
+    total = nbTickets * TARIFS_CHRISTOPHE;
 } else if(code == 100) {
-      total = nbTicket * TARIFS_GARLAND_JEFF;
-      document.write('<p>-2 x Garland Jeffreys ('+TARIFS_GARLAND_JEFF+' €) </p>');
+    total = nbTickets * TARIFS_GARLAND_JEFF;
 } else if(code == 3) {
-      total = nbTicket * TARIFS_JAMBINAI;
+    total = nbTickets * TARIFS_JAMBINAI;
 }
 
-document.write('<p>-1 x Jambinai ('+TARIFS_JAMBINAI+' €) </p>');
-document.write('<p>Total: 50 €</p>');
-document.write('<p>Total: (67 €) </p>'); 
-
-if(totalDetail) {
-    if(code == 20) {
-        total = nbTicketChristophe * TARIFS_CHRISTOPHE;
-    } if (code == 100) {
-        total = nbTicketGarland * TARIFS_GARLAND_JEFF;
-    } if (code == 3) {
-        total = nbTicketJambinai * TARIFS_JAMBINAI;
-    }
-
-    total = nbTicketGarland * TARIFS_GARLAND_JEFF + nbTicketJambinai * TARIFS_JAMBINAI;
-    document.write('Total');
-} else if(code == 20) {
-
-} else {
+//Affichage du résultat
+document.write("<p>Votre sélection:</p>");
     
+if(showDetails) {
+    if(code == 20) {
+        document.write("<p>-1 x Christophe ("+TARIFS_CHRISTOPHE+" €)</p>");
+    } else if(code == 100) {
+        document.write('<p>-2 x Garland Jeffreys ('+TARIFS_GARLAND_JEFF+' €) </p>');
+    } else if(code == 3) {
+        document.write('<p>-1 x Jambinai ('+TARIFS_JAMBINAI+' €) </p>');
+    }
 }
 
+document.write("<p>Total: "+total+" €</p>");
 </script>
