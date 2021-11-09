@@ -41,24 +41,19 @@ do {
 	//Traitement des données
 	if(morphologie == 'normale') {
 		poidsIdeal = (taille - 100 + age / 10) * 0.9;
-	
-		//Affichage des résultats
-		document.write("<p>"+prenom+", votre poids idéal est "+poidsIdeal+"Kg</p>");
-		document.write("<p>Votre poids est normale.</p>");
-
 	} else if(morphologie == 'fine') {
 		poidsIdeal = (taille - 100 + age / 10) * 0.9 * 0.9;
-		
-		//Affichage des résultats
-		document.write("<p>"+prenom+", votre poids idéal est "+poidsIdeal+"Kg</p>");
-		document.write("<p>Tout va bien, vous êtes mince.</p>");
-
 	} else if(morphologie == 'large') {
 		poidsIdeal = (taille - 100 + age / 10) * 0.9 * 1.1;
-		
-		//Affichage des résultats
+	}
+	
+	//Affichage des résultats
+	if(poidsActuel<=poidsIdeal) {
+		document.write("<p>"+prenom+", votre poids idéal est "+poidsIdeal+"Kg</p>");
+		document.write("<p>Tout va bien.</p>");
+	} else {
 		document.write("<p>"+prenom+", votre poids idéal est "+poidsIdeal+"Kg</p>");
 		document.write("<p>Vous êtes en surpoids !</p>");
-	}		
+	}
 } while(confirm("Voulez-vous recommencer ?"));
 </script>
