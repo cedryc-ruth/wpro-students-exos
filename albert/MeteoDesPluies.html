@@ -1,0 +1,48 @@
+<script>
+/**
+  * Méteo des pluies
+  * @author
+  * @version 0.1
+  */
+  
+  //Déclaration des variables
+  
+  var phJour
+  var phVeille
+  var phVariation
+  var phType
+  var phTypeJour
+  
+do {
+  //Lecture des données
+  do {
+	phVeille = prompt('Quel est le ph de la veille?')
+  } while(isNaN(phVeille) || phVeille < 0 || phVeille > 14)
+  do {
+	phJour = prompt('Quel est le ph du jour?')
+  } while(isNaN(phJour) || phJour < 0 || phJour > 14)
+  
+  phTypeJour = confirm('Voulez vous afficher le type de ph du jour?')
+  
+  //Traitement des données 
+  phVariation = (phJour-phVeille)/phVeille *100
+  
+  if(phJour < 6) {
+	phType = 'Acide'
+	} else if(phJour > 8) {
+		phType = 'Alcalin'
+	} else {
+		phType = 'neutre'
+	}
+	//Affichage
+		
+	if(phTypeJour) {
+		document.write('<p>Veille : '+phVeille+'</p>'+'<p> Aujourd\'hui : '+phJour+'('+phType+')'+'</p>'+'<p> => '+phVariation+' % </p>')
+		} else {
+		document.write('<p>Veille : '+phVeille+'</p>'+'<p> Aujourd\'hui : '+phJour+'</p>'+'<p> => '+phVariation+' % </p>')
+		}
+} while(confirm('voulez vous recommencer?'))
+		
+		
+	
+</script>
