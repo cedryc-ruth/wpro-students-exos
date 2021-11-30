@@ -1,4 +1,4 @@
-<meta charset ='utf-8'>
+<meta charset='utf-8'>
 <script>
 
 /**
@@ -30,7 +30,7 @@ const TARIF_SUPERFICIE_PLUS_GRANDE = 15
 do {
 	//Lecture des données
 	do {
-	nomProjet = prompt("Quel est le nom du projet?")
+		nomProjet = prompt("Quel est le nom du projet?")
 	} while(nomProjet.length < 3)
 
 	do {
@@ -66,6 +66,7 @@ do {
 
 	// Affrichage
 	document.write("<p>Projet Studio - "+superficie+" => Total: "+total+" € </p>")
+	
 	if(optionCuisine) {
 		document.write("<p>Option:</p>")
 		document.write("<p>Cuisine "+nomProjet+" ("+prixCuisine+" €)</p>")
