@@ -34,8 +34,8 @@ do {
 	} while(nomProjet.length < 3)
 
 	do {
-		superficie = parseInt(prompt("Quel est la superficie?"))	
-	} while(isNaN(superficie) || superficie < 1)
+		superficie = parseFloat(prompt("Quel est la superficie?"))	
+	} while(isNaN(superficie) || superficie < 1 || parseInt(superficie)!=superficie)
 
 	optionCuisine = confirm("Voulez vous une cuisine?")
 
