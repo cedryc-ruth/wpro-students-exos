@@ -65,13 +65,13 @@ do {
 	totalRenovation = total + prixCuisine + PLACEMENT_CUISINE
 
 	// Affrichage
-	document.write("<p>Projet Studio - "+superficie+" => Total: "+total+" € </p>")
+	document.write("<p>Projet "+nomProjet+" - "+superficie+"m² => Total: "+total+" €</p>")
 	
 	if(optionCuisine) {
 		document.write("<p>Option:</p>")
-		document.write("<p>Cuisine "+nomProjet+" ("+prixCuisine+" €)</p>")
-		document.write("<p>Placement cuisine ("+PLACEMENT_CUISINE+" €) </p>")
-		document.write("<p>Coût total de la rénovation: "+total+" + "+prixCuisine+" + "+PLACEMENT_CUISINE+" = "+totalRenovation+" € </p>")
+		document.write("<p>Cuisine "+(choixCuisine=="F" ? "Family" : "Student")+" ("+prixCuisine+" €)</p>")
+		document.write("<p>Placement cuisine ("+PLACEMENT_CUISINE+" €)</p>")
+		document.write("<p>Coût total de la rénovation: "+total+" + "+prixCuisine+" + "+PLACEMENT_CUISINE+" = "+totalRenovation+" €</p>")
 	}
 } while(confirm("Voulez vous recommencer?"))
 </script>
