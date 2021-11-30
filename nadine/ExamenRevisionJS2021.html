@@ -1,0 +1,76 @@
+<meta charset ='utf-8'>
+<script>
+
+/**
+ * Révision d'examen 2021
+ * 
+ * @author Van Houtryve N.
+ * @version 1.0
+ */
+ 
+//Declaration des variables et constantes
+var totalRenovation            // A calculer
+var total     
+var nomProjet        // Entrée utilisateur Nom du projet
+var superficieRenovation      // Entrée utilisateur, superficie en mètre carré
+var optionCuisine      // Utilisateur si il désire une cuisine ou pas | true ou fasle
+var choixCuisine      // Cuisine Student ou cuisine Familly
+var prixCuisine      
+const PLACEMENT_CUISINE = 2000 
+const TARIF_CUISINE_STUDENT = 750
+const TARIF_CUISINE_FAMILLY = 1500
+const SUPERFICIE_PETITE = 50    // Superficie inférieur ou égale à 50
+const SUPERFICIE_MOYENNE = 70  // Superficie comprise entre 51 et 70
+const SUPERFICIE_GRANDE = 90  // Superficie comprise entre 71 et 90 m²
+const TARIF_SUPERFICIE_PETITE = 10
+const TARIF_SUPERFICIE_MOYENNE = 12
+const TARIF_SUPERFICIE_GRANDE = 14
+const TARIF_SUPERFICIE_PLUS_GRANDE = 15
+
+do {
+	//Lecture des données
+	do {
+	nomProjet = prompt("Quel est le nom du projet?")
+	} while(nomProjet.length < 3)
+
+	do {
+		superficie = parseInt(prompt("Quel est la superficie?"))	
+	} while(isNaN(superficie) || superficie < 1)
+
+	optionCuisine = confirm("Voulez vous une cuisine?")
+
+	if(optionCuisine) {
+		do {
+			choixCuisine = prompt("Quel cuisine voulez vous?\n Taper S pour Student ou F pour Familly")
+		} while(choixCuisine != "F" && choixCuisine != "S")	
+	}
+
+	totalRenovation = total + prixCuisine + PLACEMENT_CUISINE
+
+	//Traitement des données
+	if(superficie <= SUPERFICIE_PETITE ) {
+		total = superficie * TARIF_SUPERFICIE_PETITE
+	} else if(superficie <= SUPERFICIE_MOYENNE) {
+		total = superficie * TARIF_SUPERFICIE_MOYENNE
+	} else if(superficie <= SUPERFICIE_GRANDE) {
+		total = superficie * TARIF_SUPERFICIE_GRANDE
+	} else {
+		total = superficie * TARIF_SUPERFICIE_PLUS_GRANDE
+	}
+		
+	if(choixCuisine =="F") {
+		prixCuisine = TARIF_CUISINE_FAMILLY
+	} else {
+		prixCuisine = TARIF_CUISINE_STUDENT
+	}
+
+	// Affrichage
+	document.write("<p>Projet Studio - "+superficie+" => Total: "+total+" € </p>")
+	if(optionCuisine) {
+		document.write("<p>Option:</p>")
+		document.write("<p>Cuisine "+nomProjet+" ("+prixCuisine+" €)</p>")
+		document.write("<p>Placement cuisine ("+PLACEMENT_CUISINE+" €) </p>")
+		document.write("<p>Coût total de la rénovation: "+total+" + "+prixCuisine+" + "+PLACEMENT_CUISINE+" = "+totalRenovation+" € </p>")
+	}
+} while(confirm("Voulez vous recommencer?"))
+</script>
