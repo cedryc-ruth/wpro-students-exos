@@ -45,8 +45,6 @@ do {
 		} while(choixCuisine != "F" && choixCuisine != "S")	
 	}
 
-	totalRenovation = total + prixCuisine + PLACEMENT_CUISINE
-
 	//Traitement des données
 	if(superficie <= SUPERFICIE_PETITE ) {
 		total = superficie * TARIF_SUPERFICIE_PETITE
@@ -63,6 +61,8 @@ do {
 	} else {
 		prixCuisine = TARIF_CUISINE_STUDENT
 	}
+
+	totalRenovation = total + prixCuisine + PLACEMENT_CUISINE
 
 	// Affrichage
 	document.write("<p>Projet Studio - "+superficie+" => Total: "+total+" € </p>")
