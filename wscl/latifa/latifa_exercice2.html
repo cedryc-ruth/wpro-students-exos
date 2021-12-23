@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang = "fr">
+<head>
+<meta charset = "utf-8">
+<Title> Exercice 2: Pierre Paul Jacques</Title>	
+</head>
+<body>
+<!-- Lecture des données -->
+<form id = "frmName" action = "#" method = "get">
+	<div>
+		<label>Choisissez votre prénom: </label><br/>
+		<select name = "prenom">
+			<optgroup>
+				<option value = "pierre">Pierre</option>
+				<option value = "paul">Paul</option>
+				<option value = "jacques">Jacques</option>
+			</optgroup>		
+		</select>
+		
+	</div>
+	<Button name = "btSend"> Envoyer </Button>
+</form>
+<!-- Affichage -->
+<div id="message"></div>
+
+<script>
+/**
+ * Puisqu'il faut choisir entre Pierre, Paul et Jacques, 
+ * écrivez un programme qui renvoie une de ces trois valeurs 
+ * au hasard.
+ * => "Paul"	=> "Pierre"	=> "Pierre"	=> "Jacques"	=> …
+ * 
+ * @version 1.0 L.Latifa
+ */
+
+//Declaration et Lecture
+let hello = 'Hello';
+let prenom = '?';
+const selectPrenom = document.forms['frmName'].prenom.value;
+const divMessage = document.getElementById('message'); 
+
+//Traitement
+switch (selectPrenom.value) {
+	case 'pierre': 	prenom = 'Pierre'; 		break;
+	case 'paul': 	prenom = 'Paul'; 		break;
+	case 'jacques': prenom = 'Jacques'; 	break;
+	default: prenom = '';
+}
+hello = hello + ' ' + prenom + '!';
+
+//Affichage
+divMessage.innerHTML = '<p>'+hello+'</p>';
+
+</script>
+</body>
+</html>

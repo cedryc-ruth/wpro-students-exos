@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let tabNombres = []
+
+        for (let i = 0; i < 5; i++) {
+            tabNombres[i] = parseInt(Math.random() * 99)
+        }
+
+        //Exercice 2.A
+        document.write('<h3>Exercice 2.A</h3>')
+        let toPrint = ''
+        for (const key in tabNombres) {
+            toPrint += tabNombres[key] + ', '
+        }
+
+        document.write(toPrint.substring(0, toPrint.length-2))
+
+        //Exercice 2.B
+        document.write('<h3>Exercice 2.B</h3>')
+        document.write('<ul>')
+
+        for (const tabNombresKey in tabNombres) {
+            document.write('<li>' + tabNombres[tabNombresKey] + '</li>')
+        }
+
+        document.write('</ul>')
+
+
+        //Exercice 2.C
+        document.write('<h3>Exercice 2.C</h3>')
+        toPrint = ''
+
+        for (const key in tabNombres) {
+            toPrint += tabNombres[key] + '-'
+        }
+
+        document.write(toPrint.substring(0, toPrint.length-2))
+
+        //Exercice 3
+        document.write('<h3>Exercice 3</h3>')
+        let sortedTab = tabNombres.sort()
+        document.write('<p>' + sortedTab + '</p>')
+        document.write(partition(tabNombres, 0, tabNombres.length-1))
+
+        //Exercice 4
+        document.write('<h3>Exercice 4</h3>')
+        document.write('<p>' + sortedTab[0] + '</p>')
+        document.write('<p>' + sortedTab[sortedTab.length-1] + '</p>')
+
+        //Exercice 5
+        document.write('<h3>Exercice 5</h3>')
+
+        //unshift => ajoute au début
+        //shift => enleve le premier
+        //push => ajoute a la fin
+        //pop => enleve le dernier
+        //splice => splice(indexDebut, nbASupprimer, [element a ajouter])
+
+        let aBouger
+        for (let i = 0; i < tabNombres.length; i++) {
+            if (tabNombres[i] % 2 !== 0) {
+                aBouger = tabNombres.splice(i, 1)
+                tabNombres.unshift(aBouger)
+            }
+        }
+
+        document.write(tabNombres)
+
+        //Exercice 6
+        document.write('<h3>Exercice 6</h3>')
+        let tabIndexes = tabTroisNbreRandoms(tabNombres)
+        console.log(tabIndexes)
+
+        for (let i = 0; i < 3; i++) {
+            tabNombres[tabIndexes[i]] = ~tabNombres[tabIndexes[i]] +1
+        }
+
+        document.write(tabNombres)
+
+        //Exercice 7
+        document.write('<h3>Exercice 7</h3>')
+
+        let somme = 0, nbrePositifs = 0, moyenne
+
+        for (let i = 0; i < tabNombres.length; i++)
+            if(tabNombres[i] > 0){
+                somme += parseInt(tabNombres[i])
+                nbrePositifs++
+        }
+
+        moyenne = somme / nbrePositifs
+        document.write(moyenne)
+
+        //Exercice 8
+        document.write('<h3>Exercice 8</h3>')
+        tabNombres.splice(0, 2)
+        document.write(tabNombres)
+
+        //Exercice 9
+        document.write('<h3>Exercice 9</h3>')
+        //push 2 valeurs négatives au choix
+        tabNombres.push(-9, -68)
+        document.write(tabNombres)
+
+        //Exercice 10
+        document.write('<h3>Exercice 10</h3>')
+        let nbreSuppressions = 0,
+            i = 0
+
+        while(nbreSuppressions < 2){
+            if (tabNombres[i] < 0){
+                tabNombres.splice(i, 1)
+                nbreSuppressions++
+            }
+            i++
+        }
+
+        document.write(tabNombres)
+
+        //Exercice 11
+        document.write('<h3>Exercice 11</h3>')
+        for (const nbre in tabNombres) {
+            if(nbre > 0){
+                tabNombres.splice(tabNombres.indexOf(nbre), 0, 7)
+                break
+            }
+        }
+
+        document.write(tabNombres)
+
+        //Exercice 12
+        document.write('<h3>Exercice 12</h3>')
+        nbreSuppressions = 0
+        i = tabNombres.length
+
+        while(nbreSuppressions < 2){
+            if(tabNombres[i] < 0){
+                tabNombres.splice(i, 1)
+                nbreSuppressions++
+            }
+            i--
+        }
+
+        document.write(tabNombres)
+
+        //Exercice 13
+        document.write('<h3>Exercice 13</h3>')
+        for (let j = tabNombres.length; j > 0 ; j--) {
+            if(tabNombres[j] > 0){
+                tabNombres.splice(j, 0, 7)
+                break
+            }
+        }
+
+        document.write(tabNombres)
+
+        /**
+         * Calcule 3 nombres aléatoires différents
+         * @param arr pour récupérer sa taille logique
+         * @returns tabRandoms un tableau d'entiers différents
+         */
+        function tabTroisNbreRandoms(arr) {
+            let tabRandoms = []
+            let randomIndex
+
+            while (tabRandoms.length < 3){
+                randomIndex = parseInt(Math.random()*arr.length)
+
+                if(!tabRandoms.includes(randomIndex)){
+                    tabRandoms.push(randomIndex)
+                }
+            }
+
+                return tabRandoms
+
+        }
+        /**
+         * Chiné sur https://stackabuse.com/quicksort-in-javascript/
+         */
+        function partition(arr, start, end){
+            // Taking the last element as the pivot
+            const pivotValue = arr[end];
+            let pivotIndex = start;
+            for (let i = start; i < end; i++) {
+                if (arr[i] < pivotValue) {
+                    // Swapping elements
+                    [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+                    // Moving to next element
+                    pivotIndex++;
+                }
+            }
+
+            // Putting the pivot value in the middle
+            [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]]
+            return arr;
+        }
+
+    </script>
+</body>
+</html>

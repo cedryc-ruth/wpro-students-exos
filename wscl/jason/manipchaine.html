@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulation des chaînes de caractères</title>
+</head>
+<body>
+    <h1>Exercice 4</h1>
+    <script>
+    /**
+     * Écrivez un programme qui demande à l'utilisateur d'entrer un mot de longueur impaire.
+     * Le programme affichera la première lettre, la dernière et la lettre médiane.
+     * 
+     * @author Jason Nama Jason
+     * @version 1.0
+     */
+
+    //Déclaration des variables, des constantes et des fonctions
+    let mot;
+    let affichage_1;    //Afficher la première lettre
+    let affichage_2;    //Afficher la dernière lettre
+    let affichage_3;   //Afficher la lettre médiane du mot
+
+    //Lecture des données
+    mot = prompt("Entrez un mot");
+
+    if(!isNaN(mot) || !(typeof mot == "string") || mot.length%2 == 0) {
+        alert("Aiiieee");
+    }
+
+    //Traittement des données
+    affichage_1 = mot[0];            //   Ou affichage_1 = mot.charAt(0);
+    affichage_2 = mot.charAt(mot.length-1);
+    affichage_3 = mot.charAt(Math.round((mot.length-1)/2));
+    
+    //Affichage du résultat
+    if(typeof mot == "string" && isNaN(mot) && !(mot.length%2 == 0)) {
+        document.write("<p>"+affichage_1+"</p>");
+        document.write("<p>"+affichage_2+"</p>");
+        document.write("<p>"+affichage_3+"</p>");
+    }
+    </script>
+</body>
+</html>
