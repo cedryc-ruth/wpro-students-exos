@@ -6,30 +6,38 @@
 </head>
 <body>
     <script>
-        let tabNombres = []
+        const tabNombres = []
 
         for (let i = 0; i < 5; i++) {
-            tabNombres[i] = parseInt(Math.random() * 99)
+            tabNombres[i] = Math.round(Math.random() * 99)
         }
 
         //Exercice 2.A
         document.write('<h3>Exercice 2.A</h3>')
         let toPrint = ''
+		
         for (const key in tabNombres) {
             toPrint += tabNombres[key] + ', '
         }
+		
+		/*
+		for(let i=0;i<tabNombres.length;i++) {
+			toPrint += tabNombres[i] + ', '
+		}
+		*/
 
         document.write(toPrint.substring(0, toPrint.length-2))
 
         //Exercice 2.B
         document.write('<h3>Exercice 2.B</h3>')
-        document.write('<ul>')
+        toPrint = '<ul>'
 
-        for (const tabNombresKey in tabNombres) {
-            document.write('<li>' + tabNombres[tabNombresKey] + '</li>')
+        for (const key in tabNombres) {
+            toPrint += '<li>' + tabNombres[key] + '</li>'
         }
 
-        document.write('</ul>')
+		toPrint += '</ul>'
+        document.write(toPrint)
 
 
         //Exercice 2.C

@@ -9,16 +9,16 @@
 <form id = "frmName" action = "#" method = "get">
 	<div>
 		<label>Choisissez votre prénom: </label><br/>
-		<select name = "prenom">
+		<select name="prenom">
 			<optgroup>
-				<option value = "pierre">Pierre</option>
-				<option value = "paul">Paul</option>
-				<option value = "jacques">Jacques</option>
+				<option value="pierre">Pierre</option>
+				<option value="paul">Paul</option>
+				<option value="jacques">Jacques</option>
 			</optgroup>		
 		</select>
 		
 	</div>
-	<Button name = "btSend"> Envoyer </Button>
+	<button name="btSend"> Envoyer </button>
 </form>
 <!-- Affichage -->
 <div id="message"></div>
@@ -34,23 +34,32 @@
  */
 
 //Declaration et Lecture
-let hello = 'Hello';
-let prenom = '?';
-const selectPrenom = document.forms['frmName'].prenom.value;
-const divMessage = document.getElementById('message'); 
 
-//Traitement
-switch (selectPrenom.value) {
-	case 'pierre': 	prenom = 'Pierre'; 		break;
-	case 'paul': 	prenom = 'Paul'; 		break;
-	case 'jacques': prenom = 'Jacques'; 	break;
-	default: prenom = '';
+const frm = document.forms['frmName'];
+
+frm.onsubmit = function(event) {
+	//Annuler l'envoi des données de formulaire au serveur
+	event.preventDefault();
+	
+	let hello = 'Hello';
+	let prenom = '?';
+	const selectPrenom = document.forms['frmName'].prenom;
+	const divMessage = document.getElementById('message'); 
+
+	//Traitement
+	switch (selectPrenom.value) {
+		case 'pierre': 	prenom = 'Pierre'; 		break;
+		case 'paul': 	prenom = 'Paul'; 		break;
+		case 'jacques': prenom = 'Jacques'; 	break;
+		default: prenom = '';
+	}
+	hello = hello + ' ' + prenom + '!';
+
+	//Affichage
+	divMessage.innerHTML = '<p>'+hello+'</p>';
+	
+	return false;	//Annuler l'envoi
 }
-hello = hello + ' ' + prenom + '!';
-
-//Affichage
-divMessage.innerHTML = '<p>'+hello+'</p>';
-
 </script>
 </body>
 </html>
