@@ -141,16 +141,20 @@ foreach ($infosPays as $pays){
 
 echo "<p>10.b. Affichez en détails toutes les données de tous les pays (en indiquant le pays).</p>";
 
-$amCountry = count($infosPays);
-$countryNames = [];
-foreach ($infosPays as $pays => $value){
-    $countryNames[] = $pays;
-}
-//var_dump($countryNames);
-
-for ($p = 0; $p < $amCountry; $p++){
-    echo "<p>".$countryNames[$p]."</p>";
-    showTab($infosPays[$countryNames[$p]]);
+foreach ($infosPays as $pays => $data){
+    echo "<h2>$pays</h2>";
+	
+	echo "<ul>";
+	
+	foreach ($data as $label => $value){
+		if(is_array($value)) {
+			echo "<li>$label : ".implode(", ",$value)."</li>";
+		} else {
+			echo "<li>$label : $value</li>";
+		}
+	}
+	
+	echo "</ul>";
 }
 
 
