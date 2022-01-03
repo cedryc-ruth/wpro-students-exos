@@ -3,7 +3,7 @@
 $tabPoids = [76, 62.5, 42];
 $tabPrenoms = ['Cyril', 'Malaïka', 'Abdel', 'Fritz'];
 $tabJours = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
-$saisons = ['', 'hiver', 'printemps', '', '', 'été', 'automne'];
+$saisons = [1 => 'hiver', 'printemps', 5 => 'été', 'automne'];
 $infosDate = ['joursem' => 'lundi', 'jour' => 4, 'mois' => 'novembre', 'année' => 2013];
 $tabMois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
 $dateComplet = ['weekday' => 'Monday', 'wday' => 1, 'mday' => 4, 'month' => 'november', 'mon' => 11, 'year' => 2013, 'hours' => 15, 'minutes' => 23, 'seconds' => 58];
