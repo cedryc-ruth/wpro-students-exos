@@ -85,11 +85,13 @@ echo '</table>';
 //Exercice 7
 echo '<h3>Exercice 7</h3>';
 
+$str = '';
+
 foreach ($saisons as $saison) {
-    if ($saison != '') {
-        echo ' '.$saison . ',';
-    }
+    $str .= $saison . ', ';
 }
+
+echo substr($str,0,-2);   //Afficher une seule fois après la boucle en enlevant les 2 derniers caractères ', '
 
 //Exercice 8
 echo '<h3>Exercice 8</h3>';
