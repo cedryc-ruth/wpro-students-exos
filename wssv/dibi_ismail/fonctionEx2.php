@@ -8,17 +8,19 @@
 * @return integer return le nombre d'occurence de la lettre ou false si mauvais paramètre
 */
 function yaCombien($lettre,$chaine,$casse=true) { 
-
-	if(is_string($lettre) && strlen($lettre)==1 && is_string($chaine) && is_bool($casse) ){
-		if($casse){
-			return substr_count($chaine,$lettre);
-		}else {
-			return substr_count(strtoupper($chaine),strtoupper($lettre));
-		}
-	}else{
-		return false ;
+	//Validation des données
+	if(!is_string($lettre) || strlen($lettre)!=1 || !is_string($chaine) || !is_bool($casse) ) {
+		return false;
+	}
+	
+	//Traitement des données
+	if($casse) {
+		return substr_count($chaine,$lettre);
+	} else {
+		return substr_count(strtoupper($chaine),strtoupper($lettre));
 	}
 }
+
 echo "<p>".yaCombien("e"," Ma belle Ebony ",true)."</p>";
 echo "<p>".yaCombien("e"," Ma belle Ebony ",false)."</p>";
 echo "<p>".yaCombien("e"," Ma belle Ebony ",true)."</p>";
