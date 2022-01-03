@@ -206,19 +206,25 @@ showP(substr($languString,0,-2));
 
 echo "<p>10.f. Affichez (en indiquant le pays) les langues officielles de tous les pays.</p>";
 
-foreach ($infosPays as $pays => $value) {
+$prefLan = "le ";
+
+foreach ($infosPays as $pays => $data) {
     $stringPays = "Les langues officielles du pays ".$pays." sont : ";
-    foreach ($infosPays[$pays]['langues'] as $langue) {
-        if (is_string($langue)){
+	
+    if (is_string($data['langues'])){
+        $stringPays .= $prefLan;
+        $stringPays .= $data['langues'];
+        $stringPays .= $format;
+        $stringPays = substr($stringPays,0,-2);
+    } elseif(is_array($data['langues'])) {
+        foreach ($data['langues'] as $langue) {
             $stringPays .= $prefLan;
             $stringPays .= $langue;
             $stringPays .= $format;
         }
-
+        $stringPays = substr($stringPays,0,-2);
     }
-    $stringPays .= $prefLan;
-    $stringPays .= $infosPays[$pays]['langues'];
-    $stringPays .= $format;
+
     showP($stringPays);
 }
 
