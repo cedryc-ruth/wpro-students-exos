@@ -9,7 +9,7 @@
 * Cx = x*x
 */
 function carre($x){
-return $x*$x;
+    return $x*$x;
 }
 //Usage correct :)
 $nb = 5;
@@ -32,7 +32,7 @@ echo '<p>Le carré de $nb vaut carre($nb)</p>';
 * St = base*hauteur/2
 */
 function superficie($base,$hauteur){
- return ($base*$hauteur)/2 ;
+    return ($base*$hauteur)/2 ;
 }
 //Calculer la superficie d'un triangle de base 5 et de hauteur 12
 $reponse = superficie(5,12) ;
@@ -50,7 +50,7 @@ echo "<p>Superficie: $reponse cm2;</p>";
 * Pt = cote1 + cote2 + cote3
 */
 function perimetre($cote1,$cote2,$cote3){
-return $cote1+$cote2+$cote3;
+    return $cote1+$cote2+$cote3;
 }
 //Calculer le périmètre d'un triangle de côtés 7, 8 et 4
 echo "<p>Perimètre du triangle: ".perimetre(7,8,4)."cm</p>";
@@ -68,7 +68,7 @@ echo "<p>Perimètre du triangle: ".perimetre(7,8,4)."cm</p>";
 */
 //Solution 1:
 function hypotenuse($cote1,$cote2) {
-return sqrt(carre($cote1)+carre($cote2)) ;
+    return sqrt(carre($cote1)+carre($cote2)) ;
 }
 echo hypotenuse(5,10);
 ?>
