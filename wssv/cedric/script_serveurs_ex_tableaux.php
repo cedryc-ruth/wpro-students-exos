@@ -36,7 +36,7 @@ $tabJours = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'sam
 showTab($tabJours);
 
 echo "<h3>tabMois.</h3>";
-$tabMois  = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre'];
+$tabMois  = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
 showTab($tabMois);
 
 echo "<h3>dateComplet.</h3>";
@@ -47,7 +47,7 @@ echo "<h3>infoPays.</h3>";
 $infosPays = [
     'Belgique' => ['capitale' => 'Bruxelles', 'monnaie' => 'euro', 'superficie' => 30528, 'langues' => ['français', 'neerlandais', 'allemand']],
     'France' => ['capitale' => 'Paris', 'monnaie' => 'euro', 'superficie' => 675417, 'langues' => 'français'],
-    'Japon' => ['capitale' => 'Tokio', 'monnaie' => 'yen', 'superficie' => 377915, 'langues' => 'japonais'],
+    'Japon' => ['capitale' => 'Tokyo', 'monnaie' => 'yen', 'superficie' => 377915, 'langues' => 'japonais'],
     'Suisse' => ['capitale' => 'Berne', 'monnaie' => 'franc Suisse', 'superficie' => 41285, 'langues' => ['allemand', 'français', 'italien', 'romanche']],
 ];
 showTab($infosPays);
@@ -59,8 +59,8 @@ echo "<h2>AFFICHER DES TABLEAUX.</h2>";
 
 echo "<p>2. Affichez chaque poids du tableau tabPoids sur un paragraphe différent.</p>";
 
-foreach ($tabPoids as $poid) {
-    echo "<p>$poid</p>";
+foreach ($tabPoids as $poids) {
+    echo "<p>$poids</p>";
 }
 
 echo "<p>3. Affichez les prénoms du tableau tabPrenoms sous forme de liste non ordonnée (ul).</p>";
@@ -83,9 +83,9 @@ echo "</ul>";
 echo "<p>5. Affichez les poids supérieur à 50.</p>";
 
 $minCharge = 50;
-foreach ($tabPoids as $poid) {
-    if ($poid > $minCharge) {
-        echo "<p>$poid</p>";
+foreach ($tabPoids as $poids) {
+    if ($poids > $minCharge) {
+        echo "<p>$poids</p>";
     }
 }
 
