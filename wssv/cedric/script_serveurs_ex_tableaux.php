@@ -308,7 +308,10 @@ echo "<p>3.a. Ajoutez l'anglais comme langue supplémentaire pour tous les pays.
 showTab($infosPays);
 foreach ($infosPays as $pays){
     showTab($pays);
-    array_push($pays['langues'], 'anglais');
+    //Si $pays['langues'] est un array
+    	array_push($pays['langues'], 'anglais');
+    //Sinon
+    	//Remplacer sa valeur par un tableau contenant sa valeur et 'anglais' en plus
 }
 showTab($infosPays);
 */
