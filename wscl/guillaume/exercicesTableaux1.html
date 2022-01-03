@@ -52,15 +52,53 @@
 
         //Exercice 3
         document.write('<h3>Exercice 3</h3>')
-        let sortedTab = tabNombres.sort()
+        let sortedTab = [...tabNombres]		//Copier le tableau par destructuration
+	sortedTab.sort()			//Le tableau sortedTab est trié par ordre alphabétique (1,12,2,25,209,3...)
         document.write('<p>' + sortedTab + '</p>')
+	
+	//Solution 2 - avec fontion de tri
         document.write(partition(tabNombres, 0, tabNombres.length-1))
+	    
+	sortedTab.sort(function(a,b) {
+		if(a>b) return 1;
+		if(a<b) return -1;
+		return 0;
+	})
+        document.write('<p>' + sortedTab + '</p>')
+	    
+	sortedTab.sort(function(a,b) {
+		return a-b;	//cas particulier des nombres
+	})
+        document.write('<p>' + sortedTab + '</p>')
 
+	sortedTab.sort((a,b) => a-b)	//fonction fléchée
+        document.write('<p>' + sortedTab + '</p>')
+	
         //Exercice 4
         document.write('<h3>Exercice 4</h3>')
+	//Solution 1: Trier puis afficher le premier et le dernier
         document.write('<p>' + sortedTab[0] + '</p>')
         document.write('<p>' + sortedTab[sortedTab.length-1] + '</p>')
 
+	//Solution 2: Parcourir le tableau pour trouver le min et le max
+	let min = tabNombres[0];
+	let max = tabNombres[0];
+	
+	for(nb of tabNombres) {
+		if(nb<min) {
+			min = nb;
+		} else if(nb>max) {
+			max = nb;
+		}	
+	}
+	
+	document.write('<p>min: ' + min + '</p>');
+	document.write('<p>max: ' + max + '</p>');
+	    
+	//Solution 3: Fonctions prédéfinies et destructuration
+	Math.min(...tabNombres);
+	Math.max(...tabNombres);
+	    
         //Exercice 5
         document.write('<h3>Exercice 5</h3>')
 
@@ -80,6 +118,11 @@
 
         document.write(tabNombres)
 
+	//Solution 2: avec fonction de tri
+	tabNombres.sort(function(a,b) {
+		if(a%2==0) return -1;
+	});
+	
         //Exercice 6
         document.write('<h3>Exercice 6</h3>')
         let tabIndexes = tabTroisNbreRandoms(tabNombres)
