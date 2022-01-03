@@ -108,6 +108,8 @@ foreach ($saisons as $saison){
     $returnString .= $format;
 }
 
+$returnString = substr($returnString,0,-2); //Retirer les 2 derniers caractères ", "
+
 echo "<p>$returnString</p>";
 
 echo "<p>8. Affichez les données du tableau infosDate</p>";
