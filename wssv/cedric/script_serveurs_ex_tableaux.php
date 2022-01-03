@@ -118,10 +118,14 @@ echo "<p>Nous sommes en ".$infosDate['année'].", le ".$infosDate['joursem']." "
 
 echo "<p>9. Sachant que vous disposez des tableaux tabJours et tabMois. Affichez les données du tableau dateComplet</p>";
 
-$dateComplet['weekday'] = $tabJours[0];
-$dateComplet['month'] = $tabMois[10];
+// On n'est pas sensé savoir qu'il s'agit de lundi et de novembre
+//$dateComplet['weekday'] = $tabJours[0];   //de plus, ça c'est dimanche et pas lundi
+//$dateComplet['month'] = $tabMois[10];
 
-echo "<p>Nous sommes un ".$dateComplet['weekday']." de ".$dateComplet['month']." et il est ".$dateComplet['hours'].":".$dateComplet['minutes'].".";
+$jourSemaine = $tabJours[$dateComplet['wday']];
+$moisAnnee = $tabMois[$dateComplet['mon']];
+
+echo "<p>Nous sommes un $jourSemaine de $moisAnnee et il est ".$dateComplet['hours'].":".$dateComplet['minutes'].".";
 
 echo "<p>10.a. Affichez uniquement toutes les capitales</p>";
 
