@@ -188,11 +188,21 @@ $prefLan = "le ";
 $languString = "les langues officielles de Belgique sont : ";
 
 foreach ($infosPays['Belgique']['langues'] as $langue) {
+    switch($langue[0]) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+        case 'y': $prefLan = "l'";
+    }
+	
     $languString .= $prefLan;
     $languString .= $langue;
     $languString .= $format;
 }
-showP($languString);
+
+showP(substr($languString,0,-2));
 
 echo "<p>10.f. Affichez (en indiquant le pays) les langues officielles de tous les pays.</p>";
 
