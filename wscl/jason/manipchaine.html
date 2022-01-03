@@ -26,15 +26,13 @@
 
     if(!isNaN(mot) || !(typeof mot == "string") || mot.length%2 == 0) {
         alert("Aiiieee");
-    }
+    } else {
+        //Traittement des données
+        affichage_1 = mot[0];            //   Ou affichage_1 = mot.charAt(0);
+        affichage_2 = mot.charAt(mot.length-1);
+        affichage_3 = mot.charAt(Math.round((mot.length-1)/2));
 
-    //Traittement des données
-    affichage_1 = mot[0];            //   Ou affichage_1 = mot.charAt(0);
-    affichage_2 = mot.charAt(mot.length-1);
-    affichage_3 = mot.charAt(Math.round((mot.length-1)/2));
-    
-    //Affichage du résultat
-    if(typeof mot == "string" && isNaN(mot) && !(mot.length%2 == 0)) {
+        //Affichage du résultat
         document.write("<p>"+affichage_1+"</p>");
         document.write("<p>"+affichage_2+"</p>");
         document.write("<p>"+affichage_3+"</p>");
