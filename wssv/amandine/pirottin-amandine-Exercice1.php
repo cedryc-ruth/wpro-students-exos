@@ -5,7 +5,7 @@
 $nom = "Pirottin";
 $prenom = "Amandine";
 $age = 30;
-$birthday = mktime(0,0,0,3,05,1991);
+$birthday = mktime(0,0,0,3,5,1991);
 
 echo date("d/m/Y",$birthday);
 
