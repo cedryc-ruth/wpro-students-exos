@@ -102,8 +102,8 @@ echo 'Nous sommes en ' . $infosDate['année'] . ', le ' .
 
 //Exercice 9
 echo '<h3>Exercice 9</h3>';
-echo 'Nous sommes un ' . $tabJours[1] .' de ' .
-    $tabMois[10] . ' et il est ' .
+echo 'Nous sommes un ' . $tabJours[$dateComplet['wday']] .' de ' .
+    $tabMois[$dateComplet['mon']] . ' et il est ' .
     $dateComplet['hours'] .':' .
     $dateComplet['minutes'] . '.';
 
