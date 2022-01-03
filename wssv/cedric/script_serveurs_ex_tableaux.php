@@ -294,11 +294,12 @@ for($i = 0; $i < $ammountWeights; $i++) {
 showTab($tabPoids);
 
 echo "<p>2.b Augmentez tous les poids de 5kg avec une boucle foreach.</p>";
-showP("Ici c'est sensé rajouter encore 5 mais ne le fait pas????");
-foreach($tabPoids as $poid) {
+showP("Ici c'est sensé rajouter encore 5 mais ne le fait pas????");	// as $poid est une copie, tandis que as &$poid est une référence
+foreach($tabPoids as &$poid) {	//Passer la variable par référence avec l'esperluette &
     $poid += 5;
 }
 showTab($tabPoids);
+unset($poid);	//supprimer la référence
 
 
 echo "<h3>3. En utilisant le tableau infoPays.</h3>";
