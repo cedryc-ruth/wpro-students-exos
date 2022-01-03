@@ -229,20 +229,17 @@ foreach ($infosPays as $pays => $data) {
 }
 
 echo "<p>10.g. Affichez la monnaie des deux derniers pays.</p>";
-$revCountryNames = [];
-$revInfo = array_reverse($infosPays);
-foreach ($revInfo as $pays => $value) {
-    $revCountryNames[] = $pays;
-}
-$infoCountryRevAndIndexed = array_values($revInfo);
-$amountCountry = 2;
-//showTab($infoCountryRevAndIndexed);
-for ($i = 0; $i < $amountCountry; $i++) {
-    $moneyStringLast = "La monnaie officielle du pays " . $revCountryNames[$i] . " est : ";
-    $moneyStringLast .= $infoCountryRevAndIndexed[$i]['monnaie'];
-    showP($moneyStringLast);
-}
+$revCountryNames = array_keys($infosPays);
+$lastCountry = array_pop($revCountryNames);
+$beforeLastCountry = array_pop($revCountryNames);
 
+$moneyStringLast = "La monnaie officielle du pays " . $beforeLastCountry . " est : ";
+$moneyStringLast .= $infosPays[$beforeLastCountry]['monnaie'];
+showP($moneyStringLast);
+
+$moneyStringLast = "La monnaie officielle du pays " . $lastCountry . " est : ";
+$moneyStringLast .= $infosPays[$lastCountry]['monnaie'];
+showP($moneyStringLast);
 
 //3. MODIFIER DES TABLEAUX
 
