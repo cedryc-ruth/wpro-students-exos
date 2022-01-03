@@ -317,8 +317,9 @@ echo "<p>3.b. Ajoutez comme information supplémentaire l'extension de domaine c
 $domains = ['be', 'fr', 'jp', 'ch'];
 $d = 0;
 
-foreach ($infosPays as $pays) {
+foreach ($infosPays as &$pays) {
     $pays['domaine'] = $domains[$d];
-    showTab($pays);
     $d++;
 }
+
+showTab($infosPays);
