@@ -117,6 +117,7 @@ foreach ($infosPays as $pays){
 
 echo '<h4>Exercice 10.B</h4>';
 echo'<pre>'; print_r($infosPays); echo '</pre>';
+//TODO Ecrire l'algorithme avec des boucles imbriquées et des alternatives (foreach, if-else)
 
 echo '<h4>Exercice 10.C</h4>';
 
