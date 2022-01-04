@@ -143,21 +143,22 @@ for($k = 0; $k < sizeof($infosPays['Belgique']['langues']); $k++){
 
 echo '<h4>Exercice 10.F</h4>';
 
-echo '<p>Belgique => ';
-print_r($infosPays['Belgique']['langues']);
-echo '<p>France => ';
-print_r($infosPays['France']['langues']);
-echo '<p>Japon => ';
-print_r($infosPays['Japon']['langues']);
-echo '<p>Suisse => ';
-print_r($infosPays['Suisse']['langues']);
-
-
-echo '<h4>Exercice 10.G</h4>';
-
-for ($n = 0; $n < 2; $n++){
-    echo $infosPays[$n]['monnaie'];
+foreach($infosPays as $pays => $data) {
+  echo "<h5>$pays</h5>";
+  
+  if(is_string($data['langues'])) {
+    echo "<p>$data['langues']</p>";
+  } elseif(is_array($data['langues'])) {
+    echo "<p>".imlode(', ',$data['langues'])."</p>";
+  }
 }
 
+echo '<h4>Exercice 10.G</h4>';
+//$countries = array_keys($infosPays);
+//$lastCountry = ...
+//$beforeLastCountry = ...
+
+echo "<p>$infosPays[$lastCountry]['monnaie']</p>";
+echo "<p>$infosPays[$beforeLastCountry]['monnaie']</p>";
 
 ?>
