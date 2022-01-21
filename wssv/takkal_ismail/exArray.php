@@ -152,8 +152,8 @@ $infosPays = [
         <?php } ?>
 <hr>
 <h3>b.	Affichez en détails toutes les données de tous les pays (en indiquant le pays).</h3>
-            <?php foreach ($infosPays as $Pays => $datas) { ?>
-                <h4 style="text-decoration: underline;"><?= $Pays ?> :</h4>
+            <?php foreach ($infosPays as $pays => $datas) { ?>
+                <h4 style="text-decoration: underline;"><?= $pays ?> :</h4>
                 <p>capitale: <?= $datas['capitale'] ?></p>
                 <p>monnaie: <?= $datas['monnaie'] ?></p>
                 <p>superficie: <?= $datas['superficie'] ?> km²</p>
