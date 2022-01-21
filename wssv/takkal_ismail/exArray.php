@@ -161,11 +161,11 @@ $infosPays = [
             <?php } ?>
 <hr>
 <h3>c.	Affichez la superficie du pays dont la capitale est Paris.</h3>
-<p><?php foreach ($infosPays as $pays => $data) { ?>
-<?php if ($data['capitale'] == 'Paris') { ?>
+<?php foreach ($infosPays as $pays => $data) { ?>
+    <?php if ($data['capitale'] == 'Paris') { ?>
     <p><?= $data['superficie'] ?> km²</p>
     <?php } ?>
-<?php } ?></p>
+<?php } ?>
 <hr>
 <h3>d.	Affichez tous les pays dont la superficie est supérieure à celle de la Suisse.</h3>
 <?php foreach ($infosPays as $pays => $data) { ?>
