@@ -178,8 +178,8 @@ $infosPays = [
 <?= implode(', ', $infosPays['Belgique']['langues']) ?>
 <hr>
 <h3>f.	Affichez (en indiquant le pays) les langues officielles de tous les pays.</h3>
-    <?php foreach ($infosPays as $pays => $langues) { ?>
-        <p><?= $pays ?> : <?= is_array($langues['langues']) ? implode(', ', $langues['langues']) : $langues['langues'] ?> </p>
+    <?php foreach ($infosPays as $pays => $data) { ?>
+        <p><?= $pays ?> : <?= is_array($data['langues']) ? implode(', ', $data['langues']) : $data['langues'] ?> </p>
     <?php } ?>           
 <hr>
 <h3>g.	Affichez la monnaie des deux derniers pays.</h3>
