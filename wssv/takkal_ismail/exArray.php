@@ -229,7 +229,9 @@ $infosPays = [
 <hr>
 <h3>f.	Supprimez les prénoms du troisième au cinquième prénom.</h3>
             <?php
-                array_splice($tabPrenoms, 2, 3);
+                $deb = 2;
+		$fin = 5;
+		array_splice($tabPrenoms, 2, $fin - $deb);
                 var_dump($tabPrenoms)
             ?>
 <hr>
