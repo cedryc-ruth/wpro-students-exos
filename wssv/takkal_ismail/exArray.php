@@ -162,7 +162,7 @@ $infosPays = [
 <hr>
 <h3>c.	Affichez la superficie du pays dont la capitale est Paris.</h3>
 <p><?php foreach ($infosPays as $pays => $data) { ?>
-<?php if ($pays == 'France') { ?>
+<?php if ($data['capitale'] == 'Paris') { ?>
     <p><?= $data['superficie'] ?> km²</p>
     <?php } ?>
 <?php } ?></p>
