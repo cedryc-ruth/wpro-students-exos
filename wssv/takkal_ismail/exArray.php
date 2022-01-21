@@ -99,46 +99,46 @@ $infosPays = [
 
 <hr>
 <h3>2. Affichez chaque poids du tableau $tabPoids sur un paragraphe différent.</h3>
-    <?php for($i = 0; $i < sizeof($tabPoids); $i++){?>
-        <p><?= $tabPoids[$i]?></p>
-        <?php } ?>
+    <?php for($i = 0; $i < sizeof($tabPoids); $i++) { ?>
+        <p><?= $tabPoids[$i] ?></p>
+    <?php } ?>
 <hr>
 <h3>3. Affichez les prénoms du tableau $tabPrenoms sous forme de liste non ordonnée (ul).</h3>
-        <?php foreach($tabPrenoms as $prenom){ ?>
-            <ul><?= "<li>".$prenom."</li>"?></ul>
-            <?php } ?>
+    <?php foreach($tabPrenoms as $prenom) { ?>
+        <ul><?= "<li>".$prenom."</li>" ?></ul>
+    <?php } ?>
 <hr>
 <h3>4. Affichez les prénoms du tableau $tabPrenoms sous forme de liste mais en ordre inverse.</h3>
-        <?php foreach(array_reverse($tabPrenoms) as $prenom){ ?>
-            <ul><?= "<li>".$prenom."</li>"?></ul>
-            <?php } ?>
+    <?php foreach(array_reverse($tabPrenoms) as $prenom) { ?>
+        <ul><?= "<li>".$prenom."</li>" ?></ul>
+    <?php } ?>
 <hr>
 <h3>5. Affichez les poids supérieur à 50.($tabPoids)</h3>
-        <?php foreach($tabPoids as $poid){ ?>
-            <?php if($poid > 50) {?>
-                <p><?= $poid ?></p> 
-                <?php } ?>
-            <?php } ?>
+    <?php foreach($tabPoids as $poid) { ?>
+        <?php if($poid > 50) { ?>
+            <p><?= $poid ?></p> 
+        <?php } ?>
+    <?php } ?>
 <hr>
 <h3>6. Affichez un prénom sur deux sous forme de tableau à une colonne.($tabPrenoms)</h3>
     <table style="border-collapse:collapse">
-        <?php for($i=0; $i < sizeof($tabPrenoms); $i++){ ?>
-            <?php if($i%2 == 0){ ?>
-                <tr style="border:1px solid black">
-                <td><?= $tabPrenoms[$i] ?></td> 
-                </tr>
-            <?php } ?>
-        <?php } ?>
+<?php for($i=0; $i < sizeof($tabPrenoms); $i++) { ?>
+    <?php if($i%2 == 0){ ?>
+        <tr style="border:1px solid black">
+            <td><?= $tabPrenoms[$i] ?></td> 
+        </tr>
+    <?php } ?>
+<?php } ?>
     </table>
 <hr>
 <h3>7.	Affichez chaque saison du tableau $saisons séparés par une virgule et un espace selon le format suivant:</h3>
                 <?= implode(', ',$saisons) ?>
 <hr>
 <h3>8.	Affichez les données du tableau $infosDate sous la forme:</h3>
-                <p>Nous sommes en <?= $infosDate['année']?>, le <?= $infosDate['joursem']?> <?= $infosDate['jour']?> <?=$infosDate['mois']?>.</p>
+                <p>Nous sommes en <?= $infosDate['année'] ?>, le <?= $infosDate['joursem'] ?> <?= $infosDate['jour'] ?> <?= $infosDate['mois'] ?>.</p>
 <hr>
 <h3>9.	Sachant que vous disposez des tableaux $tabJours et $tabMois. Affichez les données du tableau $dateComplet sous la forme:</h3>
-                <p>Nous sommes un <?= $tabJours[1] ?> de <?= $tabMois[10]?> et il est <?=$dateComplet['hours']?>:<?=$dateComplet['minutes']?>.</p>
+                <p>Nous sommes un <?= $tabJours[1] ?> de <?= $tabMois[10]?> et il est <?= $dateComplet['hours'] ?>:<?= $dateComplet['minutes'] ?>.</p>
 <hr>
 <h2>10.	En utilisant le tableau $infosPays,</h2>
 <h3>a.	Affichez uniquement toutes les capitales.</h3>
@@ -150,32 +150,32 @@ $infosPays = [
 <h3>b.	Affichez en détails toutes les données de tous les pays (en indiquant le pays).</h3>
             <?php foreach ($infosPays as $Pays => $datas) { ?>
                 <h4 style="text-decoration: underline;"><?= $Pays ?> :</h4>
-                <p>capitale: <?= $datas['capitale']?></p>
-                <p>monnaie: <?= $datas['monnaie']?></p>
-                <p>superficie: <?= $datas['superficie']?> km²</p>
+                <p>capitale: <?= $datas['capitale'] ?></p>
+                <p>monnaie: <?= $datas['monnaie'] ?></p>
+                <p>superficie: <?= $datas['superficie'] ?> km²</p>
                 <p>langues: <?= is_array($datas['langues']) ? implode(', ', $datas['langues']) : $datas['langues'] ?></p>
             <?php } ?>
 <hr>
 <h3>c.	Affichez la superficie du pays dont la capitale est Paris.</h3>
 <p><?php foreach ($infosPays as $pays => $data) { ?>
 <?php if ($pays == 'France') { ?>
-    <p><?= $data['superficie']?> km²</p>
+    <p><?= $data['superficie'] ?> km²</p>
     <?php } ?>
 <?php } ?></p>
 <hr>
 <h3>d.	Affichez tous les pays dont la superficie est supérieure à celle de la Suisse.</h3>
 <?php foreach ($infosPays as $pays => $data) { ?>
     <?php if ($data['superficie'] > $infosPays['Suisse']['superficie']) { ?>
-        <p><?= $pays?></p>
+        <p><?= $pays ?></p>
     <?php } ?>
 <?php } ?>           
 <hr>
 <h3>e.	Affichez toutes les langues officielles de Belgique.</h3>
-<?= implode(', ', $infosPays['Belgique']['langues'])?>
+<?= implode(', ', $infosPays['Belgique']['langues']) ?>
 <hr>
 <h3>f.	Affichez (en indiquant le pays) les langues officielles de tous les pays.</h3>
     <?php foreach ($infosPays as $pays => $langues) { ?>
-        <p><?= $pays?> : <?= is_array($langues['langues']) ? implode(', ', $langues['langues']) : $langues['langues'] ?> </p>
+        <p><?= $pays ?> : <?= is_array($langues['langues']) ? implode(', ', $langues['langues']) : $langues['langues'] ?> </p>
     <?php } ?>           
 <hr>
 <h3>g.	Affichez la monnaie des deux derniers pays.</h3>
@@ -186,14 +186,14 @@ $infosPays = [
         $lastCountry = end($countrysList);
         $prevCountry = prev($countrysList);
         ?>
-         <p><?= $infosPays[$prevCountry]['monnaie']?></p>
-         <p><?= $infosPays[$lastCountry]['monnaie']?></p>
+         <p><?= $infosPays[$prevCountry]['monnaie'] ?></p>
+         <p><?= $infosPays[$lastCountry]['monnaie'] ?></p>
        
          <!-- avec la methode forEach-->
         <?php
         $listePays = array_slice($infosPays, count($infosPays)-2, null, true );
          foreach ($listePays as $pays => $monnaie) { ?>
-            <p><?=$pays.": ".$monnaie['monnaie'] ?></p>
+            <p><?= $pays.": ".$monnaie['monnaie'] ?></p>
         <?php } ?>
 
 <hr>
@@ -201,12 +201,12 @@ $infosPays = [
 <h3>1.	En utilisant le tableau $tabPrenoms,</h3>
 <h3>a.	Ajoutez à la fin les prénoms suivants: Mike, Tanaka, Ramón.</h3>
             <?php array_push($tabPrenoms, 'Mike', 'Tanaka', 'Ramón'); ?>
-            <p><?= implode(', ', $tabPrenoms)  ?></p>
+            <p><?= implode(', ', $tabPrenoms) ?></p>
 
 <hr>
 <h3>b.	Ajoutez au début les prénoms suivants: César, Pénélope.</h3>
-<?php array_unshift($tabPrenoms, 'César','Pénélope')?>
-<?= var_dump($tabPrenoms)?>
+<?php array_unshift($tabPrenoms, 'César','Pénélope') ?>
+<?= var_dump($tabPrenoms) ?>
 <hr>
 <h3>c.	Supprimez le dernier prénom.</h3>
 <?php array_pop($tabPrenoms);
@@ -233,13 +233,13 @@ $infosPays = [
 <h3>a.	Augmentez tous les poids de 5kg avec une boucle for.</h3>
 <!--boucle for-->    
 <?php for ($i=0; $i < count($tabPoids); $i++) { ?>
-            <p><?= $tabPoids[$i]+5?> kg</p>
+            <p><?= $tabPoids[$i]+5 ?> kg</p>
            <?php } ?> 
 <hr>
 
 <!--boucle forEach-->   
 <?php foreach ($tabPoids as $poids) { ?>
-    <p><?= $poids+5?> kg</p>
+    <p><?= $poids+5 ?> kg</p>
 <?php } ?>
 
 <hr>
