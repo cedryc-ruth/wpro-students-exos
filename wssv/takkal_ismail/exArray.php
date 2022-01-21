@@ -1,3 +1,4 @@
+<?php
 /**
  * @author i. Takkal
  * 
@@ -5,8 +6,6 @@
  *
  * @ date 03 Dec 2022
  */
- 
-<?php
 
 $tabPoids = [76,62.5,45];
 
