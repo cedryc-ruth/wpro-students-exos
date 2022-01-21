@@ -2,7 +2,7 @@
 /**
  * Série d'exercices de manipulation de tableaux (Array)
  *
- * @author i. Takkal
+ * @author i. Takkal, revu et corrigé par C. Ruth
  * @version 0.1, 03 Dec 2022
  */
 
