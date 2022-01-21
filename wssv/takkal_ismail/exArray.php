@@ -104,9 +104,11 @@ $infosPays = [
     <?php } ?>
 <hr>
 <h3>3. Affichez les prénoms du tableau $tabPrenoms sous forme de liste non ordonnée (ul).</h3>
+    <ul>
     <?php foreach($tabPrenoms as $prenom) { ?>
-        <ul><?= "<li>".$prenom."</li>" ?></ul>
+        <li><?= $prenom ?></li>
     <?php } ?>
+    </ul>
 <hr>
 <h3>4. Affichez les prénoms du tableau $tabPrenoms sous forme de liste mais en ordre inverse.</h3>
     <?php foreach(array_reverse($tabPrenoms) as $prenom) { ?>
