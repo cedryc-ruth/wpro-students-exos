@@ -238,15 +238,22 @@ $infosPays = [
 <h3>2.	En utilisant le tableau $tabPoids,</h3>
 <h3>a.	Augmentez tous les poids de 5kg avec une boucle for.</h3>
 <!--boucle for-->    
-<?php for ($i=0; $i < count($tabPoids); $i++) { ?>
-            <p><?= $tabPoids[$i]+5 ?> kg</p>
-           <?php } ?> 
+<?php
+for ($i=0; $i < count($tabPoids); $i++) {
+    $tabPoids[$i] += 5;
+}
+var_dump($tabPoids);
+?> 
 <hr>
 
 <!--boucle forEach-->   
-<?php foreach ($tabPoids as $poids) { ?>
-    <p><?= $poids+5 ?> kg</p>
-<?php } ?>
+<?php
+foreach ($tabPoids as &$poids) {
+    $poids += 5;
+}
+unset($poids);
+var_dump($tabPoids);
+?>
 
 <hr>
 <hr>
