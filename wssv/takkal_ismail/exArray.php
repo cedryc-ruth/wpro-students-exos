@@ -223,7 +223,7 @@ $infosPays = [
 ?>
 <hr>
 <h3>e.	Insérez le prénom Julie en deuxième position.</h3>
-            <?php array_splice($tabPrenoms, 1, 0, 'julie');
+            <?php array_splice($tabPrenoms, 1, 0, 'Julie');
             var_dump($tabPrenoms)
             ?>
 <hr>
