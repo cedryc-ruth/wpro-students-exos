@@ -1,10 +1,9 @@
 <?php
 /**
- * @author i. Takkal
- * 
- * @version 0.1
+ * Série d'exercices de manipulation de tableaux (Array)
  *
- * @ date 03 Dec 2022
+ * @author i. Takkal
+ * @version 0.1, 03 Dec 2022
  */
 
 $tabPoids = [76,62.5,45];
