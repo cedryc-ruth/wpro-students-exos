@@ -111,9 +111,11 @@ $infosPays = [
     </ul>
 <hr>
 <h3>4. Affichez les prénoms du tableau $tabPrenoms sous forme de liste mais en ordre inverse.</h3>
+    <ul>
     <?php foreach(array_reverse($tabPrenoms) as $prenom) { ?>
-        <ul><?= "<li>".$prenom."</li>" ?></ul>
+        <li><?= $prenom ?></li>
     <?php } ?>
+    </ul>
 <hr>
 <h3>5. Affichez les poids supérieur à 50.($tabPoids)</h3>
     <?php foreach($tabPoids as $poid) { ?>
