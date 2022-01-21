@@ -142,7 +142,7 @@ $infosPays = [
                 <p>Nous sommes en <?= $infosDate['année'] ?>, le <?= $infosDate['joursem'] ?> <?= $infosDate['jour'] ?> <?= $infosDate['mois'] ?>.</p>
 <hr>
 <h3>9.	Sachant que vous disposez des tableaux $tabJours et $tabMois. Affichez les données du tableau $dateComplet sous la forme:</h3>
-                <p>Nous sommes un <?= $tabJours[1] ?> de <?= $tabMois[10]?> et il est <?= $dateComplet['hours'] ?>:<?= $dateComplet['minutes'] ?>.</p>
+                <p>Nous sommes un <?= $tabJours[ $dateComplet['wday'] ] ?> de <?= $tabMois[ $dateComplet['mon']-1 ]?> et il est <?= $dateComplet['hours'] ?>:<?= $dateComplet['minutes'] ?>.</p>
 <hr>
 <h2>10.	En utilisant le tableau $infosPays,</h2>
 <h3>a.	Affichez uniquement toutes les capitales.</h3>
