@@ -74,7 +74,7 @@ function nomLong(nom) {
 	
 	for(i=0;i<id.length-1;i++) {
 		if(!isNaN(id.charAt(i))) {
-			compteChiffre+= ;
+			compteChiffre++;
 		}
 	}
 	 
