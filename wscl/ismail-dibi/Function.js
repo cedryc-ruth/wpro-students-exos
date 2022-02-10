@@ -28,9 +28,10 @@ function nomLong(nom) {
 
 /**
  * @function motDePass
- * Vérifie si le mot de pass contient au moins 6 caractères , 1 chiffre et 2 Majuscules 
+ * Vérifie si le mot de passe contient au moins 6 caractères , 1 chiffre et 2 Majuscules 
  *
- * @throws {Error} si le mot de pass ne contient pas au moins 6 caractères , 1 chiffre et 2 Majuscules 
+ * @throws {Error} si le mot de pass ne contient pas au moins 6 caractères , 1 chiffre et 2 Majuscules
+ * @returns {Boolean} true si le mot de passe contient au moins 6 caractères , 1 chiffre et 2 majuscules
  */
  function motDePass(mdp) {
 	 let compteChiffre = 0;
@@ -57,6 +58,8 @@ function nomLong(nom) {
 	 if (compteMajuscule<2) {
 		 throw ' le mode de passe contient moins de 2 Majuscules';
 	 }
+	 
+	 return true;
  }
 
  /**
@@ -64,6 +67,7 @@ function nomLong(nom) {
  * Fonction qui vérifie si un identifiant est valide
  *
  * @throws {Error} si id manquant, ou si plus ou moins que 2 chiffres
+ * @returns {Boolean} true si un identifiant est valide
  */
  function identifiant (id) {
 	if(id==undefined) {
@@ -84,7 +88,9 @@ function nomLong(nom) {
 	 
 	if(compteChiffre>2) {	
 		throw 'Votre identifiant contient moins de 2 chiffres';
-	}		
+	}
+	 
+	return true;
  }
  
  /**
