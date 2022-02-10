@@ -39,11 +39,11 @@ function nomLong(nom) {
 	 if(mdp && mdp.length>=6) {
 		 for (i=0;i<mdp.length-1;i++) {
 			if(!isNaN(mdp.charAt(i))) {
-				compteChiffre+= ;
+				compteChiffre += 1;
 			}
 			 
 			if(mdp.charAt(i)==toUpperCase(mdp.charAt(i)) {
-				compteMajuscule+= ;
+				compteMajuscule += 1;
 			}	
 		 }
 	 } else {
