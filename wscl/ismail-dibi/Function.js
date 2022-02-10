@@ -30,7 +30,7 @@ function nomLong(nom) {
  * @function motDePass
  * Vérifie si le mot de pass contient au moins 6 caractères , 1 chiffre et 2 Majuscules 
  *
- * throw Error si le mot de pass ne contient pas au moins 6 caractères , 1 chiffre et 2 Majuscules 
+ * @throws {Error} si le mot de pass ne contient pas au moins 6 caractères , 1 chiffre et 2 Majuscules 
  */
  function motDePass(mdp) {
 	 let compteChiffre = 0;
@@ -62,7 +62,7 @@ function nomLong(nom) {
  * @function motDePass
  * Fonction qui vérifie si un identifiant est valide
  *
- * throw Error si  plus ou moins que 2 chiffres
+ * @throws {Error} si id manquant, ou si plus ou moins que 2 chiffres
  */
 
  function identifiant (id) {
@@ -91,7 +91,7 @@ function nomLong(nom) {
  * @function roundUp
  * Fonction qui arrondit le premier paramètre au premier multiple entier commun avec le deuxième paramètre.
  * @return NaN si un ou les deux paramètres entrer ne son pas des nombres
- * throw Error si le 2e paramètre n'est pas un entier
+ * @throws {Error} si le 2e paramètre n'est pas un entier
  * @return multiple commun si aucune erreur 
  */
  function roundUp(réel,entier){	 
