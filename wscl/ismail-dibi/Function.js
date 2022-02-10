@@ -58,13 +58,13 @@ function nomLong(nom) {
 		 throw ' le mode de passe contient moins de 2 Majuscules';
 	 }
  }
+
  /**
  * @function motDePass
  * Fonction qui vérifie si un identifiant est valide
  *
  * @throws {Error} si id manquant, ou si plus ou moins que 2 chiffres
  */
-
  function identifiant (id) {
 	if(id==undefined) {
 		throw 'Vous devez spécifier un identifiant!';
@@ -90,9 +90,9 @@ function nomLong(nom) {
  /**
  * @function roundUp
  * Fonction qui arrondit le premier paramètre au premier multiple entier commun avec le deuxième paramètre.
- * @return NaN si un ou les deux paramètres entrer ne son pas des nombres
+ *
  * @throws {Error} si le 2e paramètre n'est pas un entier
- * @return multiple commun si aucune erreur 
+ * @returns {(number|NaN)} multiple commun ou NaN si un ou les deux paramètres entrés ne sont pas des nombres
  */
  function roundUp(réel,entier){	 
 	 let multiple = entier ;
