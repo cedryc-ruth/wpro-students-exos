@@ -6,9 +6,13 @@
 </head>
 <body>
    <script>
-   
-      //Ecrire un script qui affiche dans quelle saison nous sommes.
-   
+      /**
+       * Ecrire un script qui affiche dans quelle saison nous sommes.
+       *
+       * @author Serge
+       * @version 1.0
+       */
+      
       const today = new Date();
       let saison;
       const annee = today.getFullYear();
@@ -16,7 +20,6 @@
       const été = new Date(annee+'-06-21');
       const automne = new Date(annee+'-09-21');
       const hiver = new Date(annee+'-12-21');
-    
 
       if (today<printemps){
          saison = 'hiver';
@@ -31,8 +34,6 @@
       }
 
       document.write(saison);
-   
    </script>
-   
 </body>
 </html>
