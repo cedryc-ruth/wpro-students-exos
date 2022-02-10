@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quelle saison sommes-nous ?</title>
+</head>
+<body>
+   <script>
+   
+      //Ecrire un script qui affiche dans quelle saison nous sommes.
+   
+      const today = new Date();
+      let saison;
+      const annee = today.getFullYear();
+      const printemps = new Date(annee+'-03-21');
+      const été = new Date(annee+'-06-21');
+      const automne = new Date(annee+'-09-21');
+      const hiver = new Date(annee+'-12-21');
+    
+
+      if (today<printemps){
+         saison = 'hiver';
+      } else if (today<été){
+         saison = 'printemps';
+      } else if (today<automne){
+         saison = 'été';
+      } else if (today<hiver){
+         saison = 'automne';
+      } else {
+         saison = 'hiver';
+      }
+
+      document.write(saison);
+   
+   </script>
+   
+</body>
+</html>
