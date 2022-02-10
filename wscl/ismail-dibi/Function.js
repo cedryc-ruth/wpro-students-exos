@@ -23,7 +23,7 @@ function diffAge(age1,age2) {
  * @return {Boolean} renvoie si le nom est long ou non
  */
 function nomLong(nom) {
-	return nom.length>=3;
+	return nom && nom.length>=3;
 }
 
 /**
@@ -36,7 +36,7 @@ function nomLong(nom) {
 	 let compteChiffre = 0;
 	 let compteMajuscule = 0;
 	 
-	 if(mdp.length>=6) {
+	 if(mdp && mdp.length>=6) {
 		 for (i=0;i<mdp.length-1;i++) {
 			if(!isNaN(mdp.charAt(i))) {
 				compteChiffre+= ;
@@ -66,6 +66,10 @@ function nomLong(nom) {
  */
 
  function identifiant (id) {
+	if(id==undefined) {
+		throw 'Vous devez spécifier un identifiant!';
+	}
+	 
 	let compteChiffre = 0;
 	
 	for(i=0;i<id.length-1;i++) {
