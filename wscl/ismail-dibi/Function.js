@@ -42,7 +42,7 @@ function nomLong(nom) {
 				compteChiffre += 1;
 			}
 			 
-			if(mdp.charAt(i)==toUpperCase(mdp.charAt(i)) {
+			if(mdp.charAt(i)==mdp.charAt(i).toUpperCase()) {
 				compteMajuscule += 1;
 			}	
 		 }
