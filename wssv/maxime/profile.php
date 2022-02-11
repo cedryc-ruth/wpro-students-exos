@@ -15,8 +15,8 @@
     require '../util/data.php';
 
     // set up flags
-    isset($_SESSION['profile']) ? $isProfile = true : $isProfile = false;
-    isset($_GET['modify']) ? $isModify = true : $isModify = false;
+    $isProfile = isset($_SESSION['profile']);
+    $isModify = isset($_GET['modify']);
 
     // decode profile if profile is not null -> only null after account creation
     if($isProfile) {
