@@ -2,7 +2,7 @@
 
     require '../util/header.php';
 
-    $isConnected = isset($_SESSION['id']) ? true : false;
+    $isConnected = !empty($_SESSION['id']);
 
 
     if($isConnected){
