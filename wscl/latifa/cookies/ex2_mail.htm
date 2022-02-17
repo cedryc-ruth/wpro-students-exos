@@ -1,0 +1,29 @@
+<!Doctype html>
+<html lang ="fr">
+<head>
+<meta charset ="utf-8">
+<title>Délai et prolongation</title>	
+</head>	
+<body>
+<form id="frmName" action="#" method="get">
+	<div>
+		<label>Entrez votre adresse e-mail</label>
+		<input type="text"; name="mail"; id="mail"></input>
+		<button>Envoyer</button>
+	</div>	
+</body>
+</form>
+<script>
+let mail = document.forms['frmName'].mail.value;
+document.cookie = 'mail; expires=Sat, 19 Feb 2022 23:59:59 UTC';
+
+
+if(mail){
+	document.write('<p>'+mail+'</p>');
+	//document.getElementById('mail').innerHTML = '<p>'+mail+'</p>';
+}
+//alert(document.forms['frmName'].mail.value);
+
+
+</script>
+</html>	

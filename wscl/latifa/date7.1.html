@@ -1,0 +1,110 @@
+<!Doctype html>
+<html lang ="fr">
+<html>
+<head>
+<meta charset = "utf-8">
+<title>nombre de jour dans l'année actuelle et l'année prochaine</title>	
+</head>	
+<body>
+<script>
+/**
+ * nombre de jour dans l'année actuelle et l'année prochaine
+ * @author L.Latifa
+ * @version 1.0
+ */
+
+/*
+Créer le nombre de mois à 31 jours 
+Créer le nombre de mois à 30 jours
+Créer le nombre de jours février 2022
+Créer le nombre de jours février 2023
+Multilplier le nombre de mois à 31 jours par le nombre de jours
+Multilplier le nombre de mois à 30 jours par le nombre de jours
+Additioner les résultat avec février
+31/01/2022	=> true
+31/03/2022	=> true
+31/04/2022	=> false
+31/05/2022	=> true
+31/06/2022	=> false
+31/07/2022	=> true
+31/08/2022	=> true
+31/09/2022	=> false
+31/10/2022	=> true
+31/11/2022	=> false
+31/12/2022	=> true
+*/
+
+// Lecture des données
+const nbJours31 = "31";
+const nbJours30 = "30";
+let nbMois31 = []; // [1,2,3,4...]
+let nbMois30 = []; // [1,2,3,4...]
+let nbMois;
+let fevrier2022; // 28 ou 29
+let fevrier2023; // 28 ou 29
+let annee2022;
+let annee2023;
+
+const today = new Date();
+let anneeActuelle = today.getFullYear();
+
+// Traitement des données
+for(let i=1;i<=12;i++) {
+	date = new Date(anneeActuelle+'/'+i+'/31');
+	//date = new Date(actualYear,i-1,31);
+	
+	if(date.getDate()==31) {
+		nbMois31.push( i-1 );
+	} else {
+		nbMois30.push( i-1 );
+	}
+}
+console.log(nbMois31.length);
+console.log(nbMois30.length);
+
+//Année 2022
+//Enlever février du tableau mois30jours
+nbMois30.shift();
+
+//Corriger février
+date = new Date(anneeActuelle+'/02/29');
+//date = new Date(actualYear,1,29);
+
+if(date.getDate()==29) {
+	fevrier2022 = 29;
+} else {
+	fevrier2022 = 28;
+}
+console.log(fevrier2022);
+
+//Année2023
+//Enlever février du tableau mois30jours
+nbMois30.shift();
+
+//Corriger février
+date = new Date(anneeActuelle+1+'/02/29');
+//date = new Date(actualYear,1,29);
+console.log(date);
+
+if(date.getDate()==29) {
+	fevrier2023 = 29;
+} else {
+	fevrier2023 = 28;
+}
+console.log(fevrier2023);
+
+if(isNaN(annee2022) || isNaN(annee2023)){
+	annee2022 = (nbJours31*nbMois31.length) + (nbJours30*nbMois30.length) + fevrier2022;
+	annee2023 = (nbJours31*nbMois31.length) + (nbJours30*nbMois30.length) + fevrier2023;
+}
+
+console.log(annee2022);
+console.log(annee2023);
+
+// Affichage du résultat 
+document.write('<p>Le nombre de jours en 2022 est de : '+annee2022+'jours.</p>');
+document.write('<p>Le nombre de jours en 2023 sera de : '+annee2023+'jours</p>');
+
+</script>	
+</body>
+</html>

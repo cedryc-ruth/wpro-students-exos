@@ -1,0 +1,23 @@
+<!doctype html>
+<html lan="fr">
+<head>
+<meta charset="utf-8">
+
+<title>Ex2 Cookies</title>
+</head>
+<body>
+	<h1> Entré votre Adresse Mail </h1>
+	<form id="frm" action = "#">
+	<div><label>Email :</label><input type="text" name="mail" ></div>
+	<p><button onclick="creeCoockie()" >Envoyé</button></p>
+	</form>
+<script>
+	let email = document.getElementById('frm').mail
+	function creeCoockie(){
+		let deuxJours = new Date();
+		deuxJours.setDate(deuxJours.getDate()+2);
+		document.cookie = 'Email='+email.value+'; expires='+deuxJours.toUTCString()+"; secure";
+	}
+</script>	
+</body>
+</html>

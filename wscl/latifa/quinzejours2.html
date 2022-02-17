@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang = "fr">	
+<head>
+<meta charset = "utf-8">
+<title>Quinze jours après le 23 Mars 2022 </title>
+</head>
+<body>
+<script>
+/**
+ * Si nous sommes le 23 mars 2022, quelle date 
+ * serons-nous dans 15 jours?	
+ * 
+ * @version 1.0
+ * @author L.Latifa
+ */
+
+ // Lecture des données
+let today = new Date();
+let year = today.getFullYear();
+const todayDate = new Date(year,2,23);
+const nbJours = 15;
+let quinzeJours; // A calculer
+
+ // Traitement des données
+quinzeJours = new Date (
+    todayDate.getFullYear(),
+    todayDate.getMonth(),
+    todayDate.getDate() + nbJours,
+);    
+
+ // Affichage du résultat 
+ document.write('<p>Dans quinze jours la date sera : '+quinzeJours+'.</p>')
+
+</script>	
+</body>
+</html>
+
+
+
+
