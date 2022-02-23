@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Les dates</title>
+</head>
+<body>
+	<h1>Exercice 1</h1>
+	<script>
+	/**
+	 * Ecrire un script qui affiche dans quelle saison nous sommes.
+	 *
+	 * @author Jason NAMA JASON
+	 * @version 1.0
+	 */
+	 
+	//Déclarations des variables, des constantes et des fonctions
+	const ajd = new Date();
+	const jrEdit = new Date("2021-12-21");		//La date d'aujourd'hui
+	let saison;		//A déterminer
+	let alternance;		//La période où l'on change de saison
+	const hiver = jrEdit.setDate( jrEdit.getDate() + 90 );
+	const printemps = jrEdit.setDate( jrEdit.getDate() + 183 );
+	const ete = jrEdit.setDate( jrEdit.getDate() + 275 );
+	const automne = jrEdit.setDate( jrEdit.getDate() + 363 );
+	
+	
+	alternance = jrEdit.setDate(jrEdit.getDate() + prompt("Entrez une date"));
+	
+	
+	if(alternance > hiver || alternance < printemps) {
+		saison = hiver;
+	} else if(alternance >= printemps || alternance < ete) {
+		saison = printemps;
+	} else if(alternance >= ete || alternance < automne) {
+		saison = ete;
+	} else {
+		saison = automne;
+	}
+	
+	
+	console.log(saison);
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulation des chaînes de caractères</title>
+</head>
+<body>
+    <h1>Exercice 6</h1>
+    <p></p>
+    <script>
+    /**
+     * Écrivez un programme qui permet à l'utilisateur de choisir entre une consonne et une voyelle. 
+     * Le programme affiche alors une de ces lettres au hasard. 
+	 * Consonne? => "k"	Voyelle? => "e" 
+     * 
+     * @author Jason NAMA JASON
+     * @version 1.0
+     */
+
+    //Déclaration des variables, des constantes et des fonctions
+    let choix;
+    let afficheConsonne;
+    let afficheVoyelle;
+    const CONSONNES = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"];
+    const MAX_CONSONNES = CONSONNES.length-1;
+    const VOYELLES = ["a", "e", "i", "o", "u", "y"];
+    const MAX_VOYELLES = VOYELLES.length-1;
+
+    //Lecture des données
+    choix = prompt('Quel est votre choix ? Tapez "C" pour Consonne et "V" pour voyelles');
+
+    //Traittement des données et affichage du résultat
+    if(choix != "C" && choix != "V") {
+        alert("Veuillez respecter les lettres indiquées svp!");
+    } else {
+        if(choix == "C") {
+            afficheConsonne = CONSONNES[Math.round(Math.random() * MAX_CONSONNES)];
+            document.write("<p>"+afficheConsonne+"</p>");
+        } else {
+            afficheVoyelle = VOYELLES[Math.round(Math.random() * MAX_VOYELLES)];
+            document.write("<p>"+afficheVoyelle+"</p>");
+        }
+    }
+    </script>
+</body>
+</html>
