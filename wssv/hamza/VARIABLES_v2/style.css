@@ -1,0 +1,22 @@
+#green {
+  color: green;
+  font-weight: bold;
+}
+
+#red {
+  color: red;
+  font-weight: bold;
+}
+
+.p_gras {
+  font-weight: bold;
+}
+
+#tab_border {
+  border-collapse: collapse;
+  width: 100px;
+}
+tr {
+  text-align: center;
+  border: 2px solid black;
+}
