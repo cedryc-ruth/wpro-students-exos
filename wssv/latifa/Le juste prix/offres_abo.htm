@@ -1,0 +1,32 @@
+<?php
+// Déclaration des variables	
+$choix = 'abonnement';
+?>
+<!doctype html5>
+<html lang ="fr">
+<head>
+<meta charset ="utf_8">
+<title>Le juste prix</title>	
+</head>
+<body>
+	<header>
+		<h1>Listes des trois abonnements</h1>
+	</header>
+	<main>
+		<form action="offre_prix.php?choix=abonnement" method="get">
+			<div>
+				<select name="choix" id="choix">
+					<option value ="">Veuillez selectionner votre choix</option>
+					<option>light</option>
+					<option>medium</option>
+					<option>speed</option>
+				</select>
+			</div>
+			<br><button>Envoyer le message</button><br/>
+		</form>	
+	</main>
+	<footer>
+		<div>&copy; EPFC &dot; 2022</div>
+	</footer>	
+</body>
+</html>
