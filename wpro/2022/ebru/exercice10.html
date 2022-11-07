@@ -20,24 +20,28 @@
         let valeur;
         let arret = -1;
         let somme = 0;
+        let nbValeurs = 0;
         
-        //lecture clavier
         do {
-            valeur = prompt('entrez une série de nombre  et terminez par -1');
-            
-            if(isNaN(valeur) || parseInt(valeur)!=valeur) {
-                alert('Valeur incorrecte!');                
+            //lecture clavier
+            do {
+                valeur = prompt('entrez une série de nombre  et terminez par -1');
+
+                if(isNaN(valeur) || parseInt(valeur)!=valeur) {
+                    alert('Valeur incorrecte!');                
+                }
+            } while(isNaN(valeur) || parseInt(valeur)!=valeur); //Tant que ce n'est pas un nombre entier
+
+            //Accumuler la somme
+            if(valeur>-1) {     //ou valeur>0
+                somme += valeur;
+                
+                //Compter les valeurs accumulées
+                nbValeurs = nbValeurs + 1; //facultatif
             }
-        } while(isNaN(valeur) || parseInt(valeur)!=valeur); //Tant que ce n'est pas un nombre entier
-        
-        while (valeur > -1) {
-            somme += valeur;
-         //   nbValeurs = nbValeurs + 1; //facultatif
-            valeur = parseFloat(prompt("entrez une valeur: " )); // somme ici
-        }
+        } while (valeur > -1); {
 
-     //   document.write('<p>vous avez entré: ' + nbValeurs + 'valeurs </p>)')
-
+        document.write('<p>vous avez entré: ' + nbValeurs + 'valeurs </p>)')
         document.write('<p><strong>La somme de toutes ces valeurs: </strong></p>' + somme);
     </script>
 </body>
