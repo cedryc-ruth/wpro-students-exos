@@ -25,14 +25,14 @@
         document.write('<span> les nombres: 1,') 
         
         for(let i=MIN+1;i<=clavier;i++) {
-          if(i%5==0) {
+          if((i%5) && (i%7)==0) {
+            i=='ding ding bottle';
+            document.write('<span> ding sing bottle')
+          } else if(i%5==0) {
             document.write('<span> ding ding, ');
           } else if(i%7==0) {
             i=='bottle';
             document.write('<span> bottle,');
-          } else if((i%5) && (i%7)==0) {
-            i=='ding ding bottle';
-            document.write('<span> ding sing bottle')
           } else {
             document.write('<span> '+i+',');
           }
