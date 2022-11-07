@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    /**
+    *11. Vérificateur d’intervalles (allons plus loin)
+    *a) Écrivez un programme qui vérifie si un nombre entré par l’utilisateur est compris dans un intervalle. Les bornes
+    inférieures et
+    * supérieures de l’intervalle seront obligatoirement des nombres entiers positifs (zéro compris) entrés par
+    l’utilisateur. Si le nombre 
+    * vérifier est compris dans l’intervalle, le programme affiche ce nombre entre crochet. Sinon, le programme affiche
+    le message
+    *[HORS LIMITES]. L’utilisateur peut tester autant de nombre qu’il veut ; il peut arrêter le programme en tapant un
+    nombre.
+    *Attention, n’oubliez pas que la borne supérieure d’un intervalle est toujours plus grande ou égale à la borne
+    inférieure!
+
+    *b) Modifiez le précédent programme de sorte qu’au lieu d’afficher [HORS LIMITES], il précise [TROP HAUT] ou [TROP
+    BAS] en fonction des cas.
+    *
+    *@author ebru
+    */
+    <script>
+
+
+        let min = parseInt(prompt('choisissez un nb minimum pour votre intervalle'));
+        let max = parseInt(prompt('choisissez un nb max pour votre intervalle'));
+        
+        let clavier;
+        const arret = -1;
+
+        document.write('<p >votre intervalle : [ ' + min + ' , ' + max + ' ]</p>')
+
+
+
+        do {
+            clavier = parseFloat(prompt('entrez un nombre'));
+            if (clavier >= min && clavier <= max && clavier != arret) {
+                document.write('<p>le nombre entré : ' + clavier + ' est dans l intervalle</p>');
+            }
+
+            if (clavier < min && clavier != arret) {
+                document.write('nombre entré ' + clavier + ' [est trop bas]');
+            }
+            if (clavier > max && clavier != arret) {
+                document.write('nombre entré ' + clavier + ' [est trop haut ]')
+            }
+            if (clavier == arret) {
+                confirm(prompt('vous voulez quitter?'));
+
+            }
+
+
+        }
+
+        while (clavier != arret);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

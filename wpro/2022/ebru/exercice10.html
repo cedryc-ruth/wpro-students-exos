@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    /**
+    *10. a) Écrivez un programme qui fait la somme d’une série d’entiers entrés un à un par l’utilisateur.
+    *Déterminez une condition permettant d’arrêter le traitement. Avant de quitter, le programme affiche le total.
+    *b) idem sauf que le total est affiché systématiquement après chaque entrée de l’utilisateur.
+
+    *@author Ebru
+    *
+    */
+    <script>
+
+
+
+        let valeur;
+        let arret = -1;
+        let somme = 0;
+        
+        //lecture clavier
+
+        valeur = parseFloat(prompt('entrez une série de nombre  et terminez par -1'));
+
+
+
+
+        while (valeur > -1) {
+            somme += valeur;
+         //   nbValeurs = nbValeurs + 1; //facultatif
+            valeur = parseFloat(prompt("entrez une valeur: " )); // somme ici
+
+        }
+
+     //   document.write('<p>vous avez entré: ' + nbValeurs + 'valeurs </p>)')
+
+        document.write('<p><strong>La somme de toutes ces valeurs: </strong></p>' + somme);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

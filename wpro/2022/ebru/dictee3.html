@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    /*
+    * ajusteur manuel
+    *@author Ebru
+    *
+    */
+    <script>
+        //déclarations de données
+        let valinit;
+        const valcible = 12;
+        
+
+        let nouvelleval;
+        valinit = Math.round((Math.random() * 11) );
+
+
+
+
+        document.write('<p>VI: ' + valinit + ' - VC: ' + valcible + '</p>');
+        difference = valcible-valinit;
+
+        let confirmation;
+        let cpttentative = 1;
+        
+
+        do {
+            
+            confirmation = confirm('<strong>voulez-vous ajuster</strong>');
+            alert('<p> différence :' + valcible+ ' - '+ valinit + '= '+difference+'</p>');
+
+            if (confirmation) {
+                document.write('<p> ecart de ' + difference + '</p>');
+                nouvelleval = parseInt(prompt('entrez un nb positif inferieur a '+difference));
+                 while(nouvelleval!=difference) {
+                    nouvelleval = parseInt(prompt('entrez un nb positif inferieur a '+difference));
+                    
+                    if(difference==nouvelleval){
+                        document.write('<p> <strong> bravo, vous avez trouvé </strong></p>');
+                        pastrouve=false;
+                    }
+                    cpttentative++;
+                    
+                   
+                }
+            }
+            
+            document.write('<p>nb de tentatives entré : ' + '<strong>'+cpttentative+'</strong> </p>' );
+        } while (nouvelleval!=difference);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    /** 9. Le devin (version simple)
+    * Écrivez un programme qui demande à l’utilisateur de deviner un nombre compris entre 0 et 10.
+    Le nombre à deviner n’est pas fourni par l’utilisateur bien sûr. Il devra être généré aléatoirement grâce à
+    la fonction random. L'utilisateur a droit à une seule tentative. Si la réponse est trouvée, le programme
+    s'arrête.
+
+    *@author
+    *
+    /*
+    <script>
+        /*
+        
+         function demandedeChiffr (devinette) {
+            
+        var chiffreHazard=Math.random()*11;
+            var devinette=parseInt(prompt('devinez un nombre de 0 a 10'));
+        document.write('<p> vous avez entrez le nb '+devinette+'</p>');
+        }
+        function verification(){
+            demandedeChiffr;
+        if (devinette===chiffreHazard){
+            document.write('bonne réponse');
+        }
+        else  (demandedeChiffr)
+        }
+        */
+
+
+        //faire attention aux etapes. math.round(Math.random()*10)   pour arrondir un nb 
+
+
+        var chiffreHazard;
+        var devinette;
+        chiffreHazard = Math.round(Math.random() * 11); //math.floor arrondi car math.random lance chiffre entre0 et 1.
+        devinette = parseInt(prompt('devinez un nombre de 0 a 10'));
+        document.write('<p> vous avez entrez le nb' + devinette + '</p>');
+        if (devinette == chiffreHazard) {
+            document.write('bonne réponse');
+        }
+        //affichage a l ecran 
+        else {
+            document.write('mauvaise réponse, la bonne réponse était : ' + chiffreHazard);
+        }
+
+    </script>
+</body>
+
+</html>

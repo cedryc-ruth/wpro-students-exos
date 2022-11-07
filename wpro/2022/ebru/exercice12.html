@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    /**
+    *12. Comptage systématique (Jeu Le devin)
+    * Programme qui demande à l’utilisateur de deviner un nombre compris entre 0 et 10. Le nombre à deviner n’est
+    *pas fourni par l’utilisateur bien sûr. Il devra être généré aléatoirement grâce à la fonction random.
+    *L'utilisateur peut faire plusieurs tentatives. Une fois la réponse trouvée, le programme affichera le nombre
+    * de tentatives.
+
+    *
+    *@author ebru
+    *
+    */
+    <div id="js"> </div> //on va ajouter ça ici
+   
+</body>
+<script>
+    let clavier;
+    const chiffreHazard = Math.floor(Math.random() * 11);
+    let tentative = 0;
+    do {
+        clavier = parseFloat(prompt('devinez un nombre de 0 a 10'));
+        tentative++;
+    } while (chiffreHazard !== clavier);
+
+    if (clavier == chiffreHazard) {
+       // document.write('<p> BRAVO! Bonne reponse ' + '<b>' + clavier + ' </b> ' 
+       //+ ' nombre de tentative : ' + tentative + '</p>');
+       //trop long on va faciliter avec
+       document.querySelector('#js').innerHTML=
+       `<p>vous avez trouvé le nombre ${chiffreHazard} en ${tentative} tentatives ! </p>`
+
+    }
+
+</script>
+</html>

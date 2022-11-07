@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    /**
+    *7. Écrivez un programme qui affiche le montant de la prime d’un vendeur lorsqu’il a entré son chiffre
+    *de vente (primes progressives : 0-500 => 2%, 501-1000 5%, plus de 1000=> 10%.
+    *@author Ebru
+    *
+    */
+    <script>
+        var chiffre_vendeur;
+        chiffre_vendeur = prompt('entrez votre chiffre de valeur');
+        chiffre_vendeur = parseInt(chiffre_vendeur);
+        const primeniveau1 = 0.02;
+        const primeniveau2 = 0.05;
+        const primeniveau3 = 0.10;
+        var reduction;
+        var resultat;
+        //methode tofixed ()  ---> permet de prendre la valeur d' unité.
+        if (chiffre_vendeur >= 0 && chiffre_vendeur <= 500) {
+            reduction = (chiffre_vendeur * primeniveau1);
+            resultat = (chiffre_vendeur - reduction);
+            document.write('<p>votre prime finale est de ' + resultat + '</p>');
+        }
+        else if (chiffre_vendeur >= 501 && chiffre_vendeur <= 1000) {
+            reduction = (chiffre_vendeur * primeniveau2);
+            resultat = (chiffre_vendeur - reduction);
+
+            document.write('<p>votre prime est de ' + resultat + '</p>');
+        }
+        else {
+            reduction = (chiffre_vendeur * primeniveau3);
+            resultat = (chiffre_vendeur - reduction);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+
+<script>
+    /*
+     * 13.	Modifiez le vérificateur d’intervalles de sorte qu’il affiche la liste des nombres
+     *compris dans l’intervalle, le nombre total de nombres compris dans l’intervalle, ainsi que l’indice dans cet intervalle du nombre testé.
+     */
+
+
+
+    let min = parseInt(prompt('choisissez un nb minimum pour votre intervalle'));
+    let max = parseInt(prompt('choisissez un nb max pour votre intervalle'));
+
+    let clavier;
+
+
+    document.write('<p >votre intervalle : [ ' + min + ' , ' + max + ' ]</p>')
+
+
+    var liste;
+    var valeur;
+    var nbvaleurpossible = 1;
+
+
+
+ 
+    document.write('<span>nombres possibles : [' + min + '</span>');
+    for (liste = min + 1; liste <= max; liste++) {
+        document.write('<span>,' + liste + '</span>')
+
+        nbvaleurpossible++;
+    }
+    document.write('<span> ] </span>')
+
+
+    document.write('<p>nombre total de valeur possible : ' + nbvaleurpossible + '</p>');
+
+   
+    clavier = parseFloat(prompt('entrez un nombre'));
+    document.write('nombre entré: '+clavier)
+    let i = 1;
+    let startval=min;
+    while (i <nbvaleurpossible-2) {
+
+        if (clavier==startval) {
+            console.log(i);
+            break;
+        }
+        startval++;
+        i++;
+           
+    }
+         
+    document.write('<p>indice :' + i+'</p>' );
+       
+    
+
+
+</script>
+
+
+</html>
