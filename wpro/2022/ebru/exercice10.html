@@ -22,8 +22,14 @@
         let somme = 0;
         
         //lecture clavier
-        valeur = parseFloat(prompt('entrez une série de nombre  et terminez par -1'));
-
+        do {
+            valeur = prompt('entrez une série de nombre  et terminez par -1');
+            
+            if(isNaN(valeur) || parseInt(valeur)!=valeur) {
+                alert('Valeur incorrecte!');                
+            }
+        } while(isNaN(valeur) || parseInt(valeur)!=valeur); //Tant que ce n'est pas un nombre entier
+        
         while (valeur > -1) {
             somme += valeur;
          //   nbValeurs = nbValeurs + 1; //facultatif
