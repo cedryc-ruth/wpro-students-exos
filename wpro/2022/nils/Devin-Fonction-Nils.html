@@ -1,0 +1,61 @@
+<meta charset='utf-8'>
+<script>
+/**
+ *Author: Nils Henrar
+ *Date: 08/11/2022
+ * Programme qui demande à l’utilisateur de deviner 
+ * un nombre compris entre 0 et 10. Le nombre à deviner 
+ * devra être généré aléatoirement grâce à la fonction 
+ * random. L'utilisateur a droit à trois tentatives.
+ * Si la réponse est trouvée, le programme s'arrête.
+ * Sinon après 3 tentatives, le programme génère un nouveau
+ * nombre à deviner.
+ *(j'ai rajouté quelques difficultés
+ *
+*/
+//déclaration
+var nbSecret;
+var nbEntree;
+var tentatives;
+var TENTATIVES_MAX=3;
+const MIN=0 ;
+const MAX=10 ;
+function NombreRandom(Maximum,Minimum){
+	return  Math.round(Math.random()*(Maximum-Minimum))+Minimum 
+}
+nbSecret = NombreRandom (MAX,MIN); 
+
+
+//lecture
+bloc: {
+do{
+	do {
+		//traitement
+		for (tentatives=1;tentatives<=3;tentatives++){
+			do {
+			nbEntree= parseFloat(prompt('Devinez un nombre secret entre 0 et 10', ));	
+			}while (isNaN(nbEntree) || nbEntree<0 || nbEntree>10); 
+		
+			if (nbEntree == nbSecret){
+				document.write('<p> bravo tu as trouvé le '+nbSecret+'</p>')
+				document.write('<p> tu l\'as trouvé en '+tentatives+' tentatives</p>')
+			break bloc;
+			}	else if (nbEntree<nbSecret) {
+					alert('Entres un nombre plus grand!')
+				}	else {	//nbEntree>nbSecret
+						alert('le nombre est plus petit!')
+					}
+			alert('il te reste seulement '+(TENTATIVES_MAX-tentatives)+' tentatives')
+		}	
+
+	}while (tentatives<3)
+		alert('tu as épuisé toutes tes tentatives')
+		document.write ('la réponse était '+nbSecret+'</p>')
+		nbSecret = NombreRandom(MAX,MIN) 
+}while(confirm('recommencer?'));
+}
+
+
+
+
+</script>
