@@ -1,8 +1,6 @@
 <meta charset="utf-8">
 <script>
-
 //Déclaration de variables, constantes et fonction
-
 var chiffreVente;
 var prime;
 
@@ -14,36 +12,28 @@ const SEUIL_1 = 500;
 const SEUIL_2 = 1000;
 
 function montant_prime(x){
-	
-	if(x<=SEUIL_1){                             // de 1 à 500
+	if(x<=SEUIL_1) {				// de 1 à 500
 		return x * PRIME_1;
-	} else if (x>SEUIL_1 && x<=SEUIL_2){		// de 501 à 1000
+	} else if (x>SEUIL_1 && x<=SEUIL_2) {		// de 501 à 1000
 		return x * PRIME_2;
 	} else {
-		return x * PRIME_3;					// plus de 1000
+		return x * PRIME_3;			// plus de 1000
 	}
 }
 
-
-
 // Lecture
-
-	
-do{	
-	do{
+do {	
+	do {
 		chiffreVente = parseFloat(prompt('Entrez votre chiffre de vente'));
-	}while(isNaN(chiffreVente) || chiffreVente<0);
+	} while(isNaN(chiffreVente) || chiffreVente<0);
 
 	prime = montant_prime(chiffreVente);
+} while(confirm('Voulez-vous recommencer?'));
 
-}while(confirm('Voulez-vous recommencer?'));
 // Affichage
-
-if (chiffreVente!=0){
+if(chiffreVente!=0) {
 	document.write('<p>La prime accordée est de <b>'+prime.toFixed(2)+'</b> €.</p>');
-}else {
+} else {
 	document.write('<p>Pas de prime!</p>');
 }	
-
-
 </script>
