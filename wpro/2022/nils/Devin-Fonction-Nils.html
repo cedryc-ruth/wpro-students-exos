@@ -50,7 +50,9 @@ do {
 		alert('il te reste seulement '+(TENTATIVES_MAX-tentatives)+' tentatives');
 	}
 
-	alert('tu as épuisé toutes tes tentatives');
-	document.write ('<p>la réponse était '+nbSecret+'</p>');
+	if(nbEntree != nbSecret) {
+		alert('tu as épuisé toutes tes tentatives');
+		document.write ('<p>la réponse était '+nbSecret+'</p>');
+	}
 } while(confirm('recommencer?'));
 </script>
