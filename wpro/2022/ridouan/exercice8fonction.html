@@ -21,12 +21,13 @@ function montant_prime(x){
 	}
 }
 
-// Lecture
 do {	
+	// Lecture
 	do {
 		chiffreVente = parseFloat(prompt('Entrez votre chiffre de vente'));
 	} while(isNaN(chiffreVente) || chiffreVente<0);
 
+	//Traitement des données
 	prime = montant_prime(chiffreVente);
 } while(confirm('Voulez-vous recommencer?'));
 
