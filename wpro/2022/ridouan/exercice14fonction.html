@@ -5,12 +5,12 @@
 var note;
 var noteSupLimite = 0;
 var resultat;
-var somme = 0;
+var cptNotes = 0;
 
 const LIMITE = 10;
 
 function noteSup(nb){
-	somme++;
+	cptNotes++;
 
 	if(nb>LIMITE){
 		return ++noteSupLimite;
@@ -28,5 +28,5 @@ do {
 } while(confirm('Continuer?'));
 
 // Affichage
-document.write('<p>Sur '+somme+' notes entrées, <b>'+resultat+'</b> sont supérieur à '+LIMITE+'.</p>');
+document.write('<p>Sur '+cptNotes+' notes entrées, <b>'+resultat+'</b> sont supérieur à '+LIMITE+'.</p>');
 </script>
