@@ -9,14 +9,6 @@ var cptNotes = 0;
 
 const LIMITE = 10;
 
-function noteSup(nb){
-	cptNotes++;
-
-	if(nb>LIMITE){
-		return ++noteSupLimite;
-	}
-}
-
 do {
 	//Lecture
 	do {
@@ -24,7 +16,11 @@ do {
 	} while(isNaN(note) || note<0);
 	
 	//Traitement	
-	resultat = noteSup(note);
+	cptNotes++;
+
+	if(nb>LIMITE){
+		return ++noteSupLimite;
+	}
 } while(confirm('Continuer?'));
 
 // Affichage
