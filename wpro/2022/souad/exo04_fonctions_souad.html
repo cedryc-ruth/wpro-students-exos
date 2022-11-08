@@ -10,22 +10,25 @@
 var longueur;
 var largeur;
 var resultatPerimetre;
-var resultatSurface
+var resultatSurface;
+	
 //Déclaration de la fonction
-function calculePerimetre(longueur, largeur){
+function calculePerimetre(longueur, largeur) {
 	return 2*(largeur+longueur);
 }
-function calculeSurface(longueur, largeur){
+	
+function calculeSurface(longueur, largeur) {
 	return largeur*longueur;
 }
 
 // Lecture des données
-do{
+do {
 	longueur = parseFloat(prompt('Quelle est la longueur ?'));
-}while(isNaN(longueur) || longueur<=0);
-do{
+} while(isNaN(longueur) || longueur<=0);
+	
+do {
 	largeur = parseFloat(prompt('Quelle est la largeur ?'));
-}while(isNaN(largeur) || largeur<=0);
+} while(isNaN(largeur) || largeur<=0);
 
 
 //Utilistaion 
