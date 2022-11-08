@@ -15,8 +15,8 @@
 	const MAX = 10;
 	const NB_ESSAI = 3;
 
-	function randomGen() {
-		var nb = Math.round(Math.random() * MAX);
+	function randomGen(min, max) {
+		var randNb = Math.round(Math.random() * (max-min)) + min;
 		
 		return nb;
 	}
