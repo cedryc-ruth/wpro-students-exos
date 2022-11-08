@@ -29,12 +29,12 @@ do {
 
 	//Traitement des données
 	prime = montantPrime(chiffreVente);
+	
+	// Affichage
+	if(chiffreVente!=0) {
+		document.write('<p>La prime accordée est de <b>'+prime.toFixed(2)+'</b> €.</p>');
+	} else {
+		document.write('<p>Pas de prime!</p>');
+	}
 } while(confirm('Voulez-vous recommencer?'));
-
-// Affichage
-if(chiffreVente!=0) {
-	document.write('<p>La prime accordée est de <b>'+prime.toFixed(2)+'</b> €.</p>');
-} else {
-	document.write('<p>Pas de prime!</p>');
-}	
 </script>
