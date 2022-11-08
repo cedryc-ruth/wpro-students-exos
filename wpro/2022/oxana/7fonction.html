@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<script>
+
+/**
+*Calcule la prime d'un vendeur avec fonction
+*@author Eremeeva Oxana
+*09/10/2022
+*/
+
+//Declaration des données
+
+var chiffre_vente; // Donner par utilisateur
+const MIN=1000;
+const PRIME=0.1;   // Prime de 10% sur son chiffre de vente  s'il a vendu pour plus de 1000€
+// Lecture des données
+do {
+do
+ chiffre_vente=parseFloat(window.prompt(' Quel est votre chiffre de vente?'));
+ while( isNaN(chiffre_vente)|| chiffre_vente<0);
+ 
+// Traitement
+function bonus(chiffre_vente,PRIME) {
+	
+	return chiffre_vente*PRIME;
+	}
+if (chiffre_vente>MIN) {
+ 
+	document.write('Votre prime est de '+bonus(chiffre_vente,PRIME)+'€');
+} else {
+	
+	document.write('Vous n´avez pas le droit d´une prime');
+}
+} while (confirm('Voulez-vous recommencer?'));
+
+</script>
