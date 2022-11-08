@@ -11,7 +11,7 @@
 	<title> mon site</title>
 
 	<script>
-
+	//Déclaration des variables, constantes et fonctions
 	function randomGen10() {
 		var randNb = Math.floor(Math.random() * 11);
 		return randNb;
@@ -22,27 +22,32 @@
 	const MAX_TRIALS = 3;
 	var nb;		//Nombre aléatoire à deviner
 	var guess;	//Nombre proposé par l'utilisateur
+	var message = '';
 
-	nb = randomGen10(MIN, MAX);
+	nb = randomGen10(MIN, MAX);	//Lecture de donnée
 
 	for (var chance = MAX_TRIALS; chance >= 0; chance--) {
+		//Lecture des données
 		guess = prompt('entrez votre nombre');
 		guess = parseFloat(guess);
 
+		//Traitement des données
 		if (guess == nb) {
-			document.write('<p> hey mon ami tu as trouvé le nombre </p>');
+			message = '<p> hey mon ami tu as trouvé le nombre </p>';
 			break;
 		} else if (chance == 0) {
-			document.write('<p> tu es encore plus nul que je le pensais, game over c\'était en fait ${nb} </p>');
+			message = '<p> tu es encore plus nul que je le pensais, game over c\'était en fait ${nb} </p>';
 		} else if (guess > MAX || guess < MIN) {
-			document.write('<p>tu n\'as pas compris les règles</p>');
+			message = '<p>tu n\'as pas compris les règles</p>';
 			break;
 		}
 		else {
-			document.write('<p>non tu es un gros nul, recommence<p>');
+			message = '<p>non tu es un gros nul, recommence<p>';
 		}
 	}
 
+	//Affichage du résultat
+	document.write(message);
 	</script>
 
 </head>
