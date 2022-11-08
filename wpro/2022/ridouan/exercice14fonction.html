@@ -3,17 +3,17 @@
 
 // Déclaration de variables, constante et fonction
 var note;
-var note_sup_limite = 0;
+var noteSupLimite = 0;
 var resultat;
 var somme = 0;
 
 const LIMITE = 10;
 
-function note_sup(nb){
+function noteSup(nb){
 	somme++;
 
 	if(nb>LIMITE){
-		return ++note_sup_limite;
+		return ++noteSupLimite;
 	}
 }
 
@@ -24,7 +24,7 @@ do {
 	} while(isNaN(note) || note<0);
 	
 	//Traitement	
-	resultat = note_sup(note);
+	resultat = noteSup(note);
 } while(confirm('Continuer?'));
 
 // Affichage
