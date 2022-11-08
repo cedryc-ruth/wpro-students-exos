@@ -24,26 +24,28 @@ function calculePrime(chiffreVente, prime){
 }
 
 //Lecture de données
-do{
-	do{
+do {
+	do {
 		chiffreVente = parseFloat(prompt('Veuillez entrer votre chiffre de vente'));
-	}while(isNaN(chiffreVente) || chiffreVente<0);
+	} while(isNaN(chiffreVente) || chiffreVente<0);
 
-//Traitement des données
+	//Traitement des données
 	if(chiffreVente>0 && chiffreVente<SEUIL_BAS){ //de 0 à 500
 		//utilisation fonction 
 		montantPrime = calculePrime(chiffreVente, PRIME_BASSE);
 	} else if(chiffreVente>SEUIL_BAS && chiffreVente<SEUIL_HAUT){ //entre 501 et 1000
 		//utilistaion fonction
 		montantPrime = calculePrime(chiffreVente, PRIME_MOYENNE);
-	}else { //plus de 1000
+	} else { //plus de 1000
 		//utilisation fonction
 		montantPrime = calculePrime(chiffreVente, PRIME_HAUTE);
-		}
-//Affichage du résultat
+	}
+	
+	//Affichage du résultat
 	if(chiffreVente<=0){
 		document.write('<p>Vous n\'avez pas droit à une pime !</p>');
-	} else { document.write('<p>Votre prime s\'élève à '+montantPrime.toFixed(2)+' €</p>');
+	} else {
+		document.write('<p>Votre prime s\'élève à '+montantPrime.toFixed(2)+' €</p>');
 	}
 }while(confirm('Voulez-Vous recommencer ?'));
 </script>
