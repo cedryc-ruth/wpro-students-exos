@@ -10,17 +10,17 @@
 // Declaration des données
 
 var chiffreVente;     //Données par l'utilisateur
-const PRIM_MIN=0.02 ;  // Prime 2% si chiffre_vente entre 0 et 500
-const PRIM_MOYEN=0.05 ;// Prime 5% si chiffre_vente entre 501 et 1000
-const PRIM_HAUT=0.1;   // Prime 10% si chiffre_vente plus de 1000
-const LIM_INF=500;
-const LIM_SUP=1000;
+const PRIM_MIN = 0.02 ;  // Prime 2% si chiffre_vente entre 0 et 500
+const PRIM_MOYEN = 0.05 ;// Prime 5% si chiffre_vente entre 501 et 1000
+const PRIM_HAUT = 0.1;   // Prime 10% si chiffre_vente plus de 1000
+const LIM_INF = 500;
+const LIM_SUP = 1000;
 	
 // Lecture des données
 do {
 	do
-		chiffreVente=parseFloat(window.prompt('Quel est votre chiffre de vente?'));
-	while (isNaN(chiffre_vente)|| chiffre_vente<0);
+		chiffreVente = parseFloat(window.prompt('Quel est votre chiffre de vente?'));
+	while(isNaN(chiffre_vente)|| chiffre_vente<0);
 
 	// Traitement des données
 	function bonusPetit(chiffreVente,PRIM_MIN){
