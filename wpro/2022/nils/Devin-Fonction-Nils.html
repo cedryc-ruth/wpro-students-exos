@@ -29,32 +29,27 @@ function nombreRandom(maximum,minimum) {
 nbSecret = nombreRandom (MAX,MIN); 
 
 //lecture
-bloc: {
-	do{
+do {
+	//traitement
+	for(tentatives=1;tentatives<=3;tentatives++) {
 		do {
-			//traitement
-			for(tentatives=1;tentatives<=3;tentatives++) {
-				do {
-					nbEntree = parseFloat(prompt('Devinez un nombre secret entre 0 et 10', ));	
-				} while (isNaN(nbEntree) || nbEntree<0 || nbEntree>10); 
-		
-				if(nbEntree == nbSecret) {
-					document.write('<p> bravo tu as trouvé le '+nbSecret+'</p>');
-					document.write('<p> tu l\'as trouvé en '+tentatives+' tentatives</p>');
-					break bloc;
-				} else if (nbEntree<nbSecret) {
-					alert('Entres un nombre plus grand!');
-				} else {	//nbEntree>nbSecret
-					alert('le nombre est plus petit!');
-				}
-			
-				alert('il te reste seulement '+(TENTATIVES_MAX-tentatives)+' tentatives');
-			}
-		} while (tentatives<3);
-		
-		alert('tu as épuisé toutes tes tentatives');
-		document.write ('la réponse était '+nbSecret+'</p>');
-		nbSecret = nombreRandom(MAX,MIN);
-	} while(confirm('recommencer?'));
-}
+			nbEntree = parseFloat(prompt('Devinez un nombre secret entre 0 et 10', ));	
+		} while (isNaN(nbEntree) || nbEntree<0 || nbEntree>10); 
+
+		if(nbEntree == nbSecret) {
+			document.write('<p> bravo tu as trouvé le '+nbSecret+'</p>');
+			document.write('<p> tu l\'as trouvé en '+tentatives+' tentatives</p>');
+		} else if (nbEntree<nbSecret) {
+			alert('Entres un nombre plus grand!');
+		} else {	//nbEntree>nbSecret
+			alert('le nombre est plus petit!');
+		}
+
+		alert('il te reste seulement '+(TENTATIVES_MAX-tentatives)+' tentatives');
+	}
+
+	alert('tu as épuisé toutes tes tentatives');
+	document.write ('la réponse était '+nbSecret+'</p>');
+	nbSecret = nombreRandom(MAX,MIN);
+} while(confirm('recommencer?'));
 </script>
