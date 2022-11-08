@@ -24,16 +24,16 @@ function calculePrime(chiffreVente, prime){
 montantPrime = calculePrime(chiffreVente, PRIME);
 
 //Lecture de données
-do{
-	do{
+do {
+	do {
 		chiffreVente = parseFloat(prompt('Veuillez entrer votre chiffre de vente'));
-	}while(isNaN(chiffreVente) || chiffreVente<0);
+	} while(isNaN(chiffreVente) || chiffreVente<0);
 
 	//Traitement des données
-	if(chiffreVente>SEUIL){
+	if(chiffreVente>SEUIL) {
 		montantPrime = calculePrime(chiffreVente, PRIME);
 		//Affichage du résultat
 		document.write('<p>Votre prime s\'élève à '+montantPrime.toFixed(2)+' €</p>');
 	} else document.write('<p>Vous n\'avez pas droit à une pime !</p>');
-}while(confirm('Voulez-Vous recommencer ?'));
+} while(confirm('Voulez-Vous recommencer ?'));
 </script>
