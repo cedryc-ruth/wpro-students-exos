@@ -12,6 +12,7 @@
 //Déclaration des variables et constantes
 var montantPrime;
 var chiffreVente;
+var message = '';
 const SEUIL = 1000;
 const PRIME = 0.1;
 
@@ -32,8 +33,12 @@ do {
 	//Traitement des données
 	if(chiffreVente>SEUIL) {
 		montantPrime = calculePrime(chiffreVente, PRIME);
-		//Affichage du résultat
-		document.write('<p>Votre prime s\'élève à '+montantPrime.toFixed(2)+' €</p>');
-	} else document.write('<p>Vous n\'avez pas droit à une pime !</p>');
+		message = '<p>Votre prime s\'élève à '+montantPrime.toFixed(2)+' €</p>';
+	} else {
+		message = '<p>Vous n\'avez pas droit à une pime !</p>';
+	}
+	
+	//Affichage du résultat
+	document.write(message);
 } while(confirm('Voulez-Vous recommencer ?'));
 </script>
