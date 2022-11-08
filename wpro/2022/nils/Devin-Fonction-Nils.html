@@ -26,10 +26,10 @@ function nombreRandom(maximum,minimum) {
 	return  Math.round(Math.random()*(maximum-minimum))+minimum;
 }
 	
-nbSecret = nombreRandom (MAX,MIN); 
-
 //lecture
 do {
+	nbSecret = nombreRandom(MAX,MIN);
+
 	//traitement
 	for(tentatives=1;tentatives<=3;tentatives++) {
 		do {
@@ -52,6 +52,5 @@ do {
 
 	alert('tu as épuisé toutes tes tentatives');
 	document.write ('<p>la réponse était '+nbSecret+'</p>');
-	nbSecret = nombreRandom(MAX,MIN);
 } while(confirm('recommencer?'));
 </script>
