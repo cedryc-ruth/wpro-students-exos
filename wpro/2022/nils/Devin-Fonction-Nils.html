@@ -22,11 +22,11 @@ var TENTATIVES_MAX = 3;
 const MIN = 0;
 const MAX = 10;
 	
-function NombreRandom(Maximum,Minimum){
-	return  Math.round(Math.random()*(Maximum-Minimum))+Minimum 
+function nombreRandom(maximum,minimum) {
+	return  Math.round(Math.random()*(maximum-minimum))+minimum 
 }
 	
-nbSecret = NombreRandom (MAX,MIN); 
+nbSecret = nombreRandom (MAX,MIN); 
 
 //lecture
 bloc: {
@@ -54,7 +54,7 @@ bloc: {
 		
 		alert('tu as épuisé toutes tes tentatives')
 		document.write ('la réponse était '+nbSecret+'</p>')
-		nbSecret = NombreRandom(MAX,MIN) 
+		nbSecret = nombreRandom(MAX,MIN) 
 	} while(confirm('recommencer?'));
 }
 </script>
