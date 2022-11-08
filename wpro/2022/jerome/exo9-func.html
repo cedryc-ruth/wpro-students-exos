@@ -17,13 +17,14 @@
 		return randNb;
 	}
 
-	var MIN = 0;
-	var MAX = 10;
+	const MIN = 0;
+	const MAX = 10;
+	const MAX_TRIALS = 3;
 	var nb;
 
 	nb = randomGen10(MIN, MAX);
 
-	for (var chance = 3; chance >= 0; chance--) {
+	for (var chance = MAX_TRIALS; chance >= 0; chance--) {
 		guess = prompt('entrez votre nombre');
 		guess = parseFloat(guess);
 
@@ -32,7 +33,7 @@
 			break;
 		} else if (chance == 0) {
 			document.write('<p> tu es encore plus nul que je le pensais, game over c\'était en fait ${nb} </p>');
-		} else if (guess > 10) {
+		} else if (guess > MAX || guess < MIN) {
 			document.write('<p>tu n\'as pas compris les règles</p>');
 			break;
 		}
