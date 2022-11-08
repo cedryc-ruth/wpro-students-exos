@@ -4,8 +4,8 @@
 // Déclarartion de variables et fonction
 
 var nb; //x
-var borne_inf; //y
-var borne_sup; // z
+var borneInf; //y
+var borneSup; // z
 var resultat;
 
 function verificateur(y,z,x){
@@ -27,12 +27,12 @@ do{
 	
 // Lecture des données	
 	do{
-		borne_inf = parseInt(prompt('Valeur de la borne inférieur :'));
-	}while(isNaN(borne_inf));
+		borneInf = parseInt(prompt('Valeur de la borne inférieur :'));
+	}while(isNaN(borneInf));
 
 	do{
-		borne_sup = parseInt(prompt('Valeur de la borne supérieur :'));
-	}while(isNaN(borne_sup) || borne_sup<borne_inf);
+		borneSup = parseInt(prompt('Valeur de la borne supérieur :'));
+	}while(isNaN(borneSup) || borneSup<borneInf);
 
 	do {
 		nb = parseInt(prompt('Entrez un nombre'));
@@ -40,7 +40,7 @@ do{
 
 // Traitement
 
-	resultat = verificateur(borne_inf,borne_sup,nb);
+	resultat = verificateur(borneInf,borneSup,nb);
 	
 }while(confirm('Souhaitez-vous recommencer?'));
 
