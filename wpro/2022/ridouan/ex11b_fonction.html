@@ -8,13 +8,13 @@ var borneInf; //y
 var borneSup; // z
 var resultat;
 
-function verificateur(y,z,x){
+function verificateur(min,max,value){
 
-	if(x>=y && x<=z){
-		return x;
+	if(value>=min && value<=max){
+		return value;
 	
 	} else {
-		if(x<y){
+		if(value<min){
 			return 'TROP BAS';
 		}else{
 			return 'TROP HAUT';
