@@ -13,8 +13,8 @@ var chiffreVente; 	// Donner par utilisateur
 const MIN = 1000;
 const PRIME = 0.1;   	// Prime de 10% sur son chiffre de vente  s'il a vendu pour plus de 1000€
 
-function bonus(chiffreVente,PRIME) {
-	return chiffreVente*PRIME;
+function bonus(montant,tauxPrime) {
+	return montant*tauxPrime;
 }
 	
 // Lecture des données
