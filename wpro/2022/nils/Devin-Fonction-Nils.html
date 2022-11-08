@@ -39,6 +39,8 @@ do {
 		if(nbEntree == nbSecret) {
 			document.write('<p> bravo tu as trouvé le '+nbSecret+'</p>');
 			document.write('<p> tu l\'as trouvé en '+tentatives+' tentatives</p>');
+			
+			break;
 		} else if (nbEntree<nbSecret) {
 			alert('Entres un nombre plus grand!');
 		} else {	//nbEntree>nbSecret
