@@ -2,52 +2,43 @@
 <script>
 
 // Déclarartion de variables et fonction
-
 var nb; //x
 var borneInf; //y
 var borneSup; // z
 var resultat;
 
-function verificateur(min,max,value){
-
-	if(value>=min && value<=max){
+function verificateur(min,max,value) {
+	if(value>=min && value<=max) {
 		return value;
-	
 	} else {
-		if(value<min){
+		if(value<min) {
 			return 'TROP BAS';
-		}else{
+		} else {
 			return 'TROP HAUT';
 		}
 	}
 }
 
 
-do{	
+do {
 	
 // Lecture des données	
-	do{
+	do {
 		borneInf = parseInt(prompt('Valeur de la borne inférieur :'));
-	}while(isNaN(borneInf));
+	} while(isNaN(borneInf));
 
-	do{
+	do {
 		borneSup = parseInt(prompt('Valeur de la borne supérieur :'));
-	}while(isNaN(borneSup) || borneSup<borneInf);
+	} while(isNaN(borneSup) || borneSup<borneInf);
 
 	do {
 		nb = parseInt(prompt('Entrez un nombre'));
-	}while(isNaN(nb));
+	} while(isNaN(nb));
 
-// Traitement
-
-	resultat = verificateur(borneInf,borneSup,nb);
-	
-}while(confirm('Souhaitez-vous recommencer?'));
-
+	// Traitement
+	resultat = verificateur(borneInf,borneSup,nb);	
+} while(confirm('Souhaitez-vous recommencer?'));
 
 // Affichage
-
 document.write('<p>[<b>'+resultat+'</b>]</p>');
-
-
 </script>
