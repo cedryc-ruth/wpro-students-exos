@@ -33,7 +33,7 @@
 			break;
 		} else if (chance == 0) {
 			document.write('<p>Tu as épuisé tes 3 tentatives, le nombre Secret était '+nbSecret+' </p>');
-		} else if (utilisateur > 10) {
+		} else if (utilisateur > MAX || utilisateur < MIN) {
 			document.write('<p> tu n\'as pas compris les règles, un nombre entre '+MIN+' et '+MAX+'</p>')
 			break;
 		}
