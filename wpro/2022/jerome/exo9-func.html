@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<meta name="author" content="Nom">
+
+	<title> mon site</title>
+
+</head>
+
+<body>
+
+
+
+</body>
+<script>
+
+	function randomGen10() {
+		nb = Math.floor(Math.random() * 11);
+
+	}
+
+	var MIN = 0;
+	var MAX = 10;
+	var nb;
+
+	randomGen10(MIN, MAX);
+
+	for (var chance = 3; chance >= 0; chance--) {
+		guess = prompt("entrez votre nombre");
+		guess = parseFloat(guess);
+
+		if (guess == nb) {
+			document.write('<p> hey mon ami tu as trouvé le nombre </p>');
+			break;
+		} else if (chance == 0) {
+			document.write(`<p> tu es encore plus nul que je le pensais, game over c etait en fait ${nb} </p>`);
+		} else if (guess > 10) {
+			document.write(`<p>tu n'as pas compris les règles</p>`)
+			break;
+		}
+		else {
+			document.write("<p>non tu es un gros nul, recommence<p>");
+		}
+	}
+
+</script>
+
+</html>

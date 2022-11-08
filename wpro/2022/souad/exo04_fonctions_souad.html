@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<script>
+/*
+ *Exercice 4 Calcul du périmètre d'un rectangle
+ *
+ *@author S. Riouch
+ *
+ */
+
+//Déclaration des variables
+var longueur;
+var largeur;
+var resultatPérimètre;
+var resultatSurface
+//Déclaration de la fonction
+function calculePérimètre(longueur, largeur){
+	return 2*(largeur+longueur);
+}
+function calculeSurface(longueur, largeur){
+	return largeur*longueur;
+}
+
+// Lecture des données
+do{
+	longueur = parseFloat(prompt('Quelle est la longueur ?'));
+}while(isNaN(longueur) || longueur<=0);
+do{
+	largeur = parseFloat(prompt('Quelle est la largeur ?'));
+}while(isNaN(largeur) || largeur<=0);
+
+
+//Utilistaion 
+resultatPérimètre = calculePérimètre(longueur, largeur);
+resultatSurface = calculeSurface(longueur, largeur);
+
+//Affichage du résultat
+document.write('<p>Le périmètre du rectangle est de '+resultatPérimètre+' cm</p>');
+document.write('<p>La Surface du rectangle est de '+resultatSurface+' cm²</p>');
+</script>

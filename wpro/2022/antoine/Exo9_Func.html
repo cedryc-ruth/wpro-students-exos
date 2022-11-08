@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Demeure Antoine">
+	<title>Exercice 9 avec function</title>
+</head>
+</body>
+<script>
+	//Déclaration des variables, constantes et fonctions
+	var nbSecret;
+	var utilisateur;
+	var tentatives = 0;
+	const MIN = 0;
+	const MAX = 10;
+	const NB_ESSAI = 3;
+
+	randomGen(MIN, MAX);
+
+	function randomGen() {
+		nbSecret = Math.round(Math.random() * MAX);
+	}
+
+	for (var chance = NB_ESSAI; chance >= tentatives; chance--) {
+		utilisateur = prompt("entrez votre nombre");
+		utilisateur = parseFloat(utilisateur);
+
+		if (utilisateur == nbSecret) {
+			document.write('<p> Bravo ! Tu as trouvé le nombre Secret</p>');
+			break;
+		} else if (chance == 0) {
+			document.write('<p>Tu as épuisé tes 3 tentatives, le nombre Secret était '+nbSecret+' </p>');
+		} else if (utilisateur > 10) {
+			document.write('<p> tu n\'as pas compris les règles, un nombre entre '+MIN+' et '+MAX+'</p>')
+			break;
+		}
+		else {
+			document.write('<p>Incorrect ! Retente ta chance, il te reste '+tentatives+'<p>');
+		}
+	}
+</script>
+</html>

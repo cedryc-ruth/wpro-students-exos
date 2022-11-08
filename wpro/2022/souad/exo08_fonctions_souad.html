@@ -1,0 +1,57 @@
+<meta charset="utf-8">
+<script>
+/**
+ *Exercice 8 : Écrivez un programme qui affiche le montant de la prime d’un vendeur 
+ *lorsqu’il a entré son chiffre de vente (prime de 10% sur son chiffre de vente s’il a vendu pour plus de 1000 €).
+ *Idem mais primes progressives:  0-500 => 2%, 501-1000 => 5%, plus de 1000 => 10%
+
+ *
+ *@author S. Riouch
+ *
+ *08/11/2022
+ */
+ 
+//Déclaration des variables et constantes
+var montantPrime;
+var chiffreVente;
+const SEUIL_BAS = 500;
+const SEUIL_HAUT = 1000;
+const PRIME_BASSE = 0.02;
+const PRIME_MOYENNE = 0.05;
+const PRIME_HAUTE = 0.1;
+
+//Déclaration des fonctions
+function calculePrimeBasse(chiffreVente, PRIME_BASSE){
+	return chiffreVente*PRIME_BASSE;
+}
+function calculePrimeMoyenne(chiffreVente, PRIME_MOYENNE){
+	return chiffreVente*PRIME_MOYENNE;
+}
+function calculePrimeHaute(chiffreVente, PRIME_HAUTE){
+	return chiffreVente*PRIME_HAUTE;
+}
+
+//Lecture de données
+do{
+	do{
+		chiffreVente = parseFloat(prompt('Veuillez entrer votre chiffre de vente'));
+	}while(isNaN(chiffreVente) || chiffreVente<0);
+
+//Traitement des données
+	if(chiffreVente>0 && chiffreVente<SEUIL_BAS){ //de 0 à 500
+		//utilisation fonction 
+		montantPrime = calculePrimeBasse(chiffreVente, PRIME_BASSE);
+	} else if(chiffreVente>SEUIL_BAS && chiffreVente<SEUIL_HAUT){ //entre 501 et 1000
+		//utilistaion fonction
+		montantPrime = calculePrimeMoyenne(chiffreVente, PRIME_MOYENNE);
+	}else { //plus de 1000
+		//utilisation fonction
+		montantPrime = calculePrimeHaute(chiffreVente, PRIME_HAUTE);
+		}
+//Affichage du résultat
+	if(chiffreVente<=0){
+		document.write('<p>Vous n\'avez pas droit à une pime !</p>');
+	} else { document.write('<p>Votre prime s\'élève à '+montantPrime.toFixed(2)+' €</p>');
+	}
+}while(confirm('Voulez-Vous recommencer ?'));
+</script>
