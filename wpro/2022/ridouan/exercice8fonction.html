@@ -11,7 +11,7 @@ const PRIME_HAUT = 0.1;
 const SEUIL_BAS = 500;
 const SEUIL_HAUT = 1000;
 
-function montant_prime(x){
+function montantPrime(x){
 	if(x<=SEUIL_BAS) {				// de 1 à 500
 		return x * PRIME_BAS;
 	} else if (x>SEUIL_BAS && x<=SEUIL_HAUT) {		// de 501 à 1000
@@ -28,7 +28,7 @@ do {
 	} while(isNaN(chiffreVente) || chiffreVente<0);
 
 	//Traitement des données
-	prime = montant_prime(chiffreVente);
+	prime = montantPrime(chiffreVente);
 } while(confirm('Voulez-vous recommencer?'));
 
 // Affichage
