@@ -4,20 +4,20 @@
 var chiffreVente;
 var prime;
 
-const PRIME_1 = 0.02;
-const PRIME_2 = 0.05;
-const PRIME_3 = 0.1;
+const PRIME_BAS = 0.02;
+const PRIME_MOYEN = 0.05;
+const PRIME_HAUT = 0.1;
 
-const SEUIL_1 = 500;
-const SEUIL_2 = 1000;
+const SEUIL_BAS = 500;
+const SEUIL_HAUT = 1000;
 
 function montant_prime(x){
-	if(x<=SEUIL_1) {				// de 1 à 500
-		return x * PRIME_1;
-	} else if (x>SEUIL_1 && x<=SEUIL_2) {		// de 501 à 1000
-		return x * PRIME_2;
+	if(x<=SEUIL_BAS) {				// de 1 à 500
+		return x * PRIME_BAS;
+	} else if (x>SEUIL_BAS && x<=SEUIL_HAUT) {		// de 501 à 1000
+		return x * PRIME_MOYEN;
 	} else {
-		return x * PRIME_3;			// plus de 1000
+		return x * PRIME_HAUT;			// plus de 1000
 	}
 }
 
