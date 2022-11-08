@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<script>
+/* Calcule le montant de la prime avec fonction
+*  Eremeeva Oxana
+* 12/102022
+*/ 
+// Declaration des données
+
+var chiffre_vente;     //Données par l'utilisateur
+const PRIM_MIN=0.02 ;  // Prime 2% si chiffre_vente entre 0 et 500
+const PRIM_MOYEN=0.05 ;// Prime 5% si chiffre_vente entre 501 et 1000
+const PRIM_HAUT=0.1;   // Prime 10% si chiffre_vente plus de 1000
+const LIM_INF=500;
+const LIM_SUP=1000;
+// Lecture des données
+do {
+do
+chiffre_vente=parseFloat(window.prompt('Quel est votre chiffre de vente?'));
+while (isNaN(chiffre_vente)|| chiffre_vente<0);
+
+// Traitement des données
+function bonus_petit(chiffre_vente,PRIM_MIN){
+	return chiffre_vente*PRIM_MIN;
+	}
+function bonus_moyen(chiffre_vente, PRIM_MOYEN){
+	return chiffre_vente*PRIM_MOYEN;
+	}
+function bonus_haut(chiffre_vente, PRIM_HAUT){
+	return chiffre_vente*PRIM_HAUT;
+	}
+// Affichage	
+if (chiffre_vente>0 && chiffre_vente<=LIM_INF) {
+	document.write('<p>Votre prime est de '+bonus_petit(chiffre_vente,PRIM_MIN)+'€</p>');
+
+} else if (chiffre_vente>LIM_INF && chiffre_vente<=LIM_SUP) {
+	document.write('<p>Votre prime est de '+bonus_moyen(chiffre_vente, PRIM_MOYEN)+'€</p>');
+	
+} else if (chiffre_vente>LIM_SUP) {
+	document.write('<p>Votre prime est de '+bonus_haut(chiffre_vente, PRIM_HAUT)+'€</p>');
+	
+} else {
+    document.write('<p>Vous n´avez pas le droit d´une prime</p>');
+}
+}while(confirm('Voulez-vous recommencer?'));
+
+ </script>

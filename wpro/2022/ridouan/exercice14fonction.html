@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<script>
+
+// Déclaration de variables, constante et fonction
+
+var note;
+var note_sup_limite = 0;
+var resultat;
+var somme = 0;
+
+const LIMITE = 10;
+
+function note_sup(nb){
+	
+	somme++;
+	if(nb>LIMITE){
+		return ++note_sup_limite;
+	}
+}
+
+do{
+
+//Lecture
+	do{
+		note = parseFloat(prompt('Entrez la note suivante'));
+	
+	}while(isNaN(note) || note<0);
+	
+//Traitement	
+	
+	resultat = note_sup(note);
+
+
+}while(confirm('Continuer?'));
+
+// Affichage
+
+document.write('<p>Sur '+somme+' notes entrées, <b>'+resultat+'</b> sont supérieur à '+LIMITE+'.</p>');
+
+</script>

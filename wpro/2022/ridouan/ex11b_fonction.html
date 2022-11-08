@@ -1,0 +1,53 @@
+<meta charset="utf-8">
+<script>
+
+// Déclarartion de variables et fonction
+
+var nb; //x
+var borne_inf; //y
+var borne_sup; // z
+var resultat;
+
+function verificateur(y,z,x){
+
+	if(x>=y && x<=z){
+		return x;
+	
+	} else {
+		if(x<y){
+			return 'TROP BAS';
+		}else{
+			return 'TROP HAUT';
+		}
+	}
+}
+
+
+do{	
+	
+// Lecture des données	
+	do{
+		borne_inf = parseInt(prompt('Valeur de la borne inférieur :'));
+	}while(isNaN(borne_inf));
+
+	do{
+		borne_sup = parseInt(prompt('Valeur de la borne supérieur :'));
+	}while(isNaN(borne_sup) || borne_sup<borne_inf);
+
+	do {
+		nb = parseInt(prompt('Entrez un nombre'));
+	}while(isNaN(nb));
+
+// Traitement
+
+	resultat = verificateur(borne_inf,borne_sup,nb);
+	
+}while(confirm('Souhaitez-vous recommencer?'));
+
+
+// Affichage
+
+document.write('<p>[<b>'+resultat+'</b>]</p>');
+
+
+</script>
