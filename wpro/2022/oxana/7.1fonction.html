@@ -23,25 +23,17 @@ do {
 	while(isNaN(chiffre_vente)|| chiffre_vente<0);
 
 	// Traitement des données
-	function bonusPetit(chiffreVente,PRIM_MIN){
-		return chiffreVente*PRIM_MIN;
-	}
-	
-	function bonusMoyen(chiffreVente, PRIM_MOYEN){
-		return chiffreVente*PRIM_MOYEN;
-	}
-	
-	function bonusHaut(chiffreVente, PRIM_HAUT){
-		return chiffreVente*PRIM_HAUT;
+	function bonus(chiffreVente, prime){
+		return chiffreVente*prime;
 	}
 	
 	// Affichage	
 	if (chiffreVente>0 && chiffreVente<=LIM_INF) {
-		document.write('<p>Votre prime est de '+bonusPetit(chiffreVente,PRIM_MIN)+'€</p>');
+		document.write('<p>Votre prime est de '+bonus(chiffreVente,PRIM_MIN)+'€</p>');
 	} else if (chiffreVente>LIM_INF && chiffre_vente<=LIM_SUP) {
-		document.write('<p>Votre prime est de '+bonus_moyen(chiffreVente, PRIM_MOYEN)+'€</p>');
+		document.write('<p>Votre prime est de '+bonus(chiffreVente, PRIM_MOYEN)+'€</p>');
 	} else if (chiffreVente>LIM_SUP) {
-		document.write('<p>Votre prime est de '+bonus_haut(chiffreVente, PRIM_HAUT)+'€</p>');
+		document.write('<p>Votre prime est de '+bonus(chiffreVente, PRIM_HAUT)+'€</p>');
 	} else {
     		document.write('<p>Vous n´avez pas le droit d´une prime</p>');
 	}
