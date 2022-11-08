@@ -19,14 +19,8 @@ const PRIME_MOYENNE = 0.05;
 const PRIME_HAUTE = 0.1;
 
 //Déclaration des fonctions
-function calculePrimeBasse(chiffreVente, PRIME_BASSE){
-	return chiffreVente*PRIME_BASSE;
-}
-function calculePrimeMoyenne(chiffreVente, PRIME_MOYENNE){
-	return chiffreVente*PRIME_MOYENNE;
-}
-function calculePrimeHaute(chiffreVente, PRIME_HAUTE){
-	return chiffreVente*PRIME_HAUTE;
+function calculePrime(chiffreVente, prime){
+	return chiffreVente*prime;
 }
 
 //Lecture de données
@@ -38,13 +32,13 @@ do{
 //Traitement des données
 	if(chiffreVente>0 && chiffreVente<SEUIL_BAS){ //de 0 à 500
 		//utilisation fonction 
-		montantPrime = calculePrimeBasse(chiffreVente, PRIME_BASSE);
+		montantPrime = calculePrime(chiffreVente, PRIME_BASSE);
 	} else if(chiffreVente>SEUIL_BAS && chiffreVente<SEUIL_HAUT){ //entre 501 et 1000
 		//utilistaion fonction
-		montantPrime = calculePrimeMoyenne(chiffreVente, PRIME_MOYENNE);
+		montantPrime = calculePrime(chiffreVente, PRIME_MOYENNE);
 	}else { //plus de 1000
 		//utilisation fonction
-		montantPrime = calculePrimeHaute(chiffreVente, PRIME_HAUTE);
+		montantPrime = calculePrime(chiffreVente, PRIME_HAUTE);
 		}
 //Affichage du résultat
 	if(chiffreVente<=0){
