@@ -15,11 +15,12 @@
 	const MAX = 10;
 	const NB_ESSAI = 3;
 
-	randomGen(MIN, MAX);
-
 	function randomGen() {
 		nbSecret = Math.round(Math.random() * MAX);
 	}
+	
+	//Lecture de données
+	randomGen(MIN, MAX);
 
 	for (var chance = NB_ESSAI; chance >= tentatives; chance--) {
 		utilisateur = prompt("entrez votre nombre");
