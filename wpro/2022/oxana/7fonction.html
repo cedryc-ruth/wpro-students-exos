@@ -9,23 +9,23 @@
  */
 
 //Declaration des variables, constantes et fonctions
-var chiffre_vente; 	// Donner par utilisateur
+var chiffreVente; 	// Donner par utilisateur
 const MIN = 1000;
 const PRIME = 0.1;   	// Prime de 10% sur son chiffre de vente  s'il a vendu pour plus de 1000€
 
-function bonus(chiffre_vente,PRIME) {
-	return chiffre_vente*PRIME;
+function bonus(chiffreVente,PRIME) {
+	return chiffreVente*PRIME;
 }
 	
 // Lecture des données
 do {
 	do
-		chiffre_vente=parseFloat(window.prompt(' Quel est votre chiffre de vente?'));
-	while( isNaN(chiffre_vente)|| chiffre_vente<0);
+		chiffreVente = parseFloat(window.prompt(' Quel est votre chiffre de vente?'));
+	while( isNaN(chiffreVente)|| chiffreVente<0);
  
 	// Traitement
 	if (chiffre_vente>MIN) {
- 		document.write('Votre prime est de '+bonus(chiffre_vente,PRIME)+'€');
+ 		document.write('Votre prime est de '+bonus(chiffreVente,PRIME)+'€');
 	} else {
 		document.write('Vous n´avez pas le droit d´une prime');
 	}
