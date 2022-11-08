@@ -8,11 +8,15 @@
  * @version 1.0 (09/10/2022)
  */
 
-//Declaration des données
+//Declaration des variables, constantes et fonctions
 var chiffre_vente; 	// Donner par utilisateur
 const MIN = 1000;
 const PRIME = 0.1;   	// Prime de 10% sur son chiffre de vente  s'il a vendu pour plus de 1000€
 
+function bonus(chiffre_vente,PRIME) {
+	return chiffre_vente*PRIME;
+}
+	
 // Lecture des données
 do {
 	do
@@ -20,10 +24,6 @@ do {
 	while( isNaN(chiffre_vente)|| chiffre_vente<0);
  
 	// Traitement
-	function bonus(chiffre_vente,PRIME) {
-		return chiffre_vente*PRIME;
-	}
-	
 	if (chiffre_vente>MIN) {
  		document.write('Votre prime est de '+bonus(chiffre_vente,PRIME)+'€');
 	} else {
