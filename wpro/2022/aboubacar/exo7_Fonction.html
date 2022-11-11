@@ -16,18 +16,17 @@
 	//Utilisation de fonction
 	montantPrime = chiffrePrime(chiffrevente, TAUX_PRIME);
 	
-	do{
-	//Lecture des données 
-		do{
-	chiffrevente = parseFloat(prompt("Quel est le montant de la prime ?")); 
-	} while (isNaN(chiffrevente) || (chiffrevente<0));
+	do {
+		//Lecture des données 
+		do {
+			chiffrevente = parseFloat(prompt("Quel est le montant de la prime ?")); 
+		} while (isNaN(chiffrevente) || (chiffrevente<0));
 		
-	//Traitement de données
-	montantPrime = chiffrevente*TAUX_PRIME;
+		//Traitement de données
+		montantPrime = chiffrevente*TAUX_PRIME;
 		
-	//Affichage du résultat	
-	document.write("<p>Le Montant de la prime est : "+montantPrime+" €<p>");
-	
+		//Affichage du résultat	
+		document.write("<p>Le Montant de la prime est : "+montantPrime+" €<p>");
 	} while (confirm("Voulez vous recommencer ?"));
 	
 </script>
