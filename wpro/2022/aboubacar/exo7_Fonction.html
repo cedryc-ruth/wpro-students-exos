@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+			
+<script>
+
+	//Declaration 
+	var montantPrime 	//A calculer
+	var chiffrevente	//A lire
+	const tauxPrime = 0.1;
+	const seuil = 1000;
+	
+	//Décalration de fonction
+	function chiffrePrime(chiffrevente, tauxPrime) {
+		return montantPrime*tauxPrime;
+	}
+	
+	//Utilisation de fonction
+	montantPrime = chiffrePrime(chiffrevente, tauxPrime);
+	
+	do{
+	//Lecture des données 
+		do{
+	chiffrevente = parseFloat(prompt("Quel est le montant de la prime ?")); 
+	} while (isNaN(chiffrevente) || (chiffrevente<0));
+		
+	//Traitement de données
+	montantPrime = chiffrevente*tauxPrime;
+		
+	//Affichage du résultat	
+	document.write("<p>Le Montant de la prime est : "+montantPrime+" €<p>");
+	
+	} while (confirm("Voulez vous recommencer ?"))
+	
+</script>
