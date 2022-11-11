@@ -2,14 +2,14 @@
 <script>
 // déclaration des variables et constente
 var chiffreDeVente;
-;
-const prime = 0.1
+
+const TAUX_PRIME = 0.1;
 // lecture des données 
 chiffreDeVente = prompt ("Qel est votre chiffre de vente ?");
 
 // traitement des données
 if (chiffreDeVente>=1000) {
-    document.write (" Le montant de votre prime est de " + chiffreDeVente * prime + " € " );
+    document.write (" Le montant de votre prime est de " + chiffreDeVente * TAUX_PRIME + " € " );
 } else {
     document.write ("pas de prime ! ");
 }
