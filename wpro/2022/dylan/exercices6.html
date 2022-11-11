@@ -7,7 +7,9 @@ const MIN = 10;
 const MAX = 20;
 
 // lecture des donées 
-nb = prompt ("choisisez un nombre entre 10 et 20");
+do {
+    nb = prompt ("choisisez un nombre entre 10 et 20");
+} while(isNaN(nb));
 
 // traitements des donéées 
 if (nb>=MIN && nb<=MAX) {
