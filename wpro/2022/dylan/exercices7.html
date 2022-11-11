@@ -7,7 +7,9 @@ const TAUX_PRIME = 0.1;
 const SEUIL = 1000;
     
 // lecture des données 
-chiffreDeVente = prompt ("Qel est votre chiffre de vente ?");
+do {
+    chiffreDeVente = prompt ("Qel est votre chiffre de vente ?");
+} while(isNaN(chiffreDeVente) || chiffreDeVente<0);
 
 // traitement des données
 if (chiffreDeVente>=SEUIL) {
