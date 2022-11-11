@@ -15,7 +15,10 @@ function calculerPrixTTC(prixHorsTaxe, TVAEnPourcent){
      return prixTTC;
 }
  
-console.log("prix TTC :" + calculerPrixTTC(10,20));
+const TAUX_TVA = 20;
+var prix = 10;
+ 
+console.log("prix TTC :" + calculerPrixTTC(prix,TAUX_TVA));
 
 console.log("Fin du code");
 </script>
