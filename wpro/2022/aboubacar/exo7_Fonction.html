@@ -5,16 +5,16 @@
 	//Declaration 
 	var montantPrime; 	//A calculer
 	var chiffrevente;	//A lire
-	const tauxPrime = 0.1;
-	const seuil = 1000;
+	const TAUX_PRIME = 0.1;
+	const SEUIL = 1000;
 	
 	//Décalration de fonction
 	function chiffrePrime(chiffrevente, tauxPrime) {
-		return montantPrime*tauxPrime;
+		return montantPrime*TAUX_PRIME;
 	}
 	
 	//Utilisation de fonction
-	montantPrime = chiffrePrime(chiffrevente, tauxPrime);
+	montantPrime = chiffrePrime(chiffrevente, TAUX_PRIME);
 	
 	do{
 	//Lecture des données 
@@ -23,7 +23,7 @@
 	} while (isNaN(chiffrevente) || (chiffrevente<0));
 		
 	//Traitement de données
-	montantPrime = chiffrevente*tauxPrime;
+	montantPrime = chiffrevente*TAUX_PRIME;
 		
 	//Affichage du résultat	
 	document.write("<p>Le Montant de la prime est : "+montantPrime+" €<p>");
