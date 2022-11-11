@@ -16,9 +16,14 @@ function calculerPrixTTC(prixHorsTaxe, TVAEnPourcent){
 }
  
 const TAUX_TVA = 20;
-var prix = 10;
-
-//Affichage du résultat
+var prix;
+ 
+ //Lecture des données
+do {
+    prix = parseFloat(prompt('Quel est le prix ?'));
+} while(isNaN(prix));
+ 
+//Traitement des données et Affichage du résultat
 document.write("<p>prix TTC :" + calculerPrixTTC(prix,TAUX_TVA)+"</p>");
 
 console.log("Fin du code");
