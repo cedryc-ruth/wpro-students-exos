@@ -20,7 +20,9 @@
 		} while (isNaN(chiffreVente) || (chiffreVente<0));
 		
 		//Traitement de données
-		montantPrime = calculerPrime(chiffreVente, TAUX_PRIME);
+		if(chiffreVente>=SEUIL) {
+			montantPrime = calculerPrime(chiffreVente, TAUX_PRIME);
+		}
 		
 		//Affichage du résultat	
 		document.write("<p>Le Montant de la prime est : "+montantPrime+" €<p>");
