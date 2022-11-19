@@ -51,14 +51,11 @@ do {
 		superficie=parseFloat(prompt('Quel superficie souhaitez-vous rénover?'));
 	} while(isNaN(superficie) || superficie <= 0 || parseInt(superficie)!= superficie);
 	
-	if (confirm('voulez-vous une cuisine?')) {
+	if (confirm('voulez-vous une cuisine?')) {	// sinon gammeCuisine undefined
 		do {
 			gammeCuisine = prompt('vous voulez l\'option student ou family?','student/family');
 		} while (gammeCuisine != 'student' &&  gammeCuisine !='family');
-	} else { // undefined
-	
 	}	
-
 
 	//traitement
 
