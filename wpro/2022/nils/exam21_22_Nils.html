@@ -61,9 +61,9 @@ do {
 
 	if (superficie <= SUPERFICIE_PETITE) {
 		totalTarifSuperficie = superficie*TARIF_PETITE_SUPERFICIE;
-	} else if (superficie > SUPERFICIE_PETITE && superficie <= SUPERFICIE_MOYENNE) {
+	} else if (superficie <= SUPERFICIE_MOYENNE) {
 		totalTarifSuperficie = superficie*TARIF_MOYENNE_PETITE_SUPERFICIE;
-	} else if (superficie > SUPERFICIE_MOYENNE && Superficie <= SUPERFICIE_GRANDE) {
+	} else if (Superficie <= SUPERFICIE_GRANDE) {
 		totalTarifSuperficie = superficie*TARIF_MOYENNE_GRANDE_SUPERFICIE;
 	} else { // Superficie > SUPERFICIE_GRANDE
 		totalTarifSuperficie = superficie*TARIF_GRANDE_SUPERFICIE;
