@@ -1,0 +1,108 @@
+<meta charset='utf-8'>
+<script>
+/**
+ * @author : Nils Henrar version 1.0
+ * @date : 19/11/2022
+ * Calcul devis rénovation
+ *Le site Web d’une entreprise de rénovation vous demande de réaliser un programme qui permet de calculer le coût total des travaux de rénovation d’un appartement. 
+ *L’utilisateur pourra encoder le nom du projet et la superficie à rénover (en m²),
+ *indiquer s’il faut installer une cuisine ou pas et choisir un modèle parmi notre gamme de cuisines. 
+ *Vous ne devez pas vous occuper du système de paiement.
+ *Déroulement du programme : l'utilisateur entre au clavier le nom du projet, puis la superficie à rénover. 
+ *Il indique s’il désire placer une nouvelle cuisine. Si oui, il indique laquelle.
+ *Le programme calcule et affiche le montant à payer pour la rénovation et le placement éventuel d’une nouvelle cuisine.
+ *L’utilisateur doit pouvoir recommencer sans devoir recharger la page.
+ *Veillez à valider correctement les données entrées : le nom du projet doit comporter au moins trois caractères et la superficie doit être un entier positif et non nul. 
+ *Affichez au terme du traitement les montants à payer et éventuellement le coût du placement de la cuisine.
+ 
+ */
+//déclaration
+var CoutTotalTravaux;
+var NomProjet;
+var Superficie;
+var cuisine;
+var GammeCuisine;
+var TotalTarifSuperficie;
+var TotalTarifCuisine;
+
+const TARIF_PETITE_SUPERFICIE = 10
+const TARIF_MOYENNE_PETITE_SUPERFICIE = 12
+const TARIF_MOYENNE_GRANDE_SUPERFICIE = 14
+const TARIF_GRANDE_SUPERFICIE = 15
+
+const STUDENT_CUISINE = 750
+const FAMILY_CUISINE = 1500
+const PLACEMENT_CUISINE = 2000
+
+const SUPERFICIE_PETITE=50
+const SUPERFICIE_MOYENNE=70
+const SUPERFICIE_GRANDE=90
+
+
+
+do {
+	//lecture
+	do {
+	NomProjet=prompt('quel nom voulez vous donner au projet?');
+	}	while(!isNaN(NomProjet)) ;
+	
+	do {
+	Superficie=parseFloat(prompt('Quel superficie souhaitez-vous rénover?'));
+	}	while(isNaN(Superficie) || Superficie <= 0 || parseInt(Superficie)!= Superficie);
+	
+	if (confirm('voulez-vous une cuisine?')) {
+		do {
+		GammeCuisine = prompt('vous voulez l\'option student ou family?','student/family');
+		}	while (GammeCuisine != 'student' &&  GammeCuisine !='family');
+	} else { // undefined
+	
+	}	
+
+
+	//traitement
+
+	if (Superficie <= SUPERFICIE_PETITE) {
+		TotalTarifSuperficie = Superficie*TARIF_PETITE_SUPERFICIE;
+	
+	} else if (Superficie > SUPERFICIE_PETITE && Superficie <= SUPERFICIE_MOYENNE) {
+		TotalTarifSuperficie = Superficie*TARIF_MOYENNE_PETITE_SUPERFICIE;
+	
+	} else if (Superficie > SUPERFICIE_MOYENNE && Superficie <= SUPERFICIE_GRANDE) {
+		TotalTarifSuperficie = Superficie*TARIF_MOYENNE_GRANDE_SUPERFICIE;
+	
+	} else { // Superficie > SUPERFICIE_GRANDE
+		TotalTarifSuperficie = Superficie*TARIF_GRANDE_SUPERFICIE;
+	}	
+	
+	if (GammeCuisine == 'student') {
+		TotalTarifCuisine = PLACEMENT_CUISINE + STUDENT_CUISINE ;
+		CoutTotalTravaux = TotalTarifCuisine + TotalTarifSuperficie ;
+		//affichage
+		document.write('<p> Projet '+NomProjet+' - '+Superficie+'m² => Total: '+TotalTarifSuperficie+'€ <br>'	
+		+'<br>'
+		+'Option:<br>'
+		+'- Cuisine Student ('+STUDENT_CUISINE+'€) <br>'
+		+'- Placement Cuisine ('+PLACEMENT_CUISINE+'€) <br>'
+		+'Coût total de la rénovation: '+TotalTarifSuperficie+'€ + '+STUDENT_CUISINE+'€ + '+PLACEMENT_CUISINE+'€ = '+CoutTotalTravaux+'€</p>');
+	
+	} else if (GammeCuisine == 'family') {
+		TotalTarifCuisine = PLACEMENT_CUISINE + FAMILY_CUISINE ;
+		CoutTotalTravaux = TotalTarifCuisine + TotalTarifSuperficie ;
+		//affichage
+		document.write('<p> Projet '+NomProjet+' - '+Superficie+'m² => Total: '+TotalTarifSuperficie+'€ <br>'
+		+'<br>'
+		+'Option:<br>'
+		+'- Cuisine Family ('+FAMILY_CUISINE+'€) <br>'
+		+'- Placement Cuisine ('+PLACEMENT_CUISINE+'€) <br>'
+		+'Coût total de la rénovation: '+TotalTarifSuperficie+'€ + '+FAMILY_CUISINE+'€ + '+PLACEMENT_CUISINE+'€ = '+CoutTotalTravaux+'€</p>');
+	
+	
+		
+	} else { // pas de placement de cuisine
+		CoutTotalTravaux = TotalTarifSuperficie ;
+		//affichage
+		document.write('<p> Projet '+NomProjet+' - '+Superficie+'m² => Total: '+TotalTarifSuperficie+'€ = '+CoutTotalTravaux+'€</p>');
+	}	
+
+}	while(confirm('voulez-vous recommencer?'));
+</script>
