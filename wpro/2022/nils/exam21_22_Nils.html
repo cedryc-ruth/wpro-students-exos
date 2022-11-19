@@ -18,13 +18,13 @@
  * @version 1.0 (19/11/2022)
  */
 //déclaration
-var CoutTotalTravaux;
-var NomProjet;
-var Superficie;
+var coutTotalTravaux;
+var nomProjet;
+var superficie;
 var cuisine;
-var GammeCuisine;
-var TotalTarifSuperficie;
-var TotalTarifCuisine;
+var gammeCuisine;
+var totalTarifSuperficie;
+var totalTarifCuisine;
 
 const TARIF_PETITE_SUPERFICIE = 10
 const TARIF_MOYENNE_PETITE_SUPERFICIE = 12
@@ -44,17 +44,17 @@ const SUPERFICIE_GRANDE=90
 do {
 	//lecture
 	do {
-	NomProjet=prompt('quel nom voulez vous donner au projet?');
-	}	while(!isNaN(NomProjet)) ;
+	nomProjet=prompt('quel nom voulez vous donner au projet?');
+	}	while(!isNaN(nomProjet)) ;
 	
 	do {
-	Superficie=parseFloat(prompt('Quel superficie souhaitez-vous rénover?'));
-	}	while(isNaN(Superficie) || Superficie <= 0 || parseInt(Superficie)!= Superficie);
+	superficie=parseFloat(prompt('Quel superficie souhaitez-vous rénover?'));
+	}	while(isNaN(superficie) || superficie <= 0 || parseInt(superficie)!= superficie);
 	
 	if (confirm('voulez-vous une cuisine?')) {
 		do {
-		GammeCuisine = prompt('vous voulez l\'option student ou family?','student/family');
-		}	while (GammeCuisine != 'student' &&  GammeCuisine !='family');
+		gammeCuisine = prompt('vous voulez l\'option student ou family?','student/family');
+		}	while (gammeCuisine != 'student' &&  gammeCuisine !='family');
 	} else { // undefined
 	
 	}	
@@ -62,47 +62,47 @@ do {
 
 	//traitement
 
-	if (Superficie <= SUPERFICIE_PETITE) {
-		TotalTarifSuperficie = Superficie*TARIF_PETITE_SUPERFICIE;
+	if (superficie <= SUPERFICIE_PETITE) {
+		totalTarifSuperficie = superficie*TARIF_PETITE_SUPERFICIE;
 	
-	} else if (Superficie > SUPERFICIE_PETITE && Superficie <= SUPERFICIE_MOYENNE) {
-		TotalTarifSuperficie = Superficie*TARIF_MOYENNE_PETITE_SUPERFICIE;
+	} else if (superficie > SUPERFICIE_PETITE && superficie <= SUPERFICIE_MOYENNE) {
+		totalTarifSuperficie = superficie*TARIF_MOYENNE_PETITE_SUPERFICIE;
 	
-	} else if (Superficie > SUPERFICIE_MOYENNE && Superficie <= SUPERFICIE_GRANDE) {
-		TotalTarifSuperficie = Superficie*TARIF_MOYENNE_GRANDE_SUPERFICIE;
+	} else if (superficie > SUPERFICIE_MOYENNE && Superficie <= SUPERFICIE_GRANDE) {
+		totalTarifSuperficie = superficie*TARIF_MOYENNE_GRANDE_SUPERFICIE;
 	
 	} else { // Superficie > SUPERFICIE_GRANDE
-		TotalTarifSuperficie = Superficie*TARIF_GRANDE_SUPERFICIE;
+		totalTarifSuperficie = superficie*TARIF_GRANDE_SUPERFICIE;
 	}	
 	
-	if (GammeCuisine == 'student') {
-		TotalTarifCuisine = PLACEMENT_CUISINE + STUDENT_CUISINE ;
-		CoutTotalTravaux = TotalTarifCuisine + TotalTarifSuperficie ;
+	if (gammeCuisine == 'student') {
+		totalTarifCuisine = PLACEMENT_CUISINE + STUDENT_CUISINE ;
+		coutTotalTravaux = totalTarifCuisine + totalTarifSuperficie ;
 		//affichage
-		document.write('<p> Projet '+NomProjet+' - '+Superficie+'m² => Total: '+TotalTarifSuperficie+'€ <br>'	
+		document.write('<p> Projet '+nomProjet+' - '+superficie+'m² => Total: '+totalTarifSuperficie+'€ <br>'	
 		+'<br>'
 		+'Option:<br>'
 		+'- Cuisine Student ('+STUDENT_CUISINE+'€) <br>'
 		+'- Placement Cuisine ('+PLACEMENT_CUISINE+'€) <br>'
-		+'Coût total de la rénovation: '+TotalTarifSuperficie+'€ + '+STUDENT_CUISINE+'€ + '+PLACEMENT_CUISINE+'€ = '+CoutTotalTravaux+'€</p>');
+		+'Coût total de la rénovation: '+totalTarifSuperficie+'€ + '+STUDENT_CUISINE+'€ + '+PLACEMENT_CUISINE+'€ = '+coutTotalTravaux+'€</p>');
 	
-	} else if (GammeCuisine == 'family') {
-		TotalTarifCuisine = PLACEMENT_CUISINE + FAMILY_CUISINE ;
-		CoutTotalTravaux = TotalTarifCuisine + TotalTarifSuperficie ;
+	} else if (gammeCuisine == 'family') {
+		totalTarifCuisine = PLACEMENT_CUISINE + FAMILY_CUISINE ;
+		coutTotalTravaux = totalTarifCuisine + totalTarifSuperficie ;
 		//affichage
-		document.write('<p> Projet '+NomProjet+' - '+Superficie+'m² => Total: '+TotalTarifSuperficie+'€ <br>'
+		document.write('<p> Projet '+nomProjet+' - '+superficie+'m² => Total: '+totalTarifSuperficie+'€ <br>'
 		+'<br>'
 		+'Option:<br>'
 		+'- Cuisine Family ('+FAMILY_CUISINE+'€) <br>'
 		+'- Placement Cuisine ('+PLACEMENT_CUISINE+'€) <br>'
-		+'Coût total de la rénovation: '+TotalTarifSuperficie+'€ + '+FAMILY_CUISINE+'€ + '+PLACEMENT_CUISINE+'€ = '+CoutTotalTravaux+'€</p>');
+		+'Coût total de la rénovation: '+totalTarifSuperficie+'€ + '+FAMILY_CUISINE+'€ + '+PLACEMENT_CUISINE+'€ = '+coutTotalTravaux+'€</p>');
 	
 	
 		
 	} else { // pas de placement de cuisine
-		CoutTotalTravaux = TotalTarifSuperficie ;
+		coutTotalTravaux = totalTarifSuperficie ;
 		//affichage
-		document.write('<p> Projet '+NomProjet+' - '+Superficie+'m² => Total: '+TotalTarifSuperficie+'€ = '+CoutTotalTravaux+'€</p>');
+		document.write('<p> Projet '+nomProjet+' - '+superficie+'m² => Total: '+totalTarifSuperficie+'€ = '+coutTotalTravaux+'€</p>');
 	}	
 
 }	while(confirm('voulez-vous recommencer?'));
