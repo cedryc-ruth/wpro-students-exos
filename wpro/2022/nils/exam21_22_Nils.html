@@ -17,6 +17,7 @@
  * @author Nils Henrar
  * @version 1.0 (19/11/2022)
  */
+
 //déclaration
 var coutTotalTravaux;
 var nomProjet;
@@ -38,8 +39,6 @@ const PLACEMENT_CUISINE = 2000
 const SUPERFICIE_PETITE = 50
 const SUPERFICIE_MOYENNE = 70
 const SUPERFICIE_GRANDE = 90
-
-
 
 do {
 	//lecture
@@ -74,28 +73,28 @@ do {
 		coutTotalTravaux = totalTarifCuisine + totalTarifSuperficie ;
 		
 		//affichage
-		document.write('<p> Projet '+nomProjet+' - '+superficie+'m² => Total: '+totalTarifSuperficie+'€ <br>'	
+		document.write('<p> Projet '+nomProjet+' - '+superficie+'&nbsp;m² => Total: '+totalTarifSuperficie+'&nbsp;€ <br>'	
 			+'<br>'
 			+'Option:<br>'
-			+'- Cuisine Student ('+STUDENT_CUISINE+'€) <br>'
-			+'- Placement Cuisine ('+PLACEMENT_CUISINE+'€) <br>'
-			+'Coût total de la rénovation: '+totalTarifSuperficie+'€ + '+STUDENT_CUISINE+'€ + '+PLACEMENT_CUISINE+'€ = '+coutTotalTravaux+'€</p>');
+			+'- Cuisine Student ('+STUDENT_CUISINE+'&nbsp;€) <br>'
+			+'- Placement Cuisine ('+PLACEMENT_CUISINE+'&nbsp;€) <br>'
+			+'Coût total de la rénovation: '+totalTarifSuperficie+' + '+STUDENT_CUISINE+' + '+PLACEMENT_CUISINE+' = '+coutTotalTravaux+'&nbsp;€</p>');
 	} else if (gammeCuisine == 'family') {
 		totalTarifCuisine = PLACEMENT_CUISINE + FAMILY_CUISINE ;
 		coutTotalTravaux = totalTarifCuisine + totalTarifSuperficie ;
 		
 		//affichage
-		document.write('<p> Projet '+nomProjet+' - '+superficie+'m² => Total: '+totalTarifSuperficie+'€ <br>'
+		document.write('<p> Projet '+nomProjet+' - '+superficie+'&nbsp;m² => Total: '+totalTarifSuperficie+'&nbsp;€ <br>'
 			+'<br>'
 			+'Option:<br>'
-			+'- Cuisine Family ('+FAMILY_CUISINE+'€) <br>'
-			+'- Placement Cuisine ('+PLACEMENT_CUISINE+'€) <br>'
-			+'Coût total de la rénovation: '+totalTarifSuperficie+'€ + '+FAMILY_CUISINE+'€ + '+PLACEMENT_CUISINE+'€ = '+coutTotalTravaux+'€</p>');		
+			+'- Cuisine Family ('+FAMILY_CUISINE+'&nbsp;€) <br>'
+			+'- Placement Cuisine ('+PLACEMENT_CUISINE+'&nbsp;€) <br>'
+			+'Coût total de la rénovation: '+totalTarifSuperficie+' + '+FAMILY_CUISINE+' + '+PLACEMENT_CUISINE+' = '+coutTotalTravaux+'&nbsp;€</p>');		
 	} else { // pas de placement de cuisine
 		coutTotalTravaux = totalTarifSuperficie ;
 		
 		//affichage
-		document.write('<p> Projet '+nomProjet+' - '+superficie+'m² => Total: '+totalTarifSuperficie+'€ = '+coutTotalTravaux+'€</p>');
+		document.write('<p> Projet '+nomProjet+' - '+superficie+'&nbsp;m² => Total: '+totalTarifSuperficie+'&nbsp;€ = '+coutTotalTravaux+'&nbsp;€</p>');
 	}	
 
 } while(confirm('voulez-vous recommencer?'));
