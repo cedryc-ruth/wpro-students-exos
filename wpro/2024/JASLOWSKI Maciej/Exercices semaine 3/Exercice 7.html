@@ -10,10 +10,10 @@ vente = parseFloat(vente);
 montant = vente + (vente*prime);
 
 if(vente >= 1000) {
-    document.write('Votre montant est de ' + montant
-        + 'Vous avez recu une prime de '+(vente*prime)+'');
+    document.write('<p>Votre montant est de ' + montant
+        + '. Vous avez recu une prime de '+(vente*prime)+'.</p>');
 } else {
-    document.write('Votre montant est de ' + vente
-        + '.Malheureusement, vous n\'avez pas le droit à une prime.');
+    document.write('<p>Votre montant est de ' + vente
+        + '. Malheureusement, vous n\'avez pas le droit à une prime.</p>');
 }
 </script>
