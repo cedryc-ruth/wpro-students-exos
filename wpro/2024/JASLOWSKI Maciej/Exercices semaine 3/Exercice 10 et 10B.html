@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Somme des Entiers</title>
+</head>
+<body>
+
+<script>
+    var somme = 0; 
+    var entiers; 
+
+    do {
+    
+        entiers = prompt('Donnez autant d\'entiers que vous voulez et tapez "stop" lorsque vous voulez arrêter. Actuellement votre somme est égale à '+somme+'');
+        
+        if (entiers.toLowerCase() === "stop") {
+            break;
+        }
+
+        
+        entiers = parseInt(entiers);
+        
+       
+        if (isNaN(entiers)) {
+            
+            alert('Veuillez entrer un nombre valide.');
+        } else {
+           
+            somme += entiers;
+        }
+
+    } while (true); 
+
+    
+    document.write('La somme des entiers est : ' + somme);
+</script>
+
+</body>
+</html>

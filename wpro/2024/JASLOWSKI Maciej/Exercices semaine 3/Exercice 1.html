@@ -1,0 +1,16 @@
+<script>
+    var A = 5;		//Déclaration par initialisation (variables locales)
+    var B = 3;
+    var C;		//Déclaration d'une variable locale C
+    
+    //Affichage avant le traitement
+document.write ('<p>A vaut ' + A + '</p>');
+document.write ('<p>B vaut ' + B + '</p>');
+//Traitement: échange de valeurs
+C = A;
+A = B;
+B = C;
+//Affichage après le traitement
+document.write ('<p>A vaut ' + A + '</p>');
+document.write('<p>B vaut ' + B + '</p>');
+</script>

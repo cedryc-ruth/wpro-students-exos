@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script>
+
+var montant
+var vente
+const prime = 10/100
+
+vente   = prompt('Ecrivez votre chiffre de vente')
+vente   = parseFloat(vente)
+
+montant = vente + (vente*prime) 
+
+if (vente >= 1000){
+document.write('Votre montant est de '+montant+
+ 'Vous avez recu une prime de '+(vente*prime)+'')    
+}
+else {
+    document.write('Votre montant est de ' + vente + 
+    '.Malheureusement, vous n\'avez pas le droit à une prime.');
+}
+
+</script>
