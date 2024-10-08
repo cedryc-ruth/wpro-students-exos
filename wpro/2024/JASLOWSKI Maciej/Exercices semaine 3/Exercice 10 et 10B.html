@@ -7,21 +7,21 @@
 <body>
 <script>
 var somme = 0; 
-var entiers; 
+var entier; 
 
 do {
-    entiers = prompt('Donnez autant d\'entiers que vous voulez et tapez "stop" lorsque vous voulez arrêter. Actuellement votre somme est égale à '+somme);
+    entier = prompt('Donnez autant d\'entiers que vous voulez et tapez "stop" lorsque vous voulez arrêter. Actuellement votre somme est égale à '+somme);
         
-    if (entiers.toLowerCase() === "stop") {
+    if (entier.toLowerCase() === "stop") {
         break;
     }
         
-    entiers = parseInt(entiers);
+    entier = parseInt(entier);
        
-    if (isNaN(entiers)) {        
+    if (isNaN(entier)) {        
         alert('Veuillez entrer un nombre valide.');
     } else {       
-        somme += entiers;
+        somme += entier;
     }
 } while (true); 
     
