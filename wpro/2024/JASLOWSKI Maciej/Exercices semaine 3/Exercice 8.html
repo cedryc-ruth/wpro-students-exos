@@ -22,11 +22,11 @@ switch (true) {
         break;
 
     default:
-        document.write('Pas de prime disponible pour ce montant.');
+        document.write('<p>Pas de prime disponible pour ce montant.</p>');
 }
 
 if(prime!=undefined) {
     montant = vente + prime;
-    document.write('Votre montant est de ' + montant + ' avec une prime de ' + prime);
+    document.write('<p>Votre montant est de ' + montant + ' € avec une prime de ' + prime + ' €.</p>');
 }
 </script>
