@@ -11,23 +11,22 @@ vente = parseFloat(vente);
 switch (true) {
     case (vente>=0 && vente<=500):
         prime = vente*(2/100);
-        montant = vente + prime;
-        document.write('Votre montant est de ' + montant + ' avec une prime de ' + prime);
         break;
 
     case (vente>=501 && vente<=1000):
         prime = vente*(5/100);
-        montant = vente + prime;
-        document.write('Votre montant est de ' + montant + ' avec une prime de ' + prime);
         break;
     
     case (vente>1000):
         prime = vente * (10/1000);
-        montant = vente + prime;
-        document.write('votre montant est de ' + montant + ' avec une prime de ' + prime);
         break;
 
     default:
         document.write('Pas de prime disponible pour ce montant.');
+}
+
+if(prime!=undefined) {
+    montant = vente + prime;
+    document.write('Votre montant est de ' + montant + ' avec une prime de ' + prime);
 }
 </script>
