@@ -1,20 +1,16 @@
 <meta charset="utf-8">
 <script>
-
 var random;
 var nbr;
 
-random = Math.floor(Math.random()*11)
+random = Math.floor(Math.random()*11);
 
-nbr = prompt('Devinez le chiffre compris entre 0 et 10',0)
-nbr = parseInt(nbr) 
-
+nbr = prompt('Devinez le chiffre compris entre 0 et 10',0);
+nbr = parseInt(nbr);
 
 if (nbr == random) {
     alert('Bravo! Vous avez deviné le bon chiffre: ' + random);
-} 
-else {
+} else {
      alert('Désolé, le chiffre à deviner était: ' + random);
 }
-
 </script>
