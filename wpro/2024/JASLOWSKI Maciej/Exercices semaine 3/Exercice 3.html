@@ -1,17 +1,17 @@
 <meta charset="UTF-8">
 <script>
-var hTVA
-var nbr
-var PrixTTC
-const TAUX_TVA = 20.5/100 //20.5%
+var hTVA;
+var nbr;
+var PrixTTC;
+const TAUX_TVA = 20.5/100; //20.5%
 
-hTVA = prompt('indiquez le prix hors TVA')
-nbr  = prompt('ecrivez le nombre d\'articles')
+hTVA = prompt('indiquez le prix hors TVA');
+nbr  = prompt('ecrivez le nombre d\'articles');
 
-hTVA = parseFloat(hTVA) //prompt donne tjrs une chaine de caracteres donc faut parseFloat ou Int
-nbr  = parseInt(nbr)    //on veut pas de nombre a virgules
+hTVA = parseFloat(hTVA); //prompt donne tjrs une chaine de caracteres donc faut parseFloat ou Int
+nbr  = parseInt(nbr);    //on veut pas de nombre a virgules
 
-PrixTTC = (hTVA+(hTVA*TAUX_TVA)) * nbr
+PrixTTC = (hTVA+(hTVA*TAUX_TVA)) * nbr;
 
-document.write('Votre prix TTC est de '+PrixTTC+'')
+document.write('Votre prix TTC est de '+PrixTTC+'');
 </script>
