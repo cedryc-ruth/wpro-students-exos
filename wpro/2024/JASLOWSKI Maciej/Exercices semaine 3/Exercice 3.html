@@ -5,13 +5,13 @@ var nbr;
 var prixTTC;
 const TAUX_TVA = 20.5/100; //20.5%
 
-hTVA = prompt('indiquez le prix hors TVA');
-nbr  = prompt('ecrivez le nombre d\'articles');
+hTVA = prompt('Indiquez le prix hors TVA :');
+nbr  = prompt('Écrivez le nombre d\'articles :');
 
 hTVA = parseFloat(hTVA); //prompt donne tjrs une chaine de caracteres donc faut parseFloat ou Int
 nbr  = parseInt(nbr);    //on veut pas de nombre a virgules
 
 prixTTC = (hTVA+(hTVA*TAUX_TVA)) * nbr;
 
-document.write('Votre prix TTC est de '+prixTTC+'');
+document.write('<p>Votre prix TTC est de '+prixTTC+'.</p>');
 </script>
