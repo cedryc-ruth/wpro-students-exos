@@ -8,21 +8,14 @@ var prime;
 vente = prompt('Ecrivez votre chiffre de vente');
 vente = parseFloat(vente);
 
-switch (true) {
-    case (vente>=0 && vente<=500):
-        prime = vente*(2/100);
-        break;
-
-    case (vente>=501 && vente<=1000):
-        prime = vente*(5/100);
-        break;
-    
-    case (vente>1000):
-        prime = vente * (10/1000);
-        break;
-
-    default:
-        document.write('<p>Pas de prime disponible pour ce montant.</p>');
+if(vente>=0 && vente<=500) {
+    prime = vente*(2/100);
+} else if(vente>=501 && vente<=1000) {
+    prime = vente*(5/100);
+} else if(vente>1000) {
+    prime = vente * (10/1000);
+} else {
+    document.write('<p>Pas de prime disponible pour ce montant.</p>');
 }
 
 if(prime!=undefined) {
