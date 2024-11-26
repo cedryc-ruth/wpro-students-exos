@@ -39,7 +39,7 @@
              do {
                  symbol = prompt("Entrez le code de symbole boursier :");
                  symbol = symbol.toUpperCase(); // Convertir le symbole en majuscules
-             } while (!/^[A-Za-z0-9]{1,4}$/.test(symbol));
+             } while (!/^[A-Za-z0-9]{3,4}$/.test(symbol));
 
              if (confirm("Désirez-vous un taux de croissance annuel moyen ?")) {
                  do {
