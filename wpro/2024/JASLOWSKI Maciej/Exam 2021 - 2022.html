@@ -34,32 +34,32 @@
         var classeEnergetique;
         var total;
         var differencePuissChandiereSeuil;
+        
         //Colllecte des données
-        do{
-            do{
+        do {
+            do {
                 puissanceChaudiere = prompt("Entrez la puissance de la chaudiere en kW");   
             } while (!/^[0-9]+([.,][0-9]+)?$/.test(puissanceChaudiere) || puissanceChaudiere < PUISSANCE_CHAUDIERE_MIN || puissanceChaudiere > PUISSANCE_CHAUDIERE_MAX );
+            
             puissanceChaudiere = parseFloat(puissanceChaudiere);
             
-            do{
+            do {
                 classeEnergetique = prompt("Entrez la classe energetique (A,B,C,D,E ou F)");
             } while (!/^(A|B|C)([+]{1,2})?$|^[D-F][-]$/i.test(classeEnergetique));
         
             //Traitement des données
             if (puissanceChaudiere <= PUISSANCE_LIMITE && (classeEnergetique.toUpperCase() !== "A" && classeEnergetique.toUpperCase() !== "A+" 
-            && classeEnergetique.toUpperCase() !== "A++")){
+            && classeEnergetique.toUpperCase() !== "A++")) {
 S
                 document.write("le citoyen n’a pas droit à une prime dans ces conditions");
-
-            }else if (confirm("Installation par chauffagiste agree ?" ) && confirm("Reception PEB ?") && confirm("Marquage CE ?")){
-                
+            } else if (confirm("Installation par chauffagiste agree ?" ) && confirm("Reception PEB ?") && confirm("Marquage CE ?")) {
                 //Affichage des résultats
-                if(puissanceChaudiere <= PUISSANCE_LIMITE){
+                if(puissanceChaudiere <= PUISSANCE_LIMITE) {
                     differencePuissChandiereSeuil = puissanceChaudiere - SEUIL_KW
                     total = PRIX_MIN + (differencePuissChandiereSeuil * KW_SUPP);
                     document.write("<p>Puissance " + puissanceChaudiere + " et classe " + classeEnergetique + ".</p><br>");
                     document.write("<p>Prime :" + total + " € </p>");
-                } else{
+                } else {
                     differencePuissChandiereSeuil = puissanceChaudiere - SEUIL_KW
                     total = PRIX_MAX + (differencePuissChandiereSeuil * KW_SUPP);
                     document.write("<p>Puissance " + puissanceChaudiere + " kW et classe " + classeEnergetique.toUpperCase() + ".</p><br>");
