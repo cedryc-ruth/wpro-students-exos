@@ -6,7 +6,6 @@
 <body>
     <script>
         /**
-         * 
          * En 2021, les régions offrent des primes pour le remplacement d’une vieille chaudière. 
          * Vous devez écrire un calculateur qui permettra au citoyen d’estimer le montant de la prime auquel il pourrait avoir droit.
          *  L’utilisateur pourra encoder la puissance de la nouvelle chaudière (en kW) et sa classe énergétique (A, B, C, D, E ou F).
@@ -17,7 +16,6 @@
          * Cette obligation ne s’application pas pour les chaudières plus puissantes.
          * 
          * @author M.Jaslowski
-         * 
          */
 
         //Déclaration de constantes
@@ -50,7 +48,6 @@
             //Traitement des données
             if (puissanceChaudiere <= PUISSANCE_LIMITE && (classeEnergetique.toUpperCase() !== "A" && classeEnergetique.toUpperCase() !== "A+" 
             && classeEnergetique.toUpperCase() !== "A++")) {
-S
                 document.write("le citoyen n’a pas droit à une prime dans ces conditions");
             } else if (confirm("Installation par chauffagiste agree ?" ) && confirm("Reception PEB ?") && confirm("Marquage CE ?")) {
                 //Affichage des résultats
