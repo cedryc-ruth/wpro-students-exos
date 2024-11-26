@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Examen 2025</title>
+</head>
+<body>
+    <script>
+        /**
+         * Une plateforme gouvernementale dédiée à l’éducation financière de la population vous demande de réaliser un simulateur 
+         * d’investissement en bourse. En vous basant sur les exemples en bas de document, 
+         * vous devez développer un calculateur de taux de croissance d’une action ou d’un fonds d’investissement. 
+         * L’utilisateur pourra encoder le montant du cours de l’action au début de la période ainsi que le montant du cours à la fin de la période, 
+         * et choisir s’il souhaite uniquement un taux de croissance total ou également le taux de croissance annualisé.
+         * 
+         * Note : Je me suis permis de refaire l'examen pour m'exercer. 
+         * Je me suis aidé, sur certains points, de ChatGPT (d’ailleurs qui m’a expliqué comment utiliser les regex), mais j’ai entièrement 
+         * réfléchi au code. Je lui ai posé la question "comment faire pour... ?" au lieu de "peux-tu faire... ?".
+         * 
+         * @author M. Jaslowski
+         */
+         
+         // Déclaration des constantes
+         const ANNEE_MIN = 2000;
+         const ANNEE_MAX = 2024;
+         const POURCENTAGE = 100;
+
+         // Déclaration des variables
+         var symbol;
+         var anneeDebut;
+         var montantInitial;
+         var anneeFin;
+         var montantFinal;
+         var tauxCroissance;
+         var cagr;
+         
+         // Collecte des données
+         do {
+             do {
+                 symbol = prompt("Entrez le code de symbole boursier :");
+                 symbol = symbol.toUpperCase(); // Convertir le symbole en majuscules
+             } while (!/^[A-Za-z0-9]{1,4}$/.test(symbol));
+
+             if (confirm("Désirez-vous un taux de croissance annuel moyen ?")) {
+                 do {
+                     anneeDebut = prompt("Indiquez l'année de début :");
+                 } while (!/^[0-9]{4}$/.test(anneeDebut) || anneeDebut < ANNEE_MIN || anneeDebut > ANNEE_MAX);
+                 anneeDebut = parseInt(anneeDebut); // Conversion en nombre
+
+                 do {
+                     montantInitial = prompt("Indiquez le montant du cours initial de l'action :");
+                 } while (!/^[0-9]+([.,][0-9]{1,2})?$/.test(montantInitial) || parseFloat(montantInitial) <= 0);
+                 montantInitial = parseFloat(montantInitial); // Conversion en nombre
+
+                 do {
+                     anneeFin = prompt("Indiquez l'année de fin :");
+                 } while (!/^[0-9]{4}$/.test(anneeFin) || anneeFin < ANNEE_MIN || anneeFin > ANNEE_MAX);
+                 anneeFin = parseInt(anneeFin); // Conversion en nombre
+
+                 do {
+                     montantFinal = prompt("Indiquez le montant final :");
+                 } while (!/^[0-9]+([.,][0-9]{1,2})?$/.test(montantFinal) || parseFloat(montantFinal) <= 0);
+                 montantFinal = parseFloat(montantFinal); // Conversion en nombre
+
+             } else {
+                 do {
+                     montantInitial = prompt("Indiquez le montant du cours initial de l'action :");
+                 } while (!/^[0-9]+([.,][0-9]{1,2})?$/.test(montantInitial));
+                 montantInitial = parseFloat(montantInitial); // Conversion en nombre
+
+                 do {
+                     montantFinal = prompt("Indiquez le montant final :");
+                 } while (!/^[0-9]+([.,][0-9]{1,2})?$/.test(montantFinal));
+                 montantFinal = parseFloat(montantFinal); // Conversion en nombre
+             }
+         } while (confirm("Voulez-vous recommencer ?"));
+        
+        // Traitement des données
+        tauxCroissance = ((montantFinal - montantInitial) / montantInitial) * POURCENTAGE;
+
+        // Vérification pour éviter la division par zéro (conseil de Chatgpt)
+        if (anneeDebut !== undefined && anneeFin !== undefined && anneeFin > anneeDebut) {
+            cagr = (montantFinal / montantInitial) ** (1 / (anneeFin - anneeDebut)) - 1;
+        }
+
+        // Affichage des résultats
+        if (anneeDebut !== undefined && anneeFin !== undefined) {
+            document.write("<p><b>Avec taux de croissance annualisé</b></p>");
+            document.write("<p><strong>" + symbol + "</strong> : Période " + anneeDebut + " - " + anneeFin + "</p>");
+            document.write("<p>Taux de croissance total : " + tauxCroissance.toFixed(2) + "%</p>");
+            document.write("<p>Taux de croissance annualisé (CAGR) : " + (cagr * POURCENTAGE).toFixed(2) + "%</p>");
+        } else {
+            document.write("<p><b>Sans taux de croissance annualisé</b></p>");
+            document.write("<p><strong>" + symbol + "</strong></p>");
+            document.write("<p>Taux de croissance total : " + tauxCroissance.toFixed(2) + "%</p>");
+        }
+
+    </script>
+</body>
+</html>
+
+

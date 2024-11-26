@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exam 2021</title>
+</head>
+<body>
+    <script>
+        /**
+         * 
+         * En 2021, les régions offrent des primes pour le remplacement d’une vieille chaudière. 
+         * Vous devez écrire un calculateur qui permettra au citoyen d’estimer le montant de la prime auquel il pourrait avoir droit.
+         *  L’utilisateur pourra encoder la puissance de la nouvelle chaudière (en kW) et sa classe énergétique (A, B, C, D, E ou F).
+         * Pour avoir droit à la prime, il faut respecter une série de critères : 
+         * installation par un chauffagiste agréé, faire l’objet d’une réception PEB et disposer du marquage CE. 
+         * Pour les chaudières dont la puissance est inférieure ou égale à 70 kW, 
+         * il faudra obligatoirement qu’elle soit de classe énergétique A ou plus (A+, A++, etc). 
+         * Cette obligation ne s’application pas pour les chaudières plus puissantes.
+         * 
+         * @author M.Jaslowski
+         * 
+         */
+
+        //declaration de constantes
+        const PUISSANCE_LIMITE = 70;
+        const PUISSANCE_CHAUDIERE_MIN = 2;
+        const PUISSANCE_CHAUDIERE_MAX = 140;
+        const PRIX_MIN = 700;
+        const PRIX_MAX = 800;
+        const KW_SUPP = 5;
+        const SEUIL_KW = 40;
+
+        //declaration de variables 
+        var puissanceChaudiere;
+        var classeEnergetique;
+        var total;
+        var differencePuissChandiereSeuil;
+        //colllecte des donnees
+        do{
+            do{
+                puissanceChaudiere = prompt("Entrez la puissance de la chaudiere en kW");   
+            } while (!/^[0-9]+([.,][0-9]+)?$/.test(puissanceChaudiere) || puissanceChaudiere < PUISSANCE_CHAUDIERE_MIN || puissanceChaudiere > PUISSANCE_CHAUDIERE_MAX );
+            puissanceChaudiere = parseFloat(puissanceChaudiere);
+            
+            do{
+                classeEnergetique = prompt("Entrez la classe energetique (A,B,C,D,E ou F)");
+            } while (!/^(A|B|C)([+]{1,2})?$|^[D-F][-]$/i.test(classeEnergetique));
+        
+            //traitement des donnees 
+            if (puissanceChaudiere <= PUISSANCE_LIMITE && (classeEnergetique.toUpperCase() !== "A" && classeEnergetique.toUpperCase() !== "A+" 
+            && classeEnergetique.toUpperCase() !== "A++")){
+S
+                document.write("le citoyen n’a pas droit à une prime dans ces conditions");
+
+            }else if (confirm("Installation par chauffagiste agree ?" ) && confirm("Reception PEB ?") && confirm("Marquage CE ?")){
+                
+                //Affichage des resultats
+                if(puissanceChaudiere <= PUISSANCE_LIMITE){
+                    differencePuissChandiereSeuil = puissanceChaudiere - SEUIL_KW
+                    total = PRIX_MIN + (differencePuissChandiereSeuil * KW_SUPP);
+                    document.write("<p>Puissance " + puissanceChaudiere + " et classe " + classeEnergetique + ".</p><br>");
+                    document.write("<p>Prime :" + total + " € </p>");
+                } else{
+                    differencePuissChandiereSeuil = puissanceChaudiere - SEUIL_KW
+                    total = PRIX_MAX + (differencePuissChandiereSeuil * KW_SUPP);
+                    document.write("<p>Puissance " + puissanceChaudiere + " kW et classe " + classeEnergetique.toUpperCase() + ".</p><br>");
+                    document.write("<p>Prime : " + PRIX_MAX + " ( " + KW_SUPP + "*" + differencePuissChandiereSeuil + ") = " + total + "€</p>");
+                }
+            } else {
+                document.write("Refus");
+            }
+        } while (confirm("Recommencer ?"));
+    </script>
+</body>
