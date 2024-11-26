@@ -20,7 +20,7 @@
          * 
          */
 
-        //declaration de constantes
+        //Déclaration de constantes
         const PUISSANCE_LIMITE = 70;
         const PUISSANCE_CHAUDIERE_MIN = 2;
         const PUISSANCE_CHAUDIERE_MAX = 140;
@@ -29,12 +29,12 @@
         const KW_SUPP = 5;
         const SEUIL_KW = 40;
 
-        //declaration de variables 
+        //Déclaration de variables 
         var puissanceChaudiere;
         var classeEnergetique;
         var total;
         var differencePuissChandiereSeuil;
-        //colllecte des donnees
+        //Colllecte des données
         do{
             do{
                 puissanceChaudiere = prompt("Entrez la puissance de la chaudiere en kW");   
@@ -45,7 +45,7 @@
                 classeEnergetique = prompt("Entrez la classe energetique (A,B,C,D,E ou F)");
             } while (!/^(A|B|C)([+]{1,2})?$|^[D-F][-]$/i.test(classeEnergetique));
         
-            //traitement des donnees 
+            //Traitement des données
             if (puissanceChaudiere <= PUISSANCE_LIMITE && (classeEnergetique.toUpperCase() !== "A" && classeEnergetique.toUpperCase() !== "A+" 
             && classeEnergetique.toUpperCase() !== "A++")){
 S
@@ -53,7 +53,7 @@ S
 
             }else if (confirm("Installation par chauffagiste agree ?" ) && confirm("Reception PEB ?") && confirm("Marquage CE ?")){
                 
-                //Affichage des resultats
+                //Affichage des résultats
                 if(puissanceChaudiere <= PUISSANCE_LIMITE){
                     differencePuissChandiereSeuil = puissanceChaudiere - SEUIL_KW
                     total = PRIX_MIN + (differencePuissChandiereSeuil * KW_SUPP);
