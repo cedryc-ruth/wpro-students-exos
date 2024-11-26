@@ -48,7 +48,7 @@
             //Traitement des données
             if (puissanceChaudiere <= PUISSANCE_LIMITE && (classeEnergetique.toUpperCase() !== "A" && classeEnergetique.toUpperCase() !== "A+" 
             && classeEnergetique.toUpperCase() !== "A++")) {
-                document.write("le citoyen n’a pas droit à une prime dans ces conditions");
+                document.write("<p>Le citoyen n’a pas droit à une prime dans ces conditions.</p>");
             } else if (confirm("Installation par chauffagiste agree ?" ) && confirm("Reception PEB ?") && confirm("Marquage CE ?")) {
                 //Affichage des résultats
                 if(puissanceChaudiere <= PUISSANCE_LIMITE) {
