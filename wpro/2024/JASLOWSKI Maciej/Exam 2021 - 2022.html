@@ -57,17 +57,18 @@ S
                 if(puissanceChaudiere <= PUISSANCE_LIMITE) {
                     differencePuissChandiereSeuil = puissanceChaudiere - SEUIL_KW
                     total = PRIX_MIN + (differencePuissChandiereSeuil * KW_SUPP);
-                    document.write("<p>Puissance " + puissanceChaudiere + " et classe " + classeEnergetique + ".</p><br>");
+                    document.write("<p>Puissance " + puissanceChaudiere + " et classe " + classeEnergetique + ".</p>");
                     document.write("<p>Prime :" + total + " € </p>");
                 } else {
                     differencePuissChandiereSeuil = puissanceChaudiere - SEUIL_KW
                     total = PRIX_MAX + (differencePuissChandiereSeuil * KW_SUPP);
-                    document.write("<p>Puissance " + puissanceChaudiere + " kW et classe " + classeEnergetique.toUpperCase() + ".</p><br>");
+                    document.write("<p>Puissance " + puissanceChaudiere + " kW et classe " + classeEnergetique.toUpperCase() + ".</p>");
                     document.write("<p>Prime : " + PRIX_MAX + " ( " + KW_SUPP + "*" + differencePuissChandiereSeuil + ") = " + total + "€</p>");
                 }
             } else {
-                document.write("Refus");
+                document.write("<p>Refus</p>");
             }
         } while (confirm("Recommencer ?"));
     </script>
 </body>
+</html>
