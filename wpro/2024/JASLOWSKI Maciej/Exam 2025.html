@@ -73,28 +73,27 @@
                  } while (!/^[0-9]+([.,][0-9]{1,2})?$/.test(montantFinal));
                  montantFinal = parseFloat(montantFinal); // Conversion en nombre
              }
-         } while (confirm("Voulez-vous recommencer ?"));
         
-        // Traitement des données
-        tauxCroissance = ((montantFinal - montantInitial) / montantInitial) * POURCENTAGE;
+            // Traitement des données
+            tauxCroissance = ((montantFinal - montantInitial) / montantInitial) * POURCENTAGE;
 
-        // Vérification pour éviter la division par zéro (conseil de Chatgpt)
-        if (anneeDebut !== undefined && anneeFin !== undefined && anneeFin > anneeDebut) {
-            cagr = (montantFinal / montantInitial) ** (1 / (anneeFin - anneeDebut)) - 1;
-        }
-
-        // Affichage des résultats
-        if (anneeDebut !== undefined && anneeFin !== undefined) {
-            document.write("<p><b>Avec taux de croissance annualisé</b></p>");
-            document.write("<p><strong>" + symbol + "</strong> : Période " + anneeDebut + " - " + anneeFin + "</p>");
-            document.write("<p>Taux de croissance total : " + tauxCroissance.toFixed(2) + "%</p>");
-            document.write("<p>Taux de croissance annualisé (CAGR) : " + (cagr * POURCENTAGE).toFixed(2) + "%</p>");
-        } else {
-            document.write("<p><b>Sans taux de croissance annualisé</b></p>");
-            document.write("<p><strong>" + symbol + "</strong></p>");
-            document.write("<p>Taux de croissance total : " + tauxCroissance.toFixed(2) + "%</p>");
-        }
-
+            // Vérification pour éviter la division par zéro (conseil de Chatgpt)
+            if (anneeDebut !== undefined && anneeFin !== undefined && anneeFin > anneeDebut) {
+                cagr = (montantFinal / montantInitial) ** (1 / (anneeFin - anneeDebut)) - 1;
+            }
+    
+            // Affichage des résultats
+            if (anneeDebut !== undefined && anneeFin !== undefined) {
+                document.write("<p><b>Avec taux de croissance annualisé</b></p>");
+                document.write("<p><strong>" + symbol + "</strong> : Période " + anneeDebut + " - " + anneeFin + "</p>");
+                document.write("<p>Taux de croissance total : " + tauxCroissance.toFixed(2) + "%</p>");
+                document.write("<p>Taux de croissance annualisé (CAGR) : " + (cagr * POURCENTAGE).toFixed(2) + "%</p>");
+            } else {
+                document.write("<p><b>Sans taux de croissance annualisé</b></p>");
+                document.write("<p><strong>" + symbol + "</strong></p>");
+                document.write("<p>Taux de croissance total : " + tauxCroissance.toFixed(2) + "%</p>");
+            }
+        } while (confirm("Voulez-vous recommencer ?"));
     </script>
 </body>
 </html>
