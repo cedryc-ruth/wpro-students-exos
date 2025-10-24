@@ -57,7 +57,7 @@
  document.write('<h1>Facture détaillée</h1>');
  document.write('<p>Vous voulez souscrire '+nbMois+' mois.</p>');
  document.write('<p>Vous avez choisi l\'abonnement '+typeAbonnement+'.</p>');
- document.write('<p>Choix pour le coaching : '+choixCoaching+'.</p>');
+ document.write('<p>Choix pour le coaching : '+(choixCoaching ? 'OUI':'NON')+'.</p>');
  document.write('<p>Le total est de '+montantTotal.toFixed(2)+' €.</p>');
  document.write('<p>Réduction : '+reduction.toFixed(2)+' €.</p>');
  document.write('<p>Montant total : '+montantAvecReduction.toFixed(2)+' €.</p>');
