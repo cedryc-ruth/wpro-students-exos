@@ -20,39 +20,44 @@
  
  //Lecture
  nbMois = parseInt(prompt('Combien de mois ?'));
- 
  while(isNaN(nbMois) || nbMois <= 0 || nbMois>12) {
      nbMois = parseInt(prompt('indiquez combien de mois !'));
  }
  
  typeAbonnement = prompt('BASIC(20€/M), PREMIUM(35€/M) ?').toUpperCase();
  while(typeAbonnement !== 'BASIC' && typeAbonnement !== 'PREMIUM') {
- typeAbonnement = prompt('Entrez BASIC ou PREMIUM !').toUpperCase();
+     typeAbonnement = prompt('Entrez BASIC ou PREMIUM !').toUpperCase();
  }
+ 
  choixCoaching = prompt('Voulez-vous un coaching(20€/M).OUI/NON ?').toUpperCase();
  while(choixCoaching !== 'OUI' && choixCoaching !== 'NON') {
- choixCoaching = prompt('Indiquez OUI ou NON !').toUpperCase();
+     choixCoaching = prompt('Indiquez OUI ou NON !').toUpperCase();
  }
  
  //Traitement
  if(typeAbonnement === 'BASIC') {
- total = nbMois * BASIC;
+     total = nbMois * BASIC;
  }
+ 
  if(typeAbonnement === 'PREMIUM') {
- total = nbMois * PREMIUM;
+     total = nbMois * PREMIUM;
  }
+ 
  if(choixCoaching === 'OUI') {
- montantTotal = total + (nbMois * COACHING);
- }else {
- montantTotal = total ;
- }
- if(nbMois>=12) {
- reduction = montantTotal * REDUCTION;
+     montantTotal = total + (nbMois * COACHING);
  } else {
- reduction = 'NON';
+     montantTotal = total ;
  }
+ 
+ if(nbMois>=12) {
+     reduction = montantTotal * REDUCTION;
+ } else {
+     reduction = 'NON';
+ }
+ 
  montantAvecReduction = montantTotal - reduction;
  montantMois = montantAvecReduction / 12;
+ 
  //Lecture
  document.write('<h1>Facture détaillée</h1>');
  document.write('<p>Vous voulez souscrire '+nbMois+' mois.</p>');
@@ -61,6 +66,5 @@
  document.write('<p>Le total est de '+montantTotal.toFixed(2)+' .</p>');
  document.write('<p>Réduction : '+reduction.toFixed(2)+'</p>');
  document.write('<p>Montant total : '+montantAvecReduction.toFixed(2)+'</p>');
- document.write('<p>Montant par mois : '+montantMois.toFixed(2)+'</p>');
- 
+ document.write('<p>Montant par mois : '+montantMois.toFixed(2)+'</p>'); 
  </script>
