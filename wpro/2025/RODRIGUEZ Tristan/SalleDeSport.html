@@ -11,8 +11,8 @@
  */
  
  //Déclaration
- var nbMois , typeAbonnement , choixCoaching , reduction ;
- var total , montantTotal , montantAvecReduction , montantMois;
+ var nbMois, typeAbonnement, choixCoaching, reduction;
+ var total, montantTotal, montantAvecReduction, montantMois;
  const BASIC = 20;
  const PREMIUM = 35;
  const COACHING = 10;
@@ -20,9 +20,11 @@
  
  //Lecture
  nbMois = parseInt(prompt('Combien de mois ?'));
+ 
  while(isNaN(nbMois) || nbMois <= 0) {
- nbMois = parseInt(prompt('indiquez combien de mois !'));
+     nbMois = parseInt(prompt('indiquez combien de mois !'));
  }
+ 
  typeAbonnement = prompt('BASIC(20€/M), PREMIUM(35€/M) ?').toUpperCase();
  while(typeAbonnement !== 'BASIC' && typeAbonnement !== 'PREMIUM') {
  typeAbonnement = prompt('Entrez BASIC ou PREMIUM !').toUpperCase();
