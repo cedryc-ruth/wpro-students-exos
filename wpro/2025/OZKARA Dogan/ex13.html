@@ -1,0 +1,67 @@
+<meta charset="utf-8">
+<script>
+
+	/**
+	* 13. Modifiez le vérificateur d’intervalles de sorte qu’il affiche la liste 
+	* des nombres compris dans l’intervalle, le nombre total de nombres compris dans 
+	* l’intervalle, ainsi que l’indice dans cet intervalle du nombre testé.
+	* 5 8			|	4 10
+	* [5 6 7 8] 4	|	[4 5 6 7 8 9 10] 7
+	* 6				| 	2
+	* [6]			|	[TROP BAS]
+	* Indice=2		|
+	*
+	* @author Ozkara Dogan
+	*/
+
+	//Déclaration de variables et constantes
+	const STOP = 999;
+	var MIN, MAX, nb, difference, j, indice;
+	
+	//Lecture de données
+	MIN = parseInt(prompt('Entrez la borne inférieure :'));
+	MAX = parseInt(prompt('Entrez la borne supérieure :'));
+	nb = parseInt(prompt('Entrez un nombre : (999 pour arrêter)'));
+	
+	//Affichage du résultat
+	document.write('<p>' + MIN + ' ' + MAX + '</p>');
+	
+	//Traitement de données
+	difference = (MAX+1)-MIN;
+	j = MIN;
+	//Affichage du résultat
+	document.write('<p>[');    
+	
+	for (let i=0; i<difference ;++i){
+		if (j<MAX){
+			//Affichage du résultat
+			document.write(j + ' ');    
+		} else {
+			//Affichage du résultat
+			document.write(j + ']' + ' ' + difference + '</p>');
+		}
+		//Incrémentation
+		++j;
+	}
+	
+	//Traitement de données
+	while (nb!=STOP){
+		//Affichage du résultat
+		document.write(nb);
+		
+		if (nb>MAX){
+			//Affichage du résultat
+			document.write('<p>[TROP HAUT]</p>');
+		} else if (nb<MIN){
+			//Affichage du résultat
+			document.write('<p>[TROP BAS]</p>');
+		} else{
+			indice = nb - difference;
+			//Affichage du résultat
+			document.write('<p>[' + nb + ']</p>' + '<p>Indice=' + indice + '</p>');
+		}
+		//Lecture de données
+		nb = parseInt(prompt('Entrez un nombre : (999 pour arrêter)'));
+	}
+
+</script>

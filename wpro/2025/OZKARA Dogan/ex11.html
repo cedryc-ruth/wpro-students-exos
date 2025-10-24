@@ -1,0 +1,89 @@
+<meta charset="utf-8">
+<script>
+
+	/**
+	* 11. Vérificateur d’intervalles (allons plus loin)
+	* a) Écrivez un programme qui vérifie si un nombre entré 
+	* par l’utilisateur est compris dans un intervalle. Les bornes
+	* inférieures et supérieures de l’intervalle seront obligatoirement 
+	* des nombres entiers positifs (zéro compris) entrés par l’utilisateur. 
+	* Si le nombre à vérifier est compris dans l’intervalle, le programme 
+	* affiche ce nombre entre crochet. Sinon, le programme affiche le message 
+	* [HORS LIMITES]. L’utilisateur peut tester autant de nombre qu’il veut ; 
+	* il peut arrêter le programme en tapant un nombre. Attention, n’oubliez pas 
+	* que la borne supérieure d’un intervalle est toujours plus grande ou égale 
+	* à la borne inférieure! 
+	* b) Modifiez le précédent programme de sorte qu’au lieu d’afficher [HORS LIMITES],
+	* il précise [TROP HAUT] ou [TROP BAS] en fonction des cas.
+	*
+	* @author Ozkara Dogan
+	*/
+	
+	<!-- //Exercice A -->
+	<!-- //Déclaration de variables et constantes -->
+	<!-- const STOP = 999; -->
+	<!-- var MIN, MAX, nb; -->
+	
+	<!-- //Lecture de données -->
+	<!-- MIN = parseInt(prompt('Entrez la borne inférieure :')); -->
+	
+	<!-- //Initialisation -->
+	<!-- MAX = 0; -->
+
+	<!-- //Traitement de données -->
+	<!-- while (MAX<MIN){ -->
+		<!-- MAX = parseInt(prompt('Entrez la borne supérieure :')); -->
+	<!-- } -->
+	
+	<!-- //Lecture de données -->
+	<!-- nb = parseInt(prompt('Entrez un nombre : (999 pour arrêter)')); -->
+	
+	<!-- //Traitement de données -->
+	<!-- while (nb!=STOP){ -->
+		<!-- if (nb>MAX || nb<MIN){ -->
+			<!-- //Affichage du résultat -->
+			<!-- document.write('<p>[HORS LIMITES]</p>'); -->
+		<!-- } else { -->
+			<!-- //Affichage du résultat -->
+			<!-- document.write('<p>[' + nb + ']</p>'); -->
+		<!-- } -->
+		<!-- //Lecture de données -->
+		<!-- nb = parseInt(prompt('Entrez un nombre : (999 pour arrêter)')); -->
+	<!-- } -->
+
+	//Exercice B
+	//Déclaration de variables et constantes
+	const STOP = 999;
+	var MIN, MAX, nb;
+	
+	//Lecture de données
+	MIN = parseInt(prompt('Entrez la borne inférieure :'));
+
+	//Initialisation
+	MAX = 0;
+
+	//Traitement de données
+	while (MAX<MIN){
+		MAX = parseInt(prompt('Entrez la borne supérieure :'));
+	}
+	
+	//Lecture de données
+	nb = parseInt(prompt('Entrez un nombre : (999 pour arrêter)'));
+	
+	//Traitement de données
+	while (nb!=STOP){
+		if (nb>MAX){
+			//Affichage du résultat
+			document.write('<p>[TROP HAUT]</p>');
+		} else if (nb<MIN){
+			//Affichage du résultat
+			document.write('<p>[TROP BAS]</p>');
+		} else{
+			//Affichage du résultat
+			document.write('<p>[' + nb + ']</p>');
+		}
+		//Lecture de données
+		nb = parseInt(prompt('Entrez un nombre : (999 pour arrêter)'));
+	}
+
+</script>

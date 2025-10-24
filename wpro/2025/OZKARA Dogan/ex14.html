@@ -1,0 +1,61 @@
+<meta charset="utf-8">
+<script>
+
+	/**
+	* 14. Comptage sélectif 
+	* a) Lire des notes. Compter le nombre de notes supérieures à 10.
+	* b) Lire des notes. Compter le nombre de notes comprises entre 5 et 15.
+	*
+	* @author Ozkara Dogan
+	*/
+
+	<!-- //Exercice A -->
+	<!-- //Déclaration de variables et constantes -->
+	<!-- const LIMITE = 10; -->
+	<!-- var note, totalNote; -->
+
+	<!-- //Initialisation -->
+	<!-- totalNote = 0; -->
+
+	<!-- //Lecture de données -->
+	<!-- note = parseInt(prompt('Entrez votre note: (999 pour arrêter)')); -->
+
+	<!-- //Traitement de données -->
+	<!-- while (note != 999){ -->
+		<!-- if (note>LIMITE){ -->
+			<!-- //Incrémentation -->
+			<!-- ++totalNote; -->
+		<!-- } -->
+		<!-- //Lecture de données -->
+		<!-- note = parseInt(prompt('Entrez votre note: (999 pour arrêter)')); -->
+	<!-- } -->
+
+	<!-- //Affichage du résultat -->
+	<!-- document.write('Il y a eu ' + totalNote + ' notes qui était supérieures à 10.'); -->
+
+	//Exercice B
+	//Déclaration de variables et constantes
+	const LIMITE_BASSE = 5;
+	const LIMITE_HAUTE = 15;
+	var note, totalNote;
+
+	//Initialisation
+	totalNote = 0;
+
+	//Lecture de données
+	note = parseInt(prompt('Entrez votre note: (999 pour arrêter)'));
+
+	//Traitement de données
+	while (note != 999){
+		if (note>=LIMITE_BASSE && note<=LIMITE_HAUTE){
+			//Incrémentation
+			++totalNote;
+		}
+		//Lecture de données
+		note = parseInt(prompt('Entrez votre note: (999 pour arrêter)'));
+	}
+
+	//Affichage du résultat
+	document.write('Il y a eu ' + totalNote + ' notes qui était comprises entre ' + LIMITE_BASSE + ' et ' + LIMITE_HAUTE + '.');
+
+</script>

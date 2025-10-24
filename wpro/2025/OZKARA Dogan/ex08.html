@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<script>
+
+	/**
+	* 8. Écrivez un programme qui affiche le montant de la prime
+	* d’un vendeur lorsqu’il a entré son chiffre de vente 
+	* (prime de 10% sur son chiffre de vente s’il a vendu pour plus de 1000 €).
+	* Idem mais primes progressives: 0-500 => 2%, 501-1000 => 5%, plus de 1000 => 10%
+	*
+	* @author Ozkara Dogan
+	*/
+
+	//Déclaration de variable et constantes
+	const prime1 = 0.02;
+	const prime2 = 0.05;
+	const prime3 = 0.10;
+	const objectif1 = 500;
+	const objectif2 = 1000;
+	var chiffreVente;
+	var montantPrime;
+	var tauxObjectif;
+	
+	//Lecture de données
+	chiffreVente = parseInt(prompt('Entrez votre chiffre de vente:'));
+	
+	//Traitement des données
+	if (chiffreVente<0){
+		//Affichage du résultat
+		document.write('Le chiffre ne peut pas être négatif');
+	} else { 
+		if (chiffreVente<=objectif1){
+			tauxObjectif = prime1;
+		} else if (chiffreVente>objectif1 && chiffreVente<=objectif2){
+			tauxObjectif = prime2;
+		} else {
+			tauxObjectif = prime3;
+		}
+		
+		montantPrime = chiffreVente*tauxObjectif;
+		
+		//Affichage du résultat
+		document.write ('Félicitations vous avez atteint votre objectif votre montant de prime est de : ' + montantPrime.toFixed(2) + '€');
+	}
+
+</script>

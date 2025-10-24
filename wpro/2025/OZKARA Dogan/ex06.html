@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<script>
+
+/**
+ *
+ * 6. Ecrivez un programme qui vérifie si un nombre
+ * entré par l'utilisateur est compris entre 10 et 20.
+ *
+ * @author Ozkara Dogan
+ */
+
+//Déclaration de variables et des constantes
+var nb;
+const MIN = 10;
+const MAX = 20;
+
+//Lecture de données
+nb = parseFloat(prompt('Ecrivez un nombre compris entre 10 et 20:'));
+
+//Traitement des données
+if (nb>=MIN && nb<=MAX){
+	//Affichage du résultat
+	document.write('<p>Oui, '+ nb + ' est compris entre ' + MIN + ' et ' + MAX + '.</p>');
+} else {
+	//Affichage du résultat
+	document.write('<p>Non, '+ nb + ' n\'est pas compris entre ' + MIN + ' et ' + MAX + '.</p>');
+}
+</script>

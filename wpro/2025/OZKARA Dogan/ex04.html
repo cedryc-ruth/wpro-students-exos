@@ -1,0 +1,28 @@
+<script>
+	/**
+	*
+	* 4.Écrivez un programme qui calcule et
+	* affiche le périmètre et la superficie d’un rectangle 
+	* dont la largeur et la longueur sont données par l’utilisateur.
+	*
+	*@author Ozkara Dogan
+	*/
+	
+	//Déclaration
+	var largeur, longueur;
+	var perimetre, superficie;
+	
+	//Lecture de données
+	longueur = prompt('Entrez la longueur du rectangle :');
+	largeur = prompt('Entrez la largeur du rectangle :');
+	
+	
+	perimetre = 2*longueur + 2*largeur;
+	superficie = longueur*largeur;
+	
+	//Affichage du résultat
+	document.write('<p>Le rectangle a une longueur de ' + longueur + ' et une largeur de '
+	+ largeur + '. Son périmètre est de : ' + perimetre + '. Sa superficie est de : '
+	+ superficie + '.</p>');
+	
+</script>

@@ -1,0 +1,50 @@
+<script>
+/**
+ * Écrivez un programme qui vérifie si un nombre entré par l’utilisateur est compris dans un intervalle. 
+ *Les bornes inférieures et supérieures de l’intervalle seront obligatoirement des nombres entiers positifs (zéro compris) 
+ *entrés par l’utilisateur. Si le nombre à vérifier est compris dans l’intervalle, le programme affiche ce nombre entre crochet. 
+ *Sinon, le programme affiche le message [HORS LIMITES]. L’utilisateur peut tester autant de nombre qu’il veut ; 
+ *il peut arrêter le programme en tapant un nombre.
+ *Attention, n’oubliez pas que la borne supérieure d’un intervalle est toujours plus grande ou égale à la borne inférieure!
+ *@Author Tristan
+ */
+
+ 
+ var  nbVerifier , nbMin , nbMax;
+ 
+do { 
+ 
+ nbMin = parseInt(prompt('Veillez rentrer un chiffre pour la borne inférieure'));
+ nbMax = parseInt(prompt('Veillez rentrer un chiffre pour la borne supérieure'));
+ 
+ if(nbMin >= nbMax) {
+ 
+    alert('La borne inférieure doit être plus petite que la borne supérieure!');
+	
+	}
+} while (nbMin>=nbMax);	
+ 
+ do{
+ 
+ nbVerifier = parseInt(prompt('Quelles chiffres souhaitez-vous vérifier ? Pour quitter tapé : 1234'));
+ 
+  if(nbVerifier === 1234){
+
+    alert('Au revoir');
+    break;
+
+  }
+
+  if(nbVerifier<nbMin || nbVerifier>nbMax){
+ 
+    alert('HORS LIMITES'); 
+ 
+  } else { 
+ 
+  alert('['+nbVerifier+']');
+ 
+  }
+
+} while(true);
+
+</script>

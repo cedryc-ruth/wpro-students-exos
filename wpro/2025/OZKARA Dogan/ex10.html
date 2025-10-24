@@ -1,0 +1,57 @@
+<meta charset="utf-8">
+<script>
+
+	/**
+	* 10. a) Écrivez un programme qui fait la somme d’une série d’entiers 
+	* entrés un à un par l’utilisateur.Déterminez une condition permettant 
+	* d’arrêter le traitement. Avant de quitter, le programme affiche le total.
+	* b) idem sauf que le total est affiché systématiquement après chaque entrée de l’utilisateur.
+	*
+	* @author Ozkara Dogan
+	*/
+	
+	<!-- //Exercice A -->
+	<!-- //Déclaration de variables et constantes -->
+	<!-- const STOP = 999; -->
+	<!-- var somme, nb; -->
+	
+	<!-- //Initialisation -->
+	<!-- somme = 0; -->
+	
+	<!-- //Lecture de données -->
+	<!-- nb = parseInt(prompt('Entrez un entier (999 pour arrêter)')); -->
+	
+	<!-- //Traitement de données -->
+	<!-- while (nb != STOP){ -->
+		<!-- //Lecture de données -->
+		<!-- somme += nb; -->
+		<!-- nb = parseInt(prompt('Entrez un entier (999 pour arrêter)')); -->
+		
+		<!-- if (nb == STOP){ -->
+		<!-- //Affichage du résultat -->
+		<!-- document.write('La somme total est de : ' + somme); -->
+		<!-- } -->
+	<!-- }; -->
+
+	//Exercice B
+	//Déclaration de variables et constantes
+	const STOP = 999;
+	var somme, nb;
+	
+	//Initialisation
+	somme = 0;
+	
+	//Lecture de données
+	nb = parseInt(prompt('Entrez un entier (999 pour arrêter)'));
+	
+	//Traitement de données
+	while (nb != STOP){
+		//Lecture de données
+		somme += nb;
+		nb = parseInt(prompt('Entrez un entier (999 pour arrêter)'));
+		
+		//Affichage du résultat
+		document.write('<p>La somme total est de : ' + somme + '</p>');
+	};
+
+</script>

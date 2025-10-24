@@ -1,0 +1,46 @@
+<script>
+/**
+ * Écrivez un programme qui fait la somme d’une série d’entiers entrés un à un par l’utilisateur.
+ * Déterminez une condition permettant d’arrêter le traitement. Avant de quitter, le programme affiche le total.
+ * @Author Tristan
+ * version 1.0
+ */
+ while(true) {
+ 
+ //Déclaration variables
+ var nb1, nb2, nb3, nb4, nb5, resultat; 
+ 
+ //Lecture des données
+ nb1 = parseInt(prompt('Entrer un nombre entiers entre 1 et 100'));
+ 
+ nb2 = parseInt(prompt('Entrer un nombre entiers entre 1 et 100'));
+ 
+ nb3 = parseInt(prompt('Entrer un nombre entiers entre 1 et 100'));
+ 
+ nb4 = parseInt(prompt('Entrer un nombre entiers entre 1 et 100'));
+ 
+ nb5 = parseInt(prompt('Entrer un nombre entiers entre 1 et 100'));
+ 
+ //Traitement des données
+ resultat = nb1+nb2+nb3+nb4+nb5;
+ 
+ //condition
+ if(resultat>0 && resultat<100) { 
+      alert(resultat); //Affichage des données
+  
+  } else {
+      alert('Erreur'); //Affichage des données 
+  break;
+  }
+ }
+
+
+
+
+
+
+
+
+
+
+</script>

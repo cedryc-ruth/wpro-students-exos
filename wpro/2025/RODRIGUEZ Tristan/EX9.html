@@ -1,0 +1,33 @@
+<script>
+/**
+ * 9.	Le devin (version simple)
+ * Écrivez un  programme qui demande à l’utilisateur de deviner un nombre compris entre 0 et 10.
+ * Le nombre à deviner n’est pas fourni par l’utilisateur bien sûr. Il devra être généré aléatoirement grâce à la fonction random.
+ * L'utilisateur a droit à une seule tentative. Si la réponse est trouvée, le programme s'arrête.aze
+ * @Author Tristan
+ */
+ 
+ //Déclaration variables
+do{
+do{
+ var nbUtilisateur , nbOrdinateur ; 
+ 
+ //Lecture des données
+nbOrdinateur = Math.floor(Math.random() * 10) + 1;
+nbUtilisateur = parseInt(prompt('Deviné le même chiffre que l\'ordinateur ! Indique un chiffre de 0 et 10 .'));
+
+//Traitement des données
+}while(isNaN && nbUtilisateur<1 && nbOrdinateur>10)
+
+  if(nbOrdinateur != nbUtilisateur){
+
+     alert('Perdu !');//Affichage résultat
+
+}   else { 
+
+     alert('Gagné ! L\'ordinateur avait choisit '+nbOrdinateur);//Affichage résultat
+
+}
+}while(nbOrdinateur != nbUtilisateur)
+
+</script>

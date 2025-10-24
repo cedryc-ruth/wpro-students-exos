@@ -1,0 +1,52 @@
+<meta charset="utf-8">
+<script>
+
+	/**
+	* 15. Modifiez le jeu Le Devin de sorte qu’il compte non seulement le nombre 
+	* de tentatives mais aussi le nombre de propositions supérieures et le nombre 
+	* de propositions inférieures au nombre à deviner.
+	*
+	* @author Ozkara Dogan
+	*/
+
+	//Déclaration de variables et constantes
+	const MAX = 11;
+	var nbAleatoire = Math.floor(Math.random()*MAX);
+	var nb, totalTentative, totalInf, totalSup;
+		
+	//Initialisation
+	totalTentative = 0;
+	totalInf = 0;
+	totalSup = 0;
+	
+	//Lecture de données
+	nb = prompt('Devinez le nombre compris entre 0 et 10:');
+		
+	//Traitement des données
+	while (nb != nbAleatoire){
+		if (nb>nbAleatoire){
+			//Incrémentation
+			++totalSup;
+		} else if (nb<nbAleatoire){
+			//Incrémentation
+			++totalInf;
+		}
+	
+		//Lecture de données
+		nb = prompt('Devinez le nombre compris entre 0 et 10:');	
+		
+		//Incrémentation
+		++totalTentative;
+	}
+	
+	//Affichage du résultat
+		if (nb == nbAleatoire){
+			//Affichage du résultat
+			document.write('Correct, le nombre était : ' + nbAleatoire);
+		} else {
+			//Affichage du résultat
+			document.write('Faux, le nombre était : ' + nbAleatoire);
+		}
+	document.write('<p>Nombre total de propositions supérieures : ' + totalSup + ' et nombre total de propositions inférieures : ' + totalInf);
+
+</script>

@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<script>
+
+	/**
+	* 12. Comptage systématique (Jeu Le devin) Programme qui demande à 
+	* l’utilisateur de deviner un nombre compris entre 0 et 10. Le nombre 
+	* à deviner n’est pas fourni par l’utilisateur bien sûr. Il devra être 
+	* généré aléatoirement grâce à la fonction random. L'utilisateur peut 
+	* faire plusieurs tentatives. Une fois la réponse trouvée, 
+	* le programme affichera le nombre de tentatives.
+	*
+	* @author Ozkara Dogan
+	*/
+
+	//Déclaration de variables et constantes
+	const MAX = 11;
+	var nb, nbAleatoire, i;
+	
+	//Initialisation
+	nbAleatoire = Math.floor(Math.random()* MAX);
+	i = 0;
+	
+	//Traitement de données
+	do {
+		//Lecture de données
+		nb = parseInt(prompt('Entrez un nombre compris entre 1 et 10:'));
+		
+		//Incrémentation
+		++i;
+	} while (nb != nbAleatoire);
+
+	//Affichage du résultat
+	document.write('<p>Félicitation le résultat était bien ' + nbAleatoire + ' tu l\'as trouvé en : ' + i + ' essai.</p>');
+
+</script>

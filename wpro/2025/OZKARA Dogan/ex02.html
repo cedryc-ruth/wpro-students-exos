@@ -1,0 +1,29 @@
+<script>
+
+	/**
+	*
+	* 2. Écrivez un programme qui calcule et 
+	* affiche le carré d’un nombre entré par l’utilisateur.
+	*
+	* @author Ozkara Dogan
+	*/
+
+	//Déclaration
+	var nombre, carre;
+
+	//Lecture de données
+		
+	do {
+		nombre = prompt('Entrez un nombre :');
+	} while (isNaN(nombre) || nombre<=0);
+
+	//Conversion
+	nombre = parseInt(nombre);
+
+	//Traitement des données
+	carre = nombre*nombre;
+	
+	//Affichage du résultat
+	document.write('<p> Le carré de ' + nombre + ' vaut ' + carre + '.</p>');
+
+</script>

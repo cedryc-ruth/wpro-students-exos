@@ -1,0 +1,35 @@
+<script>
+
+	/**
+	*
+	* 3.Écrivez un programme qui calcule et 
+	* affiche le prix TTC à partir de deux données
+	* entrées par l’utilisateur: le prix hors TVA, 
+	* le nombre d’articles désirés. 
+	* Le taux de TVA applicable est de 20,5%.
+	*
+	* @author Ozkara Dogan
+	*/
+
+	//Déclaration
+	var prixHTVA, nbArticles;
+	var prixTTC;
+	const tva;
+	
+	//Initialisation
+	tva = 0.205;
+	
+	//Lecture
+	nbArticles = prompt('Combien d\'articles souhaitez vous entrez :');
+	
+	//Traitement
+	for (let i=1; i<=nbArticles ;++i){
+		prixHTVA = prompt('Entrez le prix de l\'article numéro ' + i);
+		prixTTC = prixHTVA*tva;
+		
+		//Affichage
+		document.write('<p> Le prix ttc de l\'article numéro ' + i +
+		' est ' + prixTTC + ' (prix hors tva + ' + prixHTVA + ')</p>');
+	}
+
+</script>

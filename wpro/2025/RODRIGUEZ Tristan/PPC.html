@@ -1,0 +1,52 @@
+<script>
+/** 
+ * Crée une application du jeux Pierre Papier Ciseaux .
+ * @Author Tristan
+ * Version 1.0 
+ */
+
+do {
+
+//Déclaration des variables
+const choix = ["pierre", "papier", "ciseaux"];
+var random = Math.floor(Math.random() * 3);
+var choixOrdi = choix[random];
+var choixJoueur
+
+do {
+
+//Lecture des données
+  choixJoueur = prompt("pierre, papier ou ciseaux ?").toLowerCase();
+
+}while(!isNaN(choixJoueur))
+
+//Traitement et Affichage des données
+if ((choixOrdi === "pierre") && (choixJoueur === "pierre")) {
+  alert("Égalité !");
+} else if ((choixOrdi === "pierre") && (choixJoueur === "papier")) {
+  alert("Vous avez gagné !");
+} else if ((choixOrdi === "pierre") && (choixJoueur === "ciseaux")) {
+  alert("Vous avez perdu !");
+} 
+
+if ((choixOrdi === "papier") && (choixJoueur === "papier")) {
+  alert("Égalité !");
+} else if ((choixOrdi === "papier") && (choixJoueur === "ciseaux")) {
+  alert("Vous avez gagné !");
+} else if ((choixOrdi === "papier") && (choixJoueur === "pierre")) {
+  alert("Vous avez perdu !");
+} 
+
+if ((choixOrdi === "ciseaux") && (choixJoueur === "ciseaux")) {
+  alert("Égalité !");
+} else if ((choixOrdi === "ciseaux") && (choixJoueur === "pierre")) {
+  alert("Vous avez gagné !");
+} else if ((choixOrdi === "ciseaux") && (choixJoueur === "papier")) {
+  alert("Vous avez perdu !");
+} 
+
+alert("L'ordinateur a choisi : " + choixOrdi);
+
+}while(confirm('Voulez-vous recommencer ?'))
+
+</script>
