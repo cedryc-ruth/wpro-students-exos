@@ -29,10 +29,7 @@
      typeAbonnement = prompt('Entrez BASIC ou PREMIUM !').toUpperCase();
  }
  
- choixCoaching = prompt('Voulez-vous un coaching(20€/M).OUI/NON ?').toUpperCase();
- while(choixCoaching !== 'OUI' && choixCoaching !== 'NON') {
-     choixCoaching = prompt('Indiquez OUI ou NON !').toUpperCase();
- }
+ choixCoaching = confirm('Voulez-vous un coaching(20€/M).OUI/NON ?');
  
  //Traitement
  if(typeAbonnement === 'BASIC') {
@@ -43,7 +40,7 @@
      total = nbMois * PREMIUM;
  }
  
- if(choixCoaching === 'OUI') {
+ if(choixCoaching) {
      montantTotal = total + (nbMois * COACHING);
  } else {
      montantTotal = total ;
