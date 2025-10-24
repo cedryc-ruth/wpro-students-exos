@@ -21,7 +21,7 @@
  //Lecture
  nbMois = parseInt(prompt('Combien de mois ?'));
  
- while(isNaN(nbMois) || nbMois <= 0) {
+ while(isNaN(nbMois) || nbMois <= 0 || nbMois>12) {
      nbMois = parseInt(prompt('indiquez combien de mois !'));
  }
  
