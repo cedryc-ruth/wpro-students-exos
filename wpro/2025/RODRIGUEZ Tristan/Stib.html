@@ -16,38 +16,34 @@ const TARIF_MOIS = 49;
 mobib = confirm('Avez-vous une carte electronique MOBIB ?'); 
 
 do {
-age = parseInt(prompt('Quel âge avez-vous ?'));
+	age = parseInt(prompt('Quel âge avez-vous ?'));
 } while(isNaN(age) && age <= 0);
 
 //Traitement des données
 if(age <= 6) {
 	document.write('Pas d\'abonnement pour cette catégorie ! Vous pouvez voyager gratuitement mais accompagné .');
-
 } else if(age < 12 && age > 6) {
 	docment.write('le tarif est de 0 ');
+	
 	if(!mobib) {
-	docment.write('<p>le tarif est de 0 </p>');
-	document.write('<p>Vous devez acheter une carte à 5 €</p>')
+		docment.write('<p>le tarif est de 0 </p>');
+		document.write('<p>Vous devez acheter une carte à 5 €</p>')
 	}
-
 } else if(age < 25 && age > 12) {
 	document.write('le tarif est de 12€');
-
 } else if(age > 25) {
 	do {
 		typeAbonnement = prompt('Quel type d\'abonnement ? Tapez "m" pour mensuel ou "a" pour annuel');
 	} while(typeAbonnement !== 'a' && typeAbonnement !== 'm');
 	
 	if(typeAbonnement == 'a') {
-		
 		if(!mobib) {
 			document.write('<p>le tarif est de 499€</p>');
 			document.write('<p>Vous devez acheter une carte de 5€</p>');
 		} else {
 			document.write('le tarif est de 499€');
 		}
-	} else if (typeAbonnement =='m') {
-		
+	} else if (typeAbonnement =='m') {		
 		do {
 			mois = prompt('Combien de mois ?');
 		} while(isNaN(mois) || mois <=0);
