@@ -20,12 +20,12 @@ do {
 	
 	//Lecture
 	nbAdulte = parseInt(prompt('Combien d\'adulte ?'));
-	while(nbAdulte<=0 || isNaN(nbAdulte)) {
+	while(isNaN(nbAdulte) || nbAdulte<=0) {
 		nbAdulte = parseInt(prompt('Indiquez un nombre correct !'));
 	}
 
 	nbEnfant = parseInt(prompt('Combien d\'enfant ?'));
-	while(nbEnfant<0 || isNaN(nbEnfant)) {
+	while( isNaN(nbEnfant) || nbEnfant<0) {
 		nbEnfant = parseInt(prompt('Indiquez un nombre correct !'));
 	}
 	
