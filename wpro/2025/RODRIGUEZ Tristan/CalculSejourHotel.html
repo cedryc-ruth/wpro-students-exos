@@ -9,7 +9,7 @@
  */
  
 //Déclarations des variables et constantes
-var nbNuits, prixNuits, typeChambre, prixChambre, choixBreakfast, prixBreakfast,montantTotal, totalFinal;
+var nbNuits, prixNuits, typeChambre, prixChambre, choixBreakfast, prixBreakfast, montantTotal, totalFinal;
 var statutClient, choixSaison, supplementSaison, calculSuppSaison, supplementTarif, calculSuppTarif, reductionFidelite; 
 var  calculReducFidelite, reductionlongueDuree, calculReducDuree;
 const SIMPLE = 55;
@@ -52,11 +52,11 @@ if(typeChambre == 1) {
 	typeChambre = 'Chambre Simple';
 	prixChambre = 55;
 } else if(typeChambre == 2) {
-		typeChambre = 'Chambre Double';
-		prixChambre = 75;
+	typeChambre = 'Chambre Double';
+	prixChambre = 75;
 } else {
-		typeChambre = 'Suite';
-		prixChambre = 120;
+	typeChambre = 'Suite';
+	prixChambre = 120;
 }
 
 prixNuits = nbNuits * prixChambre;
@@ -65,11 +65,11 @@ if(choixBreakfast == 1 && typeChambre == 3 ) {
 	choixBreakfast = 'OUI';
 	prixBreakfast = 0;
 } else if(choixBreakfast == 1) {
-		choixBreakfast = 'OUI';
-		prixBreakfast = nbNuits * PRIX_BREAKFAST;
+	choixBreakfast = 'OUI';
+	prixBreakfast = nbNuits * PRIX_BREAKFAST;
 } else {
-		choixBreakfast = 'NON';
-		prixBreakfast = 0;
+	choixBreakfast = 'NON';
+	prixBreakfast = 0;
 }
 
 montantTotal = prixNuits + prixBreakfast;
@@ -78,25 +78,25 @@ if(nbNuits >= 7) {
 	reductionlongueDuree = montantTotal * REDUCT_LONGUE_DUREE;
 	supplementTarif = 0;
 } else if(nbNuits <= 2) {
-		reductionlongueDuree = 0;
-		supplementTarif = SUPPLEMENT_TARIF;
+	reductionlongueDuree = 0;
+	supplementTarif = SUPPLEMENT_TARIF;
 } else {
-		reductionlongueDuree = 0;
-		supplementTarif = 0;
+	reductionlongueDuree = 0;
+	supplementTarif = 0;
 }
 
 if(statutClient == 1 ) {
 	reductionFidelite = montantTotal * REDUC_FIDELITE;
 } else {
-		reductionFidelite = 0;
+	reductionFidelite = 0;
 }
 
 if(choixSaison == 2) {
 	choixSaison = 'Avril-Septembre';
 	supplementSaison = montantTotal * SUPPLEMENT_SAISON;
 } else {
-		choixSaison = 'Octobre-Mars';
-		supplementSaison = 0;
+	choixSaison = 'Octobre-Mars';
+	supplementSaison = 0;
 }
 
 totalFinal = montantTotal + supplementSaison + supplementTarif - reductionFidelite - reductionlongueDuree;
