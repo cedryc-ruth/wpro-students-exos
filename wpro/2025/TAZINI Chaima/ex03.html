@@ -11,25 +11,25 @@
  */
 
 //Déclaration des valeurs
-var prix_HTVA;
-var nombre_articles_desires;
+var prixHTVA;
+var nombreArticlesDesires;
 var Taux_de_TVA;
-var TTC;
+var prixTTC;
 
 //Initialisation
-prix_HTVA = prompt('Quel est le prix HTVA ?');
-nombre_articles_desires = prompt('Quel est le nombre darticles désirés?');
+prixHTVA = prompt('Quel est le prix HTVA ?');
+nombreArticlesDesires = prompt('Quel est le nombre darticles désirés?');
 Taux_de_TVA = 1.205
 
 //Affectation de la valeur
 
-TTC= prix_HTVA*Taux_de_TVA;
+prixTTC= prixHTVA*Taux_de_TVA;
 
 //Affichage
 
-document.write('<p> prix_HTVA'+prix_HTVA);
-document.write('<p> TTC'+TTC);
+document.write('<p> prix_HTVA'+prixHTVA);
+document.write('<p> TTC'+prixTTC);
 
-document.write('<p> Le prix TTC pour tous les articles est'+TTC*nombre_articles_desires)
+document.write('<p> Le prix TTC pour tous les articles est'+prixTTC*nombreArticlesDesires)
 
 </script>
