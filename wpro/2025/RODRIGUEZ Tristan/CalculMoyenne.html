@@ -17,10 +17,11 @@ do {
 } while(isNaN(nbNotes) || nbNotes <= 0);
 
 for(var i=0;i<nbNotes;i++) {
-        do {
+    do {
 		note = parseFloat(prompt('Entrez la note n° '+i+' compris entre 0 et 20 !'));
-		} while(isNaN(note) || note <= 0 || note >= 21);
-		somme += note; //somme = somme + note
+	} while(isNaN(note) || note <= 0 || note >= 21);
+	
+	somme += note; //somme = somme + note
 }
 
 //Traitement des données
@@ -29,15 +30,15 @@ moyenne = somme / nbNotes;
 totalnbNotes = nbNotes*20; //la somme / note maximale 
 
 if(moyenne < 10) {
-typeNote = 'Recalé';
+	typeNote = 'Recalé';
 } else if(moyenne >= 10 && moyenne < 14) {
-typeNote = 'Passable';
+	typeNote = 'Passable';
 } else if(moyenne >= 14 && moyenne < 17) {
-typeNote = 'Bien';
+	typeNote = 'Bien';
 } else if(moyenne >= 17) {
-typeNote = 'Excellent';
+	typeNote = 'Excellent';
 } else {
-typeNote = 'Erreur';
+	typeNote = 'Erreur';
 }
 
 //Affichage des données
