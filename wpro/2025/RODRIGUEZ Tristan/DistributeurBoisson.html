@@ -20,7 +20,7 @@ do {
 
 do {
 	choixBoisson = parseInt(prompt('Quelles boissons voulez-vous ? Tapez 1 pour Café(1.5€), 2 pour Thé(3€), 3 pour Chocolat(2.5€).'));	
-} while(isNaN(choixBoisson) && choixBoisson !== 1 && choixBoisson !== 2 && choixBoisson !== 3);
+} while(isNaN(choixBoisson) || (choixBoisson !== 1 && choixBoisson !== 2 && choixBoisson !== 3));
 
 if(choixBoisson == 1) {
 	prixBoisson = PRIX_CAFE;
