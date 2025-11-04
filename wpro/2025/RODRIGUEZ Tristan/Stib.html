@@ -44,7 +44,7 @@ if(age <= 6) {
 	} else if (typeAbonnement =='m') {		
 		do {
 			mois = prompt('Combien de mois ?');
-		} while(isNaN(mois) || mois <=0);
+		} while(isNaN(mois) || mois <=0 || mois>=12 || mois%1!=0);
 		
 		abonnement = (!mobib) ? mois * TARIF_MOIS + 5 : mois * TARIF_MOIS;
 
