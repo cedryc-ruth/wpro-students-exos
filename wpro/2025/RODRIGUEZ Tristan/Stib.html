@@ -21,16 +21,16 @@ do {
 
 //Traitement des données
 if(age <= 6) {
-	document.write('Pas d\'abonnement pour cette catégorie ! Vous pouvez voyager gratuitement mais accompagné .');
+	document.write('<p>Pas d\'abonnement pour cette catégorie ! Vous pouvez voyager gratuitement mais accompagné.</p>');
 } else if(age < 12 && age > 6) {
-	document.write('le tarif est de 0 ');
+	document.write('<p>Le tarif est de 0 €.</p>');
 	
 	if(!mobib) {
-		document.write('<p>le tarif est de 0 </p>');
-		document.write('<p>Vous devez acheter une carte à 5 €</p>')
+		document.write('<p>le tarif est de 0 €.</p>');
+		document.write('<p>Vous devez acheter une carte à 5 €.</p>')
 	}
 } else if(age < 25 && age > 12) {
-	document.write('le tarif est de 12€');
+	document.write('<p>Le tarif est de 12 €.</p>');
 } else if(age > 25) {
 	do {
 		typeAbonnement = prompt('Quel type d\'abonnement ? Tapez "m" pour mensuel ou "a" pour annuel');
@@ -38,10 +38,10 @@ if(age <= 6) {
 	
 	if(typeAbonnement == 'a') {
 		if(!mobib) {
-			document.write('<p>le tarif est de 499€</p>');
-			document.write('<p>Vous devez acheter une carte de 5€</p>');
+			document.write('<p>Le tarif est de 499 €.</p>');
+			document.write('<p>Vous devez acheter une carte de 5 €.</p>');
 		} else {
-			document.write('le tarif est de 499€');
+			document.write('<p>Le tarif est de 499 €.</p>');
 		}
 	} else if (typeAbonnement =='m') {		
 		do {
