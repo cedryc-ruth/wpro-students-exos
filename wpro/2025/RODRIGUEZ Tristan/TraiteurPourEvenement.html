@@ -46,12 +46,12 @@ do {
 	if(choixMenu === 'STANDARD') {
 		montantAdulte = nbAdulte * MENU_STANDARD_ADULTE;
 		montantEnfant = nbEnfant * MENU_STANDARD_ENFANT;
-		montantTotal = montantAdulte + montantEnfant + optionDessert;
 	} else { 
 		montantAdulte = nbAdulte * MENU_PREMIUM_ADULTE;
 		montantEnfant = nbEnfant * MENU_PREMIUM_ENFANT;
-		montantTotal = montantAdulte + montantEnfant + optionDessert;
 	}
+
+	montantTotal = montantAdulte + montantEnfant + optionDessert;
 	
 	if(montantTotal >= MONTANT_SUP) {
 		montantReduction = (montantAdulte + montantEnfant + optionDessert) * REDUCTION;
