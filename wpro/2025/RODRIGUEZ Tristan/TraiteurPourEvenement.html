@@ -7,63 +7,70 @@
  * Si le total dépasse 1000 € → 5 % de réduction automatique. Afficher un ticket détaillé.
  * @author Tristan
  */
+	
 do {
-//Declaration
-var nbAdulte , nbEnfant , choixMenu , choixDessert , optionDessert , reduction , montantEnfant , montantAdulte , montantReduction , montantTotal;
-const MENU_STANDARD_ADULTE = 25;
-const MENU_STANDARD_ENFANT = 15;
-const MENU_PREMIUM_ADULTE = 40;
-const MENU_PREMIUM_ENFANT = 25;
-const REDUCTION = 0.05;
-const MONTANT_SUP = 1000;
+	//Declaration
+	var nbAdulte , nbEnfant , choixMenu , choixDessert , optionDessert , reduction , montantEnfant , montantAdulte , montantReduction , montantTotal;
+	const MENU_STANDARD_ADULTE = 25;
+	const MENU_STANDARD_ENFANT = 15;
+	const MENU_PREMIUM_ADULTE = 40;
+	const MENU_PREMIUM_ENFANT = 25;
+	const REDUCTION = 0.05;
+	const MONTANT_SUP = 1000;
+	
+	//Lecture
+	nbAdulte = parseInt(prompt('Combien d\'adulte ?'));
+	while(nbAdulte<=0 || isNaN(nbAdulte)) {
+		nbAdulte = parseInt(prompt('Indiquez un nombre correct !'));
+	}
 
-//Lecture
-nbAdulte = parseInt(prompt('Combien d\'adulte ?'));
-while(nbAdulte<=0 || isNaN(nbAdulte)) {
-	nbAdulte = parseInt(prompt('Indiquez un nombre correct !'));
-}
-nbEnfant = parseInt(prompt('Combien d\'enfant ?'));
-while(nbEnfant<0 || isNaN(nbEnfant)) {
-	nbEnfant = parseInt(prompt('Indiquez un nombre correct !'));
-}
-choixMenu = prompt('Menu STANDARD (25€/adulte,15€/enfant) ou Menu PREMIUM (40€/adulte,25€/enfant) ?').toUpperCase();
-while(choixMenu !== 'STANDARD' && choixMenu !== 'PREMIUM') {
-	choixMenu = prompt('Entrez un menu valide !').toUpperCase();
-}
-choixDessert = prompt('Voulez-vous l\'option dessert (3€/personnes), OUI/NON ?').toUpperCase();
-while(choixDessert !== 'OUI' && choixDessert !== 'NON') {
-	choixDessert = prompt('Entrez OUI ou NON svp !').toUpperCase();
-}
-
-//Traitement
-if(choixDessert === 'OUI') {
-optionDessert = 3 * (nbAdulte + nbEnfant);
-} else {
-optionDessert = 0;
-}
-if(choixMenu === 'STANDARD') {
-montantAdulte = nbAdulte * MENU_STANDARD_ADULTE;
-montantEnfant = nbEnfant * MENU_STANDARD_ENFANT;
-montantTotal = montantAdulte + montantEnfant + optionDessert;
-} else { 
-montantAdulte = nbAdulte * MENU_PREMIUM_ADULTE;
-montantEnfant = nbEnfant * MENU_PREMIUM_ENFANT;
-montantTotal = montantAdulte + montantEnfant + optionDessert;
-}
-if(montantTotal >= MONTANT_SUP) {
-montantReduction = (montantAdulte + montantEnfant + optionDessert) * REDUCTION;
-montantTotal = montantTotal - montantReduction;
-reduction = 'OUI';
-} else {
-montantTotal = montantAdulte + montantEnfant + optionDessert;
-reduction = 'NON';
-}
-//Affichage
-document.write('<h1>Facture détaillée</h1>');
-document.write('<p>Vous êtes '+nbAdulte+' adultes et '+nbEnfant+' enfants .</p>');
-document.write('<p>Menu : '+choixMenu+'</p>');
-document.write('<p>Option dessert : '+choixDessert+'</p>');
-document.write('<p>Réduction 5% : '+reduction+'</p>');
-document.write('<p>Total facture : '+montantTotal+'</p>');
+	nbEnfant = parseInt(prompt('Combien d\'enfant ?'));
+	while(nbEnfant<0 || isNaN(nbEnfant)) {
+		nbEnfant = parseInt(prompt('Indiquez un nombre correct !'));
+	}
+	
+	choixMenu = prompt('Menu STANDARD (25€/adulte,15€/enfant) ou Menu PREMIUM (40€/adulte,25€/enfant) ?').toUpperCase();
+	while(choixMenu !== 'STANDARD' && choixMenu !== 'PREMIUM') {
+		choixMenu = prompt('Entrez un menu valide !').toUpperCase();
+	}
+	
+	choixDessert = prompt('Voulez-vous l\'option dessert (3€/personnes), OUI/NON ?').toUpperCase();
+	while(choixDessert !== 'OUI' && choixDessert !== 'NON') {
+		choixDessert = prompt('Entrez OUI ou NON svp !').toUpperCase();
+	}
+	
+	//Traitement
+	if(choixDessert === 'OUI') {
+	optionDessert = 3 * (nbAdulte + nbEnfant);
+	} else {
+	optionDessert = 0;
+	}
+	
+	if(choixMenu === 'STANDARD') {
+	montantAdulte = nbAdulte * MENU_STANDARD_ADULTE;
+	montantEnfant = nbEnfant * MENU_STANDARD_ENFANT;
+	montantTotal = montantAdulte + montantEnfant + optionDessert;
+	} else { 
+	montantAdulte = nbAdulte * MENU_PREMIUM_ADULTE;
+	montantEnfant = nbEnfant * MENU_PREMIUM_ENFANT;
+	montantTotal = montantAdulte + montantEnfant + optionDessert;
+	}
+	
+	if(montantTotal >= MONTANT_SUP) {
+	montantReduction = (montantAdulte + montantEnfant + optionDessert) * REDUCTION;
+	montantTotal = montantTotal - montantReduction;
+	reduction = 'OUI';
+	} else {
+	montantTotal = montantAdulte + montantEnfant + optionDessert;
+	reduction = 'NON';
+	}
+	
+	//Affichage
+	document.write('<h1>Facture détaillée</h1>');
+	document.write('<p>Vous êtes '+nbAdulte+' adultes et '+nbEnfant+' enfants .</p>');
+	document.write('<p>Menu : '+choixMenu+'</p>');
+	document.write('<p>Option dessert : '+choixDessert+'</p>');
+	document.write('<p>Réduction 5% : '+reduction+'</p>');
+	document.write('<p>Total facture : '+montantTotal+'</p>');
 } while (confirm('Souhaitez-vous recommencer ?'));
 </script>
