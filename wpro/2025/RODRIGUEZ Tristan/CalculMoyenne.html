@@ -10,6 +10,10 @@
  
 //Déclaration des variables
 var nbNotes, note, typeNote, somme = 0, moyenne, totalNbNotes;
+const NOTE_MAX = 20;
+const SEUIL_PASSABLE = 0.50;
+const SEUIL_BIEN = 0.70;
+const SEUIL_EXCELLENT = 0.85;
 
 //Lecture des données
 do {
@@ -18,8 +22,8 @@ do {
 
 for(var i=0;i<nbNotes;i++) {
     do {
-		note = parseFloat(prompt('Entrez la note n° '+(i+1)+' compris entre 0 et 20 !'));
-	} while(isNaN(note) || note <= 0 || note >= 21);
+		note = parseFloat(prompt('Entrez la note n° '+(i+1)+' compris entre 0 et '+NOTE_MAX+' !'));
+	} while(isNaN(note) || note <= 0 || note > NOTE_MAX);
 	
 	somme += note; //somme = somme + note
 }
@@ -27,15 +31,15 @@ for(var i=0;i<nbNotes;i++) {
 //Traitement des données
 moyenne = somme / nbNotes;
 
-totalNbNotes = nbNotes*20; //la somme / note maximale 
+totalNbNotes = nbNotes*NOTE_MAX; //la somme / note maximale 
 
-if(moyenne < 10) {
+if(moyenne < NOTE_MAX*SEUIL_PASSABLE) {		//20*50% => 10
 	typeNote = 'Recalé';
-} else if(moyenne >= 10 && moyenne < 14) {
+} else if(moyenne >= NOTE_MAX*SEUIL_PASSABLE && moyenne < NOTE_MAX*SEUIL_BIEN) {	//20*70% => 14
 	typeNote = 'Passable';
-} else if(moyenne >= 14 && moyenne < 17) {
+} else if(moyenne >= NOTE_MAX*SEUIL_BIEN && moyenne < NOTE_MAX*SEUIL_EXCELLENT) {	//20*85% => 17
 	typeNote = 'Bien';
-} else if(moyenne >= 17) {
+} else if(moyenne >= NOTE_MAX*SEUIL_EXCELLENT) {
 	typeNote = 'Excellent';
 }
 
