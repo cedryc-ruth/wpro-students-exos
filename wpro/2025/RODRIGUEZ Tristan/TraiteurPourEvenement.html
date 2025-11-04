@@ -41,28 +41,28 @@ do {
 	
 	//Traitement
 	if(choixDessert === 'OUI') {
-	optionDessert = 3 * (nbAdulte + nbEnfant);
+		optionDessert = 3 * (nbAdulte + nbEnfant);
 	} else {
-	optionDessert = 0;
+		optionDessert = 0;
 	}
 	
 	if(choixMenu === 'STANDARD') {
-	montantAdulte = nbAdulte * MENU_STANDARD_ADULTE;
-	montantEnfant = nbEnfant * MENU_STANDARD_ENFANT;
-	montantTotal = montantAdulte + montantEnfant + optionDessert;
+		montantAdulte = nbAdulte * MENU_STANDARD_ADULTE;
+		montantEnfant = nbEnfant * MENU_STANDARD_ENFANT;
+		montantTotal = montantAdulte + montantEnfant + optionDessert;
 	} else { 
-	montantAdulte = nbAdulte * MENU_PREMIUM_ADULTE;
-	montantEnfant = nbEnfant * MENU_PREMIUM_ENFANT;
-	montantTotal = montantAdulte + montantEnfant + optionDessert;
+		montantAdulte = nbAdulte * MENU_PREMIUM_ADULTE;
+		montantEnfant = nbEnfant * MENU_PREMIUM_ENFANT;
+		montantTotal = montantAdulte + montantEnfant + optionDessert;
 	}
 	
 	if(montantTotal >= MONTANT_SUP) {
-	montantReduction = (montantAdulte + montantEnfant + optionDessert) * REDUCTION;
-	montantTotal = montantTotal - montantReduction;
-	reduction = 'OUI';
+		montantReduction = (montantAdulte + montantEnfant + optionDessert) * REDUCTION;
+		montantTotal = montantTotal - montantReduction;
+		reduction = 'OUI';
 	} else {
-	montantTotal = montantAdulte + montantEnfant + optionDessert;
-	reduction = 'NON';
+		montantTotal = montantAdulte + montantEnfant + optionDessert;
+		reduction = 'NON';
 	}
 	
 	//Affichage
