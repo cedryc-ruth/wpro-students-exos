@@ -16,8 +16,13 @@ const TAUX_TVA = 1.205;
 var prixTTC;
 
 //Lecture des données
-prixHTVA = prompt('Quel est le prix HTVA ?');
-nombreArticlesDesires = prompt('Quel est le nombre darticles désirés?');
+do {
+  prixHTVA = prompt('Quel est le prix HTVA ?');
+} while(isNaN(prixHTVA) || prixHTVA<0);
+
+do {
+  nombreArticlesDesires = prompt('Quel est le nombre darticles désirés?');
+} while(isNaN(nombreArticlesDesires) || nombreArticlesDesires<0);
 
 //Traitement des données (calcul du prix TTC)
 prixTTC = prixHTVA*TAUX_TVA;
