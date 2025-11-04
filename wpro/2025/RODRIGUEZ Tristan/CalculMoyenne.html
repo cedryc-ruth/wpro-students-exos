@@ -1,0 +1,49 @@
+<script>
+/**
+ * Créer un programme qui permet de calculer la moyenne d’un élève et 
+ * d’afficher un message d’évaluation selon le résultat.
+ * L'utilisateur devra entrer le nombres de notes à calculer puis entrer les notes
+ * une à une.
+ *
+ *@author Tristan
+ */
+ 
+//Déclaration des variables
+var nbNotes, note, typeNote, somme = 0, moyenne;
+
+//Lecture des données
+do {
+	nbNotes = parseInt(prompt('Combien de notes voulez-vous calculer ?'));
+} while(isNaN(nbNotes) || nbNotes <= 0);
+
+for(var i=0;i<nbNotes;i++) {
+        do {
+		note = parseFloat(prompt('Entrez la note n° '+i+' compris entre 0 et 20 !'));
+		} while(isNaN(note) || note <= 0 || note >= 21);
+		somme += note; //somme = somme + note
+}
+
+//Traitement des données
+moyenne = somme / nbNotes;
+
+totalnbNotes = nbNotes*20; //la somme / note maximale 
+
+if(moyenne < 10) {
+typeNote = 'Recalé';
+} else if(moyenne >= 10 && moyenne < 14) {
+typeNote = 'Passable';
+} else if(moyenne >= 14 && moyenne < 17) {
+typeNote = 'Bien';
+} else if(moyenne >= 17) {
+typeNote = 'Excellent';
+} else {
+typeNote = 'Erreur';
+}
+
+//Affichage des données
+document.write('<h2>Moyenne générale.</h2>');
+document.write('<p>Vous avez entré '+nbNotes+' notes.</p>');
+document.write('<p>La somme est de '+somme.toFixed(2)+'/'+totalnbNotes+'.</p>');
+document.write('<p>Votre moyenne est de '+moyenne.toFixed(2)+'/20.</p>');
+document.write('<p>Evaluation : '+typeNote+'.</p>');
+</script>

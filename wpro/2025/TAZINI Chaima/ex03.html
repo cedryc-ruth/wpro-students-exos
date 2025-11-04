@@ -1,0 +1,32 @@
+<script>
+
+/* Écrivez un programme qui calcule et affiche
+/* le Prix TTC à partir de deux données entrée
+/* par l'utilisateur : le prix Hors TVA, le nb
+/* d'articles désirés. Le Taux Applicable
+/* est de 20.5%
+/* author Chaima Tazini*/
+
+//Déclaration des valeurs
+var prix_HTVA;
+var nombre_articles_desires;
+var Taux_de_TVA;
+var TTC;
+
+//Initialisation
+prix_HTVA = prompt('Quel est le prix HTVA ?');
+nombre_articles_desires = prompt('Quel est le nombre darticles désirés?');
+Taux_de_TVA = 1.205
+
+//Affectation de la valeur
+
+TTC= prix_HTVA*Taux_de_TVA;
+
+//Affichage
+
+document.write('<p> prix_HTVA'+prix_HTVA);
+document.write('<p> TTC'+TTC);
+
+document.write('<p> Le prix TTC pour tous les articles est'+TTC*nombre_articles_desires)
+
+</script>

@@ -1,0 +1,31 @@
+<script>
+/**
+ * Pour ce premier exercice, il est demandé de déclarer et définir trois variables numériques.
+ * Si elles sont égales, écrire : « Les trois variables sont identiques. »
+ * Si seulement deux sont identiques, écrire : « deux des variables sont de valeurs égales. »
+ * Sinon, écrire : « Les trois variables sont différentes. »
+ *
+ *@author Tristan
+ */
+ 
+//Déclaration des variables et constantes
+var nb1, nb2, nb3 ;
+
+nb1 = parseInt(prompt('Indiquez votre chiffre'));
+nb2 = parseInt(prompt('Indiquez votre chiffre'));
+nb3 = parseInt(prompt('Indiquez votre chiffre'));
+
+if(nb1 == nb2 && nb1 == nb3) {
+	document.write('Les trois variables sont identiques.');
+} else if(nb1 == nb2) {
+	document.write('deux des variables sont de valeurs égales.');
+} else if(nb1 == nb3) {
+	document.write('deux des variables sont de valeurs égales.');
+} else if(nb2 == nb3) {
+	document.write('deux des variables sont de valeurs égales.');
+} else {
+	document.write('Les trois variables sont différentes.');
+}
+
+
+</script>

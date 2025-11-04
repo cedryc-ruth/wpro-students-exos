@@ -1,0 +1,50 @@
+<script>
+/**
+ * Simuler un petit distributeur automatique où l’utilisateur insère de l’argent et choisit sa boisson, 
+ * l'ordinateur calcul le montant et le solde restant.
+ *
+ * @author Tristan
+ */
+ 
+//Déclarations des variables et constantes
+var soldeMonnaie, resteMonnaie, choixBoisson, typeBoisson, prixBoisson, soldeManquant, prixTotal;
+const PRIX_CAFE = 1.5;
+const PRIX_THE = 3;
+const PRIX_CHOCOLAT = 2.5;
+const MAX_BOISSON = 5;
+
+//Lecture des données
+do {
+	soldeMonnaie = parseFloat(prompt('Combien avez-vous ?(euro)'));
+} while(isNaN(soldeMonnaie) || soldeMonnaie <= 0); 
+
+do {
+	choixBoisson = parseInt(prompt('Quelles boissons voulez-vous ? Tapez 1 pour Café(1.5€), 2 pour Thé(3€), 3 pour Chocolat(2.5€).'));	
+} while(isNaN(choixBoisson) && choixBoisson !== 1 && choixBoisson !== 2 && choixBoisson !== 3);
+
+if(choixBoisson == 1) {
+	prixBoisson = PRIX_CAFE;
+	typeBoisson = 'Café';
+} else if(choixBoisson == 2) {
+	prixBoisson = PRIX_THE;
+	typeBoisson = 'Thé';
+} else if(choixBoisson == 3) {
+	prixBoisson = PRIX_CHOCOLAT;
+	typeBoisson = 'Chocolat';
+}
+
+//Traintement des données
+soldeManquant = prixBoisson - soldeMonnaie;
+resteMonnaie = soldeMonnaie - prixBoisson;
+
+//Affichage des données 
+if(soldeMonnaie == prixBoisson) {
+	document.write('<p>Vous avez choisit '+typeBoisson+' à '+prixBoisson+'€ !</p>');
+	
+} else if(soldeMonnaie > prixBoisson) {	
+	document.write('<p>Vous avez choisit '+typeBoisson+' !</p>');
+	document.write('<p>Il vous reste '+resteMonnaie.toFixed(2)+' €</p>');
+} else if(soldeMonnaie < prixBoisson) {
+	document.write('<p>Montant insuffisant ! il vous manque '+soldeManquant.toFixed(2)+' € !</p>');
+}
+</script>

@@ -1,0 +1,116 @@
+<script>
+/**
+ * Un hôtel te charge de créer un programme pour calculer le prix final d’un séjour selon les critères suivants :
+ * le type de chambre,
+ * le nombre de nuits, la saison, le petit-déjeuner, le statut du client (fidélité ou non),
+ * et des remises ou suppléments selon certaines conditions.
+ *
+ *@author Tristan
+ */
+ 
+//Déclarations des variables et constantes
+var nbNuits, prixNuits, typeChambre, prixChambre, choixBreakfast, prixBreakfast,montantTotal, totalFinal;
+var statutClient, choixSaison, supplementSaison, calculSuppSaison, supplementTarif, calculSuppTarif, reductionFidelite; 
+var  calculReducFidelite, reductionlongueDuree, calculReducDuree;
+const SIMPLE = 55;
+const DOUBLE = 75;
+const SUITE = 120;
+const PRIX_BREAKFAST = 9;
+const REDUC_FIDELITE = 0.10;
+const REDUCT_LONGUE_DUREE = 0.05;
+const SUPPLEMENT_SAISON = 0.20;
+const SUPPLEMENT_TARIF = 15;
+
+//Lecture des données
+typeChambre = parseInt(prompt('Quelles types de chambres ? Tapez 1 pour Chambre Simple, 2 pour Chambre Double ou 3 pour une Suite'));
+while(isNaN(typeChambre) || typeChambre != 1 && typeChambre != 2 && typeChambre != 3) {
+	typeChambre = parseInt(prompt('Tapez 1 pour Chambre Simple, 2 pour Chambre Double ou 3 pour une Suite !'));
+}
+
+nbNuits = parseInt(prompt('Indiquer combien de nuits vous souhaitez !'));
+while(isNaN(nbNuits) || nbNuits <= 0) {
+	nbNuits = parseInt(prompt('Indiquer combien de nuits vous souhaitez en chiffres !'));
+}
+
+choixSaison = parseInt(prompt('Quelle périodes souhaitez-vous ? Tapez 1 entre octobre et mars , 2 entre avril et septembre'));
+while(isNaN(choixSaison) || choixSaison != 1 && choixSaison != 2) {
+	choixSaison = parseInt(prompt('Tapez 1 entre octobre et mars , 2 entre avril et septembre'));
+}
+
+choixBreakfast = parseInt(prompt('Voulez-vous le petit déjeuner ? Tapez 1 pour OUI, 2 pour NON'));
+while(isNaN(choixBreakfast) || choixBreakfast != 1 && choixBreakfast != 2) {
+	choixBreakfast = parseInt(prompt('Tapez 1 pour OUI, 2 pour NON'));
+}
+
+statutClient = parseInt(prompt('Êtes-vous membre ? Tapez 1 pour OUI, 2 pour NON'));
+while(isNaN(statutClient) || statutClient != 1 && statutClient != 2) {
+	statutClient = parseInt(prompt('Tapez 1 pour OUI, 2 pour NON'));
+}
+
+//Traitement des données 
+if(typeChambre == 1) {
+	typeChambre = 'Chambre Simple';
+	prixChambre = 55;
+} else if(typeChambre == 2) {
+		typeChambre = 'Chambre Double';
+		prixChambre = 75;
+} else {
+		typeChambre = 'Suite';
+		prixChambre = 120;
+}
+
+prixNuits = nbNuits * prixChambre;
+
+if(choixBreakfast == 1 && typeChambre == 3 ) {
+	choixBreakfast = 'OUI';
+	prixBreakfast = 0;
+} else if(choixBreakfast == 1) {
+		choixBreakfast = 'OUI';
+		prixBreakfast = nbNuits * PRIX_BREAKFAST;
+} else {
+		choixBreakfast = 'NON';
+		prixBreakfast = 0;
+}
+
+montantTotal = prixNuits + prixBreakfast;
+
+if(nbNuits >= 7) {
+	reductionlongueDuree = montantTotal * REDUCT_LONGUE_DUREE;
+	supplementTarif = 0;
+} else if(nbNuits <= 2) {
+		reductionlongueDuree = 0;
+		supplementTarif = SUPPLEMENT_TARIF;
+} else {
+		reductionlongueDuree = 0;
+		supplementTarif = 0;
+}
+
+if(statutClient == 1 ) {
+	reductionFidelite = montantTotal * REDUC_FIDELITE;
+} else {
+		reductionFidelite = 0;
+}
+
+if(choixSaison == 2) {
+	choixSaison = 'Avril-Septembre';
+	supplementSaison = montantTotal * SUPPLEMENT_SAISON;
+} else {
+		choixSaison = 'Octobre-Mars';
+		supplementSaison = 0;
+}
+
+totalFinal = montantTotal + supplementSaison + supplementTarif - reductionFidelite - reductionlongueDuree;
+
+//Affichege des données
+document.write('<p>Type chambre : '+typeChambre+'</p>');
+document.write('<p>Nuits : '+nbNuits+'</p>');
+document.write('<p>Saison : '+choixSaison+'</p>');
+document.write('<p>Petit déjeuner : '+choixBreakfast+'</p>');
+document.write('<p>Prix de base : '+montantTotal.toFixed(2)+'</p>');
+document.write('<p>Supplément Tarif: +'+supplementTarif.toFixed(2)+'</p>');
+document.write('<p>Supplément haute saison : +'+supplementSaison.toFixed(2)+'</p>');
+document.write('<p>Petit déjeuner : '+prixBreakfast+'</p>');
+document.write('<p>Réduction fidélité : -'+reductionFidelite.toFixed(2)+'</p>');
+document.write('<p>Réduction longue durée : -'+reductionlongueDuree.toFixed(2)+'</p>');
+document.write('<p>Total final : '+totalFinal.toFixed(2)+'</p>');
+</script>
