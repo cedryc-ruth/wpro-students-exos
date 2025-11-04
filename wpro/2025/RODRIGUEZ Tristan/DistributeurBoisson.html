@@ -38,11 +38,8 @@ soldeManquant = prixBoisson - soldeMonnaie;
 resteMonnaie = soldeMonnaie - prixBoisson;
 
 //Affichage des données 
-if(soldeMonnaie == prixBoisson) {
+if(soldeMonnaie >= prixBoisson) {	
 	document.write('<p>Vous avez choisit '+typeBoisson+' à '+prixBoisson+'€ !</p>');
-	
-} else if(soldeMonnaie > prixBoisson) {	
-	document.write('<p>Vous avez choisit '+typeBoisson+' !</p>');
 	document.write('<p>Il vous reste '+resteMonnaie.toFixed(2)+' €</p>');
 } else if(soldeMonnaie < prixBoisson) {
 	document.write('<p>Montant insuffisant ! il vous manque '+soldeManquant.toFixed(2)+' € !</p>');
