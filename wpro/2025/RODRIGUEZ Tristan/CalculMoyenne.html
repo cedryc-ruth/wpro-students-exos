@@ -9,7 +9,7 @@
  */
  
 //Déclaration des variables
-var nbNotes, note, typeNote, somme = 0, moyenne;
+var nbNotes, note, typeNote, somme = 0, moyenne, totalNbNotes;
 
 //Lecture des données
 do {
@@ -27,7 +27,7 @@ for(var i=0;i<nbNotes;i++) {
 //Traitement des données
 moyenne = somme / nbNotes;
 
-totalnbNotes = nbNotes*20; //la somme / note maximale 
+totalNbNotes = nbNotes*20; //la somme / note maximale 
 
 if(moyenne < 10) {
 	typeNote = 'Recalé';
@@ -44,7 +44,7 @@ if(moyenne < 10) {
 //Affichage des données
 document.write('<h2>Moyenne générale.</h2>');
 document.write('<p>Vous avez entré '+nbNotes+' notes.</p>');
-document.write('<p>La somme est de '+somme.toFixed(2)+'/'+totalnbNotes+'.</p>');
+document.write('<p>La somme est de '+somme.toFixed(2)+'/'+totalNbNotes+'.</p>');
 document.write('<p>Votre moyenne est de '+moyenne.toFixed(2)+'/20.</p>');
 document.write('<p>Evaluation : '+typeNote+'.</p>');
 </script>
