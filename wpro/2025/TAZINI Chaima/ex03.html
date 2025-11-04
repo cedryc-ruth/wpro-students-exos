@@ -15,11 +15,11 @@ var nombreArticlesDesires;
 const TAUX_TVA = 1.205;
 var prixTTC;
 
-//Initialisation
+//Lecture des données
 prixHTVA = prompt('Quel est le prix HTVA ?');
 nombreArticlesDesires = prompt('Quel est le nombre darticles désirés?');
 
-//Affectation de la valeur
+//Traitement des données (calcul du prix TTC)
 prixTTC = prixHTVA*TAUX_TVA;
 
 //Affichage
