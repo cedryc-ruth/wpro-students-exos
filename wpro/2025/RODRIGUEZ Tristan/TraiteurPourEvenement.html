@@ -34,10 +34,7 @@ do {
 		choixMenu = prompt('Entrez un menu valide !').toUpperCase();
 	}
 	
-	choixDessert = prompt('Voulez-vous l\'option dessert (3€/personnes), OUI/NON ?').toUpperCase();
-	while(choixDessert !== 'OUI' && choixDessert !== 'NON') {
-		choixDessert = prompt('Entrez OUI ou NON svp !').toUpperCase();
-	}
+	choixDessert = confirm('Voulez-vous l\'option dessert (3€/personnes), OUI/NON ?') ? 'OUI' : 'NON';
 	
 	//Traitement
 	if(choixDessert === 'OUI') {
