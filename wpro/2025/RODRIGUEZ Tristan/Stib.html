@@ -26,7 +26,6 @@ if(age <= 6) {
 	document.write('<p>Le tarif est de 0 €.</p>');
 	
 	if(!mobib) {
-		document.write('<p>le tarif est de 0 €.</p>');
 		document.write('<p>Vous devez acheter une carte à 5 €.</p>')
 	}
 } else if(age < 25 && age > 12) {
@@ -37,24 +36,22 @@ if(age <= 6) {
 	} while(typeAbonnement !== 'a' && typeAbonnement !== 'm');
 	
 	if(typeAbonnement == 'a') {
+		document.write('<p>Le tarif est de 499 €.</p>');
+
 		if(!mobib) {
-			document.write('<p>Le tarif est de 499 €.</p>');
 			document.write('<p>Vous devez acheter une carte de 5 €.</p>');
-		} else {
-			document.write('<p>Le tarif est de 499 €.</p>');
 		}
 	} else if (typeAbonnement =='m') {		
 		do {
 			mois = prompt('Combien de mois ?');
 		} while(isNaN(mois) || mois <=0);
 		
+		abonnement = (!mobib) ? mois * TARIF_MOIS + 5 : mois * TARIF_MOIS;
+
+		document.write('<p>Abonnement mensuel : Nombre de mois : '+mois+' => '+TARIF_MOIS+' * '+mois+' = '+abonnement+'</p>');
+
 		if(!mobib) {
-			abonnement = mois * TARIF_MOIS + 5;
-			document.write('<p>Abonnement mensuel : Nombre de mois : '+mois+' => '+TARIF_MOIS+' * '+mois+' = '+abonnement+'</p>');
 			document.write('<p>Achat carte Mobib : 5.00€</p>');
-		} else {
-			abonnement = mois * TARIF_MOIS;
-			document.write('<p>Abonnement mensuel : Nombre de mois : '+mois+' => '+TARIF_MOIS+' * '+mois+' = '+abonnement+'</p>');
 		}
 	}
 }
