@@ -22,30 +22,25 @@ const SUPPLEMENT_SAISON = 0.20;
 const SUPPLEMENT_TARIF = 15;
 
 //Lecture des données
-typeChambre = parseInt(prompt('Quelles types de chambres ? Tapez 1 pour Chambre Simple, 2 pour Chambre Double ou 3 pour une Suite'));
-while(isNaN(typeChambre) || typeChambre != 1 && typeChambre != 2 && typeChambre != 3) {
+do {
 	typeChambre = parseInt(prompt('Tapez 1 pour Chambre Simple, 2 pour Chambre Double ou 3 pour une Suite !'));
-}
+} while(isNaN(typeChambre) || typeChambre != 1 && typeChambre != 2 && typeChambre != 3);
 
-nbNuits = parseInt(prompt('Indiquer combien de nuits vous souhaitez !'));
-while(isNaN(nbNuits) || nbNuits <= 0) {
+do {
 	nbNuits = parseInt(prompt('Indiquer combien de nuits vous souhaitez en chiffres !'));
-}
+} while(isNaN(nbNuits) || nbNuits <= 0);
 
-choixSaison = parseInt(prompt('Quelle périodes souhaitez-vous ? Tapez 1 entre octobre et mars , 2 entre avril et septembre'));
-while(isNaN(choixSaison) || choixSaison != 1 && choixSaison != 2) {
+do {
 	choixSaison = parseInt(prompt('Tapez 1 entre octobre et mars , 2 entre avril et septembre'));
-}
+} while(isNaN(choixSaison) || choixSaison != 1 && choixSaison != 2);
 
-choixBreakfast = parseInt(prompt('Voulez-vous le petit déjeuner ? Tapez 1 pour OUI, 2 pour NON'));
-while(isNaN(choixBreakfast) || choixBreakfast != 1 && choixBreakfast != 2) {
+do {
 	choixBreakfast = parseInt(prompt('Tapez 1 pour OUI, 2 pour NON'));
-}
+} while(isNaN(choixBreakfast) || choixBreakfast != 1 && choixBreakfast != 2);
 
-statutClient = parseInt(prompt('Êtes-vous membre ? Tapez 1 pour OUI, 2 pour NON'));
-while(isNaN(statutClient) || statutClient != 1 && statutClient != 2) {
+do {
 	statutClient = parseInt(prompt('Tapez 1 pour OUI, 2 pour NON'));
-}
+} while(isNaN(statutClient) || statutClient != 1 && statutClient != 2);
 
 //Traitement des données 
 if(typeChambre == 1) {
