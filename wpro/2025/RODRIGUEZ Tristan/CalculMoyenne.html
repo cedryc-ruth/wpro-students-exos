@@ -18,7 +18,7 @@ do {
 
 for(var i=0;i<nbNotes;i++) {
     do {
-		note = parseFloat(prompt('Entrez la note n° '+i+' compris entre 0 et 20 !'));
+		note = parseFloat(prompt('Entrez la note n° '+(i+1)+' compris entre 0 et 20 !'));
 	} while(isNaN(note) || note <= 0 || note >= 21);
 	
 	somme += note; //somme = somme + note
