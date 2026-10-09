@@ -17,13 +17,11 @@ chiffre = parseFloat (prompt('Entrez votre chiffre de vente.'));
 
  //Traitement des données
 montant = chiffre*PRIME;
-
+	
+//Affichage
 if (chiffre>=1000) {
 	document.write('<p>Le montant de votre prime est de '+montant.toFixed(2)+' €.</p>');
 } else  {
 	document.write('<p>Vous n\'êtes pas éligible à la prime.</p>');
 }
-
- //Affichage
-
 </script>
