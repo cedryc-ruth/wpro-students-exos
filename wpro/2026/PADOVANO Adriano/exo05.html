@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+/**
+ * 5. Écrivez un programme qui calcule et affiche l’amende à payer pour un retour de livres en bibliothèque. 
+ * Sachant qu’il faut payer 50 centimes par jour de retard et une fois 25 centimes de frais administratifs, 
+ * le bibliothécaire devra donner le nombre de jours de retard.
+ * 
+ * @author A. Padovano
+ */
+ 
+ //Déclaration des variables
+var nb 
+var prix
+const FRAIS_ADMIN = 0.25
+const AMENDE = 0.5
+
+ //Lecture des données
+var nb = 5 //mocking
+
+ //Traitement des données
+prix = ((nb*AMENDE)+FRAIS_ADMIN)
+
+ //Affichage
+document.write('<p>Le prix à payer est '+prix+' €. </p>')
+</script>
