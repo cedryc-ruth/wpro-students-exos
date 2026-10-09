@@ -10,10 +10,10 @@
 
 var salaireActuel = 2500;
 var salaireBeta = 2800;
+var ligne;
 
-document.write("Année 0 (Départ) :");
-document.write("<p>- Actuel : " + salaireActuel + " €</p>");
-document.write("<p>- Beta : " + salaireBeta + " €\n</p>");
+document.write("<p>Année : Actuel - Beta</p>");
+document.write("0 : " + salaireActuel + " € - " + salaireBeta + " €\n</p>");
 
 for (var annee = 1; annee <= 10; annee++) {
   if (annee % 2 === 0) {
@@ -22,8 +22,9 @@ for (var annee = 1; annee <= 10; annee++) {
   if (annee % 5 === 0) {
     salaireBeta *= 1.08;
   }
-  document.write("<p>Année " + annee + " :</p>");
-  document.write("<p>- Actuel : " + salaireActuel.toFixed(2) + " €</p>");
-  document.write("<p>- Beta : " + salaireBeta.toFixed(2) + " €</p>");
+
+  ligne = "<p>" + annee + " : " + salaireActuel.toFixed(2) + " € - " + salaireBeta.toFixed(2) + " €</p>"
+  
+  document.write(ligne);
 }
 </script>
