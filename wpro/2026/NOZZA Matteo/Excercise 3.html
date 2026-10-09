@@ -13,17 +13,22 @@ var salaireBeta = 2800;
 var totalActuel = 0;
 var totalBeta = 0;
 var ligne;
+const TAUX_ACTUEL = 0.04;    //Taux de croissance du salaire (entreprise actuelle)
+const TAUX_BETA = 0.08;      //Taux de croissance du salaire (entreprise Beta)
+const FREQUENCE_ACTUEL = 2;  //Augmentation du salaire tous les 2 ans (entreprise actuelle)
+const FREQUENCE_BETA = 5;    //Augmentation du salaire tous les 5 ans (entreprise Beta)
+const NB_ANNEES = 10;        //Période étudiée (en nombre d'années)
 
 document.write("<p>Année : Actuel - Beta</p>");
 document.write("0 : " + salaireActuel + " € - " + salaireBeta + " €\n</p>");
 
-for (var annee = 1; annee <= 10; annee++) {
-  if (annee % 2 === 0) {
-    salaireActuel *= 1.04;
+for (var annee = 1; annee <= NB_ANNEES; annee++) {
+  if (annee % FREQUENCE_ACTUEL === 0) {
+    salaireActuel *= (1+TAUX_ACTUEL);
   }
   
-  if (annee % 5 === 0) {
-    salaireBeta *= 1.08;
+  if (annee % FREQUENCE_BETA === 0) {
+    salaireBeta *= (1+TAUX_BETA);
   }
 
   ligne = "<p>" + annee + " : " + salaireActuel.toFixed(2) + " € - " + salaireBeta.toFixed(2) + " €</p>"  
