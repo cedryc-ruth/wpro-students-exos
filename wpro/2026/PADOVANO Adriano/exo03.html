@@ -9,19 +9,19 @@
  */
  
  //Déclaration des variables
-var nb
-var prix
-var prixHT
-var prixTTC
-const TVA = 0.205
+var nb;
+var prix;
+var prixHT;
+var prixTTC;
+const TVA = 0.205;
 
  //Lecture des données
 prixHT = parseFloat(prompt('Quel est le prix hors TVA ?'));
 nb = parseFloat(prompt('Combien d\'articles voulez-vous ?'));
 
  //Traitement des données
-prix = prixHT*nb
-prixTTC = prix+(prix*TVA)
+prix = prixHT*nb;
+prixTTC = prix+(prix*TVA);
 
  //Affichage
 document.write('<p>Le prix TTC est de '+prixTTC+' €.</p>');
