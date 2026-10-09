@@ -18,8 +18,13 @@ var prixAvecRistourne;
 codeClient = 'EPFC';    //Mock
 
 //Traitement des données
-prixAvecRistourne = (prix * (TAUX_PROMO/100));
+if(codeClient==CODE_PROMO) {
+  prixAvecRistourne = (prix * (TAUX_PROMO/100));
 
-//Affichage du résultat
-document.write('<p>Vous avez économisé ' + prixAvecRistourne + '€</p>'); 
+  //Affichage du résultat
+  document.write('<p>Vous avez économisé ' + prixAvecRistourne + '€</p>'); 
+} else {
+  //Affichage du résultat
+  document.write('<p>Code incorrect.</p>'); 
+}
 </script>  
