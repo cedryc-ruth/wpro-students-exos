@@ -10,6 +10,8 @@
 
 var salaireActuel = 2500;
 var salaireBeta = 2800;
+var totalActuel = 0;
+var totalBeta = 0;
 var ligne;
 
 document.write("<p>Année : Actuel - Beta</p>");
@@ -26,5 +28,10 @@ for (var annee = 1; annee <= 10; annee++) {
 
   ligne = "<p>" + annee + " : " + salaireActuel.toFixed(2) + " € - " + salaireBeta.toFixed(2) + " €</p>"  
   document.write(ligne);
+
+  totalActuel += salaireActuel;
+  totalBeta += salaireBeta;
 }
+
+document.write("<p>Totaux : "+totalActuel.toFixed(2)+" € - "+totalBeta.toFixed(2)+" €</p>");
 </script>
