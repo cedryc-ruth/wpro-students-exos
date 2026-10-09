@@ -18,7 +18,7 @@ const AMENDE = 0.5;
 var nbJoursRetard = 5; //mocking
 
  //Traitement des données
-prix = ((nbJoursRetard*AMENDE)+FRAIS_ADMIN);
+prix = nbJoursRetard*AMENDE + FRAIS_ADMIN;
 
  //Affichage
 document.write('<p>Le prix à payer est '+prix+' €. </p>');
