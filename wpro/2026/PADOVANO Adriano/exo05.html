@@ -9,17 +9,17 @@
  */
  
  //Déclaration des variables
-var nb 
-var prix
-const FRAIS_ADMIN = 0.25
-const AMENDE = 0.5
+var nbJoursRetard;
+var prix;
+const FRAIS_ADMIN = 0.25;
+const AMENDE = 0.5;
 
  //Lecture des données
-var nb = 5 //mocking
+var nbJoursRetard = parseInt(prompt('Nombre de jours de retard ?'));
 
  //Traitement des données
-prix = ((nb*AMENDE)+FRAIS_ADMIN)
+prix = nbJoursRetard*AMENDE + FRAIS_ADMIN;
 
  //Affichage
-document.write('<p>Le prix à payer est '+prix+' €. </p>')
+document.write('<p>Le prix à payer est '+prix+' €. </p>');
 </script>

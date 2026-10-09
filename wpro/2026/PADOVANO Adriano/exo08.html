@@ -7,29 +7,28 @@
  * @author A. Padovano
  */
  
- //Déclaration des variables et des constantes
-var chiffre
-var prime
-const PRIME_A = 0.02
-const PRIME_B = 0.05
-const PRIME_C = 0.10
+//Déclaration des variables et des constantes
+var chiffreVente;
+var prime;
+const PRIME_A = 0.02;
+const PRIME_B = 0.05;
+const PRIME_C = 0.10;
+const SEUIL_PRIME_A = 500;
+const SEUIL_PRIME_B = 1000;
 
- //Lecture des données
-chiffre = parseFloat (prompt('Entrez votre chiffre de vente.'));
+//Lecture des données
+chiffreVente = parseFloat (prompt('Entrez votre chiffre de vente.'));
 
- //Traitement des données
-
-if (chiffre<=500) {
+//Traitement des données
+if (chiffreVente<=SEUIL_PRIME_A) {
 	prime = chiffre*PRIME_A;
-}
-else if (chiffre<=1000) {
+} else if (chiffreVente<=SEUIL_PRIME_B) {
 	prime = chiffre*PRIME_B;
-}
-else {
-	prime = chiffre*PRIME_C;
+} else {
+	prime = chiffreVente*PRIME_C;
 }
 	
- //Affichage
-document.write('<p>Le montant de votre chiffre de vente est de '+chiffre+' €.</p>');
+//Affichage
+document.write('<p>Le montant de votre chiffre de vente est de '+chiffreVente+' €.</p>');
 document.write('<p>Le montant de votre prime est de '+prime.toFixed(2)+' €.</p>');
 </script>
