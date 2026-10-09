@@ -1,0 +1,20 @@
+<script>
+var salaireActuel = 2500;
+var salaireBeta = 2800;
+
+document.write("Année 0 (Départ) :");
+document.write("<p>- Actuel : " + salaireActuel + " €</p>");
+document.write("<p>- Beta : " + salaireBeta + " €\n</p>");
+
+for (var annee = 1; annee <= 10; annee++) {
+  if (annee % 2 === 0) {
+    salaireActuel *= 1.04;
+  }
+  if (annee % 5 === 0) {
+    salaireBeta *= 1.08;
+  }
+  document.write("<p>Année " + annee + " :</p>");
+  document.write("<p>- Actuel : " + salaireActuel.toFixed(2) + " €</p>");
+  document.write("<p>- Beta : " + salaireBeta.toFixed(2) + " €</p>");
+}
+</script>
