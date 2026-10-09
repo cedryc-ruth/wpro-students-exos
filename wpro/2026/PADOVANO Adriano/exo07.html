@@ -8,21 +8,21 @@
  */
  
  //Déclaration des variables
-var chiffre
-var montant
-const PRIME = 0.1
+var chiffre;
+var montant;
+const PRIME = 0.1;
 
  //Lecture des données
-chiffre = parseFloat (prompt('Entrez votre chiffre de vente.'))
+chiffre = parseFloat (prompt('Entrez votre chiffre de vente.'));
 
  //Traitement des données
-montant = chiffre*PRIME
+montant = chiffre*PRIME;
 
 if (chiffre>=1000) {
-	document.write('<p>Le montant de votre prime est de '+montant.toFixed(2)+' €.</p>')
+	document.write('<p>Le montant de votre prime est de '+montant.toFixed(2)+' €.</p>');
 }
 else  {
-	document.write('<p>Vous n\'êtes pas éligible à la prime.</p>')
+	document.write('<p>Vous n\'êtes pas éligible à la prime.</p>');
 }
 
  //Affichage
