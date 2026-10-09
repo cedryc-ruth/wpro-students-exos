@@ -7,7 +7,7 @@
  * @author A. Padovano
  */
  
- //Déclaration des variables et des constantes
+//Déclaration des variables et des constantes
 var chiffreVente;
 var prime;
 const PRIME_A = 0.02;
@@ -16,11 +16,10 @@ const PRIME_C = 0.10;
 const SEUIL_PRIME_A = 500;
 const SEUIL_PRIME_B = 1000;
 
- //Lecture des données
+//Lecture des données
 chiffreVente = parseFloat (prompt('Entrez votre chiffre de vente.'));
 
- //Traitement des données
-
+//Traitement des données
 if (chiffreVente<=SEUIL_PRIME_A) {
 	prime = chiffre*PRIME_A;
 } else if (chiffreVente<=SEUIL_PRIME_B) {
@@ -29,7 +28,7 @@ if (chiffreVente<=SEUIL_PRIME_A) {
 	prime = chiffreVente*PRIME_C;
 }
 	
- //Affichage
+//Affichage
 document.write('<p>Le montant de votre chiffre de vente est de '+chiffreVente+' €.</p>');
 document.write('<p>Le montant de votre prime est de '+prime.toFixed(2)+' €.</p>');
 </script>
