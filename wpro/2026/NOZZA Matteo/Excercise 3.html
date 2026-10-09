@@ -19,12 +19,12 @@ for (var annee = 1; annee <= 10; annee++) {
   if (annee % 2 === 0) {
     salaireActuel *= 1.04;
   }
+  
   if (annee % 5 === 0) {
     salaireBeta *= 1.08;
   }
 
-  ligne = "<p>" + annee + " : " + salaireActuel.toFixed(2) + " € - " + salaireBeta.toFixed(2) + " €</p>"
-  
+  ligne = "<p>" + annee + " : " + salaireActuel.toFixed(2) + " € - " + salaireBeta.toFixed(2) + " €</p>"  
   document.write(ligne);
 }
 </script>
