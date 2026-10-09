@@ -15,7 +15,7 @@ const FRAIS_ADMIN = 0.25;
 const AMENDE = 0.5;
 
  //Lecture des données
-var nbJoursRetard = 5; //mocking
+var nbJoursRetard = parseInt(prompt('Nombre de jours de retard ?'));
 
  //Traitement des données
 prix = nbJoursRetard*AMENDE + FRAIS_ADMIN;
