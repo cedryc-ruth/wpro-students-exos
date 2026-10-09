@@ -11,6 +11,7 @@
 var chiffreVente;
 var montant;
 const PRIME = 0.1;
+const SEUIL_VENTE = 1000;
 
  //Lecture des données
 chiffreVente = parseFloat (prompt('Entrez votre chiffre de vente.'));
@@ -19,7 +20,7 @@ chiffreVente = parseFloat (prompt('Entrez votre chiffre de vente.'));
 montant = chiffreVente*PRIME;
 	
 //Affichage
-if (chiffreVente>=1000) {
+if (chiffreVente>=SEUIL_VENTE) {
 	document.write('<p>Le montant de votre prime est de '+montant.toFixed(2)+' €.</p>');
 } else  {
 	document.write('<p>Vous n\'êtes pas éligible à la prime.</p>');
