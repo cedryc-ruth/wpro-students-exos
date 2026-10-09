@@ -13,16 +13,18 @@ var prime;
 const PRIME_A = 0.02;
 const PRIME_B = 0.05;
 const PRIME_C = 0.10;
+const SEUIL_PRIME_A = 500;
+const SEUIL_PRIME_B = 1000;
 
  //Lecture des données
 chiffre = parseFloat (prompt('Entrez votre chiffre de vente.'));
 
  //Traitement des données
 
-if (chiffre<=500) {
+if (chiffre<=SEUIL_PRIME_A) {
 	prime = chiffre*PRIME_A;
 }
-else if (chiffre<=1000) {
+else if (chiffre<=SEUIL_PRIME_B) {
 	prime = chiffre*PRIME_B;
 }
 else {
