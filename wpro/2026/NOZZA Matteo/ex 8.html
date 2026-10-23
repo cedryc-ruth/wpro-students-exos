@@ -1,7 +1,7 @@
 <script>
 //déclaration des variables
 var chiffreDeVente;
-var prime1, prime2, prime3;
+var prime;
 const PRIME_A = 500;
 const PRIME_B = 1000;
 const TAUX_PRIME = 0.02;
@@ -11,17 +11,15 @@ const TAUX_PRIME_B = 0.1;
 //initialiser 
 chiffreDeVente = parseInt(prompt('Entrez le chiffre de vente :'));
 
-//calcul
-prime1 = chiffreDeVente * TAUX_PRIME;
-prime2 = chiffreDeVente * TAUX_PRIME_A;
-prime3 = chiffreDeVente * TAUX_PRIME_B;
-
-//vérification des données
+//traitement des données : calcul de la prime
 if(chiffreDeVente < PRIME_A) {
-	document.write('<p>Le montant de la prime est de : ' + prime1 + ' €</p>');
+	prime = chiffreDeVente * TAUX_PRIME;
 } else if(chiffreDeVente >= PRIME_A && chiffreDeVente <= PRIME_B) {
-	document.write('<p>Le montant de la prime est de : ' + prime2 + ' €</p>');
+	prime = chiffreDeVente * TAUX_PRIME_A;
 } else {
-	document.write('<p>Le montant de la prime est de : ' + prime3 + ' €</p>');
+	prime = chiffreDeVente * TAUX_PRIME_B;
 }
+
+//affichage du résultat
+document.write('<p>Le montant de la prime est de : ' + prime1 + ' €</p>');
 </script>
