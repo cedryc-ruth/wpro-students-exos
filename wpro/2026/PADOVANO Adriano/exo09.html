@@ -20,7 +20,7 @@ var nombre;
 nbSecret = parseInt(Math.random()* (NOMBRE_MAX - NOMBRE_MIN + 1)) + NOMBRE_MIN;
 
 do {
-	nombre = parseInt(prompt('Devinez le nombre entre 0 et 10.'));
+	nombre = parseInt(prompt('Devinez le nombre entre '+NOMBRE_MIN+' et '+NOMBRE_MAX+'.'));
 } while (isNaN(nombre) || nombre < NOMBRE_MIN || nombre > NOMBRE_MAX);
 
 //Traitement des données
