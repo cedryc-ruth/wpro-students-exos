@@ -15,7 +15,7 @@ cptPos = 0;
 cptNeg = 0;
 
 do {
-	nb = prompt('donnez un nombre');
+	nb = prompt('Veuillez donnez un nombre.');
 	nb = parseFloat(nb)
 
 	if (nb>0){
@@ -25,6 +25,6 @@ do {
 		cptNeg = cptNeg+nb;
 	}
 	
-	document.write(cptPos +' '+ cptNeg +' '+ total);
+	document.write('<p>Nb positifs: '+cptPos +' - Nb négatifs: '+ cptNeg +' - Total: '+ total+'</p>');
 } while(nb!=0);
 </script>
