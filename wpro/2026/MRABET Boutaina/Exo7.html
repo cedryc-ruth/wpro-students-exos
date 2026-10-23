@@ -9,13 +9,14 @@
 
 var prime; 
 var chiffreVente;
+const SEUIL_VENTE = 1000;
 
 chiffreVente = parseFloat(prompt('Quel est ton chiffre de vente'));
 
-if(chiffreVente >= 1000) {
+if(chiffreVente >= SEUIL_VENTE) {
 	prime = chiffreVente * 0.1;
 	document.write('<p>Voici le montant de ta prime: '+ prime +' </p>');
 } else {
-	document.write('<p> Prime possible à partir de 1000€ de vente</p>');
+	document.write('<p> Prime possible à partir de '+SEUIL_VENTE+'€ de vente</p>');
 }
 </script>
