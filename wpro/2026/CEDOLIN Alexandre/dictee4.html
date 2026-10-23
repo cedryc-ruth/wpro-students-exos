@@ -15,21 +15,16 @@ cptPos = 0;
 cptNeg = 0;
 
 do {
-nb = prompt('donnez un nombre');
+	nb = prompt('donnez un nombre');
+	nb = parseFloat(nb)
 
-nb = parseFloat(nb)
-
-if (nb>0){
-
-	total = total+nb;
-	cptPos = total;
+	if (nb>0){
+		total = total+nb;
+		cptPos = total;
+	} else  (nb!=0) {
+		cptNeg = cptNeg+nb;
+	}
 	
-}
-else  (nb!=0){
-	cptNeg = cptNeg+nb;
-
-}
-document.write(cptPos + cptNeg + total);
+	document.write(cptPos + cptNeg + total);
 } while(nb!=0);
-
 </script>
