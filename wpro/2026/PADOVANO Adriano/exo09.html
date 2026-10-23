@@ -11,13 +11,14 @@
  */
  
 //Déclaration des variables et des constantes
-const NOMBRE_MIN = 0 ;
-const NOMBRE_MAX = 10 ;
-var nbSecret ;
-var nombre ;
+const NOMBRE_MIN = 0;
+const NOMBRE_MAX = 10;
+var nbSecret;
+var nombre;
 
 //Lecture des données
 nbSecret = parseInt(Math.random()* (NOMBRE_MAX - NOMBRE_MIN + 1)) + NOMBRE_MIN;
+
 do {
 	nombre = parseInt(prompt('Devinez le nombre entre 0 et 10.'));
 } while (isNaN(nombre) || nombre < NOMBRE_MIN || nombre > NOMBRE_MAX);
@@ -29,5 +30,4 @@ if (nombre == nbSecret) {
 } else {
 	document.write('<p>Dommage, vous pouvez actualiser la page pour réessayer.</p>');
 }
-
 </script>
