@@ -15,11 +15,11 @@ var largeur;
 
 //lecture des donées
 do {
-	longeur = '' || parseFloat(prompt("longeur du rectangle en cm :"));
+	longeur = parseFloat(prompt("longeur du rectangle en cm :"));
 } while(isNaN(longeur));
 
 do {
-	largeur = '' || parseFloat(prompt("largeur du rectangle en cm :"));
+	largeur = parseFloat(prompt("largeur du rectangle en cm :"));
 } while(isNaN(largeur));
 
 if(longeur!=null && largeur!=null) {
