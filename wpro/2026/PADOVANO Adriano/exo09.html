@@ -24,8 +24,9 @@ do {
 } while (isNaN(nombre) || nombre < NOMBRE_MIN || nombre > NOMBRE_MAX);
 
 //Traitement des données
+	
+//Affichage du résultat
 if (nombre == nbSecret) {
-	//Affichage du résultat
 	document.write('<p>Félicitations, vous avez deviné le bon nombre.</p>');
 } else {
 	document.write('<p>Dommage, vous pouvez actualiser la page pour réessayer.</p>');
