@@ -18,9 +18,9 @@ var borneMin;
 var borneMax;
 
 //Lecture des données	
-
 do {
 	borneMin = prompt('Veuillez entrer un nombre entier positif pour la borne INFÉRIEURE, zéro compris.');
+	
 	if (borneMin == null) {
 		//Affichage du résultat
 		document.write('<p>Le programme s\'est annulé.</p>');
@@ -28,11 +28,9 @@ do {
 	}
 	
 	borneMin = parseInt(borneMin);
-
 } while (isNaN(borneMin) || borneMin < 0);
 
 if (borneMin !== null) {
-	
 	do {
 		borneMax = prompt('Veuillez entrer un nombre entier positif pour la borne SUPÉRIEURE. zéro compris.');
 		
@@ -41,8 +39,8 @@ if (borneMin !== null) {
 			document.write('<p>Le programme s\'est annulé.</p>');
 			break;
 		}
+		
 		borneMax = parseInt(borneMax);
-	
 	} while (isNaN(borneMax) || borneMax < 0 || borneMax < borneMin);
 	
 	if (borneMax !== null) {
@@ -54,7 +52,8 @@ if (borneMin !== null) {
 				//Affichage du résultat
 				document.write('<p>Le programme s\'est annulé.</p>');
 				break;
-			}	
+			}
+			
 			//Traitement des données
 			if (nb != -1 && nb !== null) {	
 				if (nb >= borneMin && nb <=borneMax) {
@@ -67,9 +66,8 @@ if (borneMin !== null) {
 					//Affichage du résultat
 					document.write('<p>[TROP HAUT]</p>');
 				}
-			}
-				
-			} while (nb != -1 && nb !== null);
-		}
+			}			
+		} while (nb != -1 && nb !== null);
+	}
 }
 </script>
