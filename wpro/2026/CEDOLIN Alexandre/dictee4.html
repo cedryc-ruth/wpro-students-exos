@@ -7,12 +7,12 @@
 
 var nb;
 var total;
-var cpt-pos;
-var cpt-neg;
+var cptPos;
+var cptNeg;
 
 total = 0;
-cpt-pos = 0; 
-cpt-neg = 0;
+cptPos = 0; 
+cptNeg = 0;
 
 do(){
 nb = prompt('donnez un nombre');
@@ -22,14 +22,14 @@ nb = parseFloat(nb)
 if (nb>0){
 
 	total = total+nb;
-	cpt-pos = total;
+	cptPos = total;
 	
 }
 else  (nb!=0){
-	cpt-neg = cpt-neg+nb;
+	cptNeg = cptNeg+nb;
 
 }
-document.write(cpt-pos + cpt-neg + total);
+document.write(cptPos + cptNeg + total);
 } while
 
 </script>
