@@ -11,17 +11,22 @@
 
 var prime; 
 var chiffreVente;
-
+const SEUIL_VENTE_MIN = 500;
+const SEUIL_VENTE_MEDIUM = 1000;
+const TAUX_PRIME_MIN = 0.02;
+const TAUX_PRIME_MEDIUM = 0.05;
+const TAUX_PRIME_MAX = 0.1;
+	
 chiffreVente = parseFloat(prompt('Quel est ton chiffre de vente'));
 
-if(chiffreVente >= 1000) {
-	prime = chiffreVente * 0.1;
+if(chiffreVente >= SEUIL_VENTE_MEDIUM) {
+	prime = chiffreVente * TAUX_PRIME_MAX;
 	document.write('<p>Voici le montant de ta prime: '+ prime.toFixed(2) +' </p>');
-} else if (chiffreVente > 500 && chiffreVente < 1000){
-	prime = chiffreVente * 0.05;
+} else if (chiffreVente > SEUIL_VENTE_MIN && chiffreVente < SEUIL_VENTE_MEDIUM){
+	prime = chiffreVente * TAUX_PRIME_MEDIUM;
 	document.write('<p>Voici le montant de ta prime: '+ prime.toFixed(2) +' </p>');
 } else {
-	prime = chiffreVente * 0.02
+	prime = chiffreVente * TAUX_PRIME_MIN;
 	document.write('<p>Voici le montant de ta prime: '+ prime.toFixed(2) +' </p>');
 	
 	//.toFixed(3) pour limiter les décimales (ici max 3 décimales) 
