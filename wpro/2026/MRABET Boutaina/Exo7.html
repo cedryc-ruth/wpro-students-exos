@@ -12,12 +12,12 @@ var chiffreVente;
 const SEUIL_VENTE = 1000;
 const TAUX_PRIME = 0.1;
 
-chiffreVente = parseFloat(prompt('Quel est ton chiffre de vente'));
+chiffreVente = parseFloat(prompt('Quel est ton chiffre de vente ?'));
 
 if(chiffreVente >= SEUIL_VENTE) {
 	prime = chiffreVente * TAUX_PRIME;
-	document.write('<p>Voici le montant de ta prime: '+ prime +' </p>');
+	document.write('<p>Voici le montant de ta prime: '+ prime +'€.</p>');
 } else {
-	document.write('<p> Prime possible à partir de '+SEUIL_VENTE+'€ de vente</p>');
+	document.write('<p>Prime possible à partir de '+SEUIL_VENTE+'€ de vente.</p>');
 }
 </script>
