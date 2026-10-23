@@ -16,11 +16,11 @@ var largeur;
 //lecture des donées
 do {
 	longeur = '' || parseFloat(prompt("longeur du rectangle en cm :"));
-} while(isNaN(longeur))
+} while(isNaN(longeur));
 
 do {
 	largeur = '' || parseFloat(prompt("largeur du rectangle en cm :"));
-} while(isNaN(largeur))
+} while(isNaN(largeur));
 
 if(longeur!=null && largeur!=null) {
 	//calcul
@@ -33,6 +33,6 @@ if(longeur!=null && largeur!=null) {
 	document.write('<p>Périmètre : ' + perimetre + ' cm.</p>');
 	document.write('<p>superficie : ' + superficie + ' cm².</p>');
 } else {
-	document.writre('<p>Dommage...</p>')
+	document.writre('<p>Dommage...</p>');
 }
 </script>
