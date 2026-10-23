@@ -1,0 +1,19 @@
+<script>
+/**
+* Programme qui affiche le montant de la prime d’un vendeur 
+* lorsqu’il a entré son chiffre de vente 
+*(prime de 10% sur son chiffre de vente s’il a vendu pour plus de 1000 €).
+*/
+
+var prime; 
+var chiffreVente;
+
+chiffreVente = parseFloat(prompt('Quel est ton chiffre de vente'));
+
+if(chiffreVente >= 1000) {
+	prime = chiffreVente * 0.1;
+	document.write('<p>Voici le montant de ta prime: '+ prime +' </p>');
+} else {
+	document.write('<p> Prime possible à partir de 1000€ de vente</p>');
+}
+</script>

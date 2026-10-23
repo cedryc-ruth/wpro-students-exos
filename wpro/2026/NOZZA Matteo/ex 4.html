@@ -1,0 +1,37 @@
+<meta charset="utf-8">
+<script>
+/**
+ *
+ * @author M. Nozza <1108manozza@student.epfc.eu>
+ * @version 1.0 (2026/10/09)
+ */
+ 
+//déclaration des variables 
+var perimetre; 
+var superficie;
+var longeur;
+var largeur;
+
+//lecture des donées
+do {
+	longeur = '' || parseFloat(prompt("longeur du rectangle en cm :"));
+} while(isNaN(longeur))
+do {
+	largeur = '' || parseFloat(prompt("largeur du rectangle en cm :"));
+} while(isNaN(largeur))
+
+if(longeur!=null && largeur!=null) {
+	//calcul
+	perimetre = ((longeur + largeur)*2);
+	superficie = (longeur * largeur);
+
+	//affichage du résultat
+	document.write('<p>Votre longeur est de : ' + longeur + 'cm.</p>');
+	document.write('<p>Votre largeur est de : ' + largeur + 'cm.</p>');
+	document.write('<p>Périmètre : ' + perimetre + ' cm.</p>');
+	document.write('<p>superficie : ' + superficie + ' cm².</p>');
+} else {
+	document.writre('<p>Dommage...</p>')
+}	
+
+</script>

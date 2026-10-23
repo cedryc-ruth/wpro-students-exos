@@ -1,0 +1,24 @@
+<script>
+//déclaration des variables
+var chiffreDeVente;
+const PRIME_A = 500;
+const PRIME_B = 1000;
+
+//initialiser 
+chiffreDeVente = parseInt(prompt('Entrez le chiffre de vente :'));
+
+//calcul
+prime1 = chiffreDeVente * 0.02;
+prime2 = chiffreDeVente * 0.05;
+prime3 = chiffreDeVente * 0.10;
+
+//vérification des données
+if(chiffreDeVente < PRIME_A) {
+	document.write('<p>Le montant de la prime est de : ' + prime1 + ' €</p>');
+} else if(chiffreDeVente >= PRIME_A && chiffreDeVente <= PRIME_B) {
+	document.write('<p>Le montant de la prime est de : ' + prime2 + ' €</p>');
+} else {
+	document.write('<p>Le montant de la prime est de : ' + prime3 + ' €</p>');
+}
+
+</script>

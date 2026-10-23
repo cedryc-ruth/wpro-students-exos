@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<script>
+/*
+ * 10a. Écrivez un programme qui fait la somme d'une série d'entiers entrés un à un par l'utilisateur.
+ * Déterminez une condition permettant d'arrêter le traitement. Avant de quitter,
+ * le programme affiche le total.
+ * 10b. idem sauf que le total est affiché systématiquement après chaque entrée de l'utilisateur.
+ *
+ * @author A.Padovano <0411adpadovano@student.epfc.eu>
+ * @version 1.0 (19/10/2026)
+ */
+
+//Déclaration des variables
+var nb;
+var total = 0;
+//Lecture et traitement des données
+do {
+	nb = prompt('Entrez un nombre entier (-1 pour arrêter).');
+	nb = parseInt(nb);
+	
+	if (!isNaN(nb) && nb != -1) {
+		total = total + nb;
+		//Affichage du résultat
+		document.write('<p>Votre total est '+total+'.</p>')
+	}
+} while (isNaN(nb) || nb != -1);
+
+
+</script>

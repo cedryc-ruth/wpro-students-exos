@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<script>
+/**
+ * 9. Écrivez un programme qui demande à l’utilisateur de deviner un nombre compris entre 0 et 10.
+ * Le nombre à deviner n’est pas fourni par l’utilisateur bien sûr. 
+ * Il devra être généré aléatoirement grâce à la fonction random. L'utilisateur a droit à une seule tentative.
+ * Si la réponse est trouvée, le programme s'arrête.
+ *
+ *@author A.Padovano
+ *@version 1.0
+ */
+ 
+//Déclaration des variables et des constantes
+const NOMBRE_MIN = 0 ;
+const NOMBRE_MAX = 10 ;
+var nbSecret ;
+var nombre ;
+
+//Lecture des données
+nbSecret = parseInt(Math.random()* (NOMBRE_MAX - NOMBRE_MIN + 1)) + NOMBRE_MIN;
+do {
+	nombre = parseInt(prompt('Devinez le nombre entre 0 et 10.'));
+} while (isNaN(nombre) || nombre < NOMBRE_MIN || nombre > NOMBRE_MAX);
+
+//Traitement des données
+if (nombre == nbSecret) {
+	//Affichage du résultat
+	document.write('<p>Félicitations, vous avez deviné le bon nombre.</p>');
+} else {
+	document.write('<p>Dommage, vous pouvez actualiser la page pour réessayer.</p>');
+}
+
+</script>

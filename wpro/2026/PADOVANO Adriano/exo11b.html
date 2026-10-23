@@ -1,0 +1,75 @@
+<meta charset="utf-8">
+
+<script>
+/**
+ * 11. Écrivez un programme qui vérifie si un nombre entré par l'utilisateur est compris dans un intervalle. Les bornes inférieures et supérieures de l'intervalle 
+ * seront obligatoirement des nombres entiers positifs (zéro compris) entrés par l'utilisateur. Si le nombre à vérifier est compris dans l'intervalle, le programme
+ * affiche ce nombre entre crochet. Sinon, le programme affiche le message [HORS LIMITES]. L'utilisateur peut tester autant de nombre qu'il veut ; il peut arrêter
+ * le programme en tapant un nombre. Attention, n'oubliez pas que la borne supérieure d'un intervalle est toujours plus grand ou égale à la borne inférieure!
+ * b. Modifiez le précédent programme de sortte qu'au lieu d'afficher [HORS LIMITES], il précise [TROP HAUT] ou [TROP BAS] en fonction des cas.
+ *
+ * @author A. Padovano <0411adpadovano@student.epfc.eu>
+ * @version 1.0 (18/10/2026)
+ */
+ 
+//Déclaration des variables
+var nb;
+var borneMin;
+var borneMax;
+
+//Lecture des données	
+
+do {
+	borneMin = prompt('Veuillez entrer un nombre entier positif pour la borne INFÉRIEURE, zéro compris.');
+	if (borneMin == null) {
+		//Affichage du résultat
+		document.write('<p>Le programme s\'est annulé.</p>');
+		break;
+	}
+	
+	borneMin = parseInt(borneMin);
+
+} while (isNaN(borneMin) || borneMin < 0);
+
+if (borneMin !== null) {
+	
+	do {
+		borneMax = prompt('Veuillez entrer un nombre entier positif pour la borne SUPÉRIEURE. zéro compris.');
+		
+		if (borneMax == null) {
+			//Affichage du résultat
+			document.write('<p>Le programme s\'est annulé.</p>');
+			break;
+		}
+		borneMax = parseInt(borneMax);
+	
+	} while (isNaN(borneMax) || borneMax < 0 || borneMax < borneMin);
+	
+	if (borneMax !== null) {
+		do {
+			nb = prompt('Entrez un nombre (-1 pour arrêter).');
+			nb = parseInt(nb);
+			
+			if (nb === null) {
+				//Affichage du résultat
+				document.write('<p>Le programme s\'est annulé.</p>');
+				break;
+			}	
+			//Traitement des données
+			if (nb != -1 && nb !== null) {	
+				if (nb >= borneMin && nb <=borneMax) {
+					//Affichage du résultat
+					document.write('<p>['+ nb +']</p>');
+				} else if ( nb < borneMin) {
+					//Affichage du résultat
+					document.write('<p>[TROP BAS]</p>');
+				} else {
+					//Affichage du résultat
+					document.write('<p>[TROP HAUT]</p>');
+				}
+			}
+				
+			} while (nb != -1 && nb !== null);
+		}
+}
+</script>

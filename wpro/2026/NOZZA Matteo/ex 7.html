@@ -1,0 +1,17 @@
+<script>
+
+//déclaration des variables
+var chiffreDeVente = parseFloat(prompt('Entrez le chiffre de vente :'));
+const NB_PRIME = 1000;
+
+//calcul
+prime = chiffreDeVente * 0.10;
+
+//vérification des données
+if(chiffreDeVente >= NB_PRIME) {
+	document.write('<p>Le montant de la prime est de : ' + prime + ' €</p>');
+} else {
+	document.write("Aucune prime accordée (chiffre inférieur ou égal à 1000 €).");
+}
+
+</script>

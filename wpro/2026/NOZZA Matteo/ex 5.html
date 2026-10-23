@@ -1,0 +1,17 @@
+<script>
+
+//déclaration des variables
+var nb;
+const MIN = 10;
+const MAX = 20;
+
+//lecture des données
+nb = parseFloat(prompt('Valeur de nb?'));
+
+//traitement des données
+if(nb >= 10 && nb <= 20) {
+	document.write('<p>' + nb + ' est bien compris entre ' + MIN + ' et ' + MAX + '</p>');
+} else	{
+	document.write('<p>Nope</p>');
+}
+</script>

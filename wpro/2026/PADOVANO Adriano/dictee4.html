@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<script>
+// Adriano Padovano
+/**
+ * Compte de nombres valeurs positives et de valeurs negatives, calcule la sommes des valeurs positives.
+ *
+ * 
+ *  
+ */
+
+//Déclaration des variables
+var nb;
+var total = 0;
+var cptPos = 0;
+var cptNeg = 0;
+
+//Lecture des données
+do {
+	nb = prompt('Entrez un nombre.');
+	nb = parseFloat(nb);
+} while (isNaN(nb) || nb = 0) 
+
+//Traitement des données
+if (nb < total ) {
+	cptPos = (nb + total);
+} else (nb > total) {
+	cptNeg = (nb + total);
+}
+
+//Affichage du résultat
+document.write('<p>Le total est : '+total+.'</p>')
+document.write('<p>Le positif est : '+cptPos+'.</p>')
+document.write('<p>Le negatif est : '+cptNeg+'.</p>')
+
+</script>

@@ -1,0 +1,14 @@
+<script>
+
+//génération random 
+var nbSecret = Math.floor(Math.random() * 11);
+var tentative = parseInt(prompt('Un numéro entre 0 et 10'));
+
+// verification et affichage
+if (tentative === nbSecret) {
+    document.write('Bravo, vous avez trouvé !');
+} else {
+    document.write('Dommage, le nombre mystère était ' + nbSecret + '.');
+}
+
+</script>
